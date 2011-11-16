@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@class ControladorRepresentacionGlobo;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+{
+    ControladorRepresentacionGlobo *_controladorRepresentacionGlobo;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
