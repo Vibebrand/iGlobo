@@ -1,0 +1,264 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D7AFB71D1474136200D66A37 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AFB71C1474136200D66A37 /* UIKit.framework */; };
+		D7AFB71F1474136200D66A37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AFB71E1474136200D66A37 /* Foundation.framework */; };
+		D7AFB7211474136200D66A37 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AFB7201474136200D66A37 /* CoreGraphics.framework */; };
+		D7AFB7271474136200D66A37 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D7AFB7251474136200D66A37 /* InfoPlist.strings */; };
+		D7AFB7291474136200D66A37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7AFB7281474136200D66A37 /* main.m */; };
+		D7AFB72D1474136200D66A37 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7AFB72C1474136200D66A37 /* AppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D7AFB7181474136200D66A37 /* iGlobo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGlobo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7AFB71C1474136200D66A37 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D7AFB71E1474136200D66A37 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D7AFB7201474136200D66A37 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D7AFB7241474136200D66A37 /* iGlobo-Info.plist */ = {isa = PBXFileReference; path = "iGlobo-Info.plist"; sourceTree = "<group>"; };
+		D7AFB7261474136200D66A37 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D7AFB7281474136200D66A37 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D7AFB72A1474136200D66A37 /* iGlobo-Prefix.pch */ = {isa = PBXFileReference; path = "iGlobo-Prefix.pch"; sourceTree = "<group>"; };
+		D7AFB72B1474136200D66A37 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		D7AFB72C1474136200D66A37 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D7AFB7151474136200D66A37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7AFB71D1474136200D66A37 /* UIKit.framework in Frameworks */,
+				D7AFB71F1474136200D66A37 /* Foundation.framework in Frameworks */,
+				D7AFB7211474136200D66A37 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D7AFB70D1474136200D66A37 = {
+			isa = PBXGroup;
+			children = (
+				D7AFB7221474136200D66A37 /* iGlobo */,
+				D7AFB71B1474136200D66A37 /* Frameworks */,
+				D7AFB7191474136200D66A37 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D7AFB7191474136200D66A37 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D7AFB7181474136200D66A37 /* iGlobo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D7AFB71B1474136200D66A37 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D7AFB71C1474136200D66A37 /* UIKit.framework */,
+				D7AFB71E1474136200D66A37 /* Foundation.framework */,
+				D7AFB7201474136200D66A37 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D7AFB7221474136200D66A37 /* iGlobo */ = {
+			isa = PBXGroup;
+			children = (
+				D7AFB72B1474136200D66A37 /* AppDelegate.h */,
+				D7AFB72C1474136200D66A37 /* AppDelegate.m */,
+				D7AFB7231474136200D66A37 /* Supporting Files */,
+			);
+			path = iGlobo;
+			sourceTree = "<group>";
+		};
+		D7AFB7231474136200D66A37 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D7AFB7241474136200D66A37 /* iGlobo-Info.plist */,
+				D7AFB7251474136200D66A37 /* InfoPlist.strings */,
+				D7AFB7281474136200D66A37 /* main.m */,
+				D7AFB72A1474136200D66A37 /* iGlobo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D7AFB7171474136200D66A37 /* iGlobo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7AFB7301474136200D66A37 /* Build configuration list for PBXNativeTarget "iGlobo" */;
+			buildPhases = (
+				D7AFB7141474136200D66A37 /* Sources */,
+				D7AFB7151474136200D66A37 /* Frameworks */,
+				D7AFB7161474136200D66A37 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iGlobo;
+			productName = iGlobo;
+			productReference = D7AFB7181474136200D66A37 /* iGlobo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D7AFB70F1474136200D66A37 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = INEGI;
+			};
+			buildConfigurationList = D7AFB7121474136200D66A37 /* Build configuration list for PBXProject "iGlobo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D7AFB70D1474136200D66A37;
+			productRefGroup = D7AFB7191474136200D66A37 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D7AFB7171474136200D66A37 /* iGlobo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D7AFB7161474136200D66A37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7AFB7271474136200D66A37 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D7AFB7141474136200D66A37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7AFB7291474136200D66A37 /* main.m in Sources */,
+				D7AFB72D1474136200D66A37 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D7AFB7251474136200D66A37 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7AFB7261474136200D66A37 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D7AFB72E1474136200D66A37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		D7AFB72F1474136200D66A37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D7AFB7311474136200D66A37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iGlobo/iGlobo-Prefix.pch";
+				INFOPLIST_FILE = "iGlobo/iGlobo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D7AFB7321474136200D66A37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iGlobo/iGlobo-Prefix.pch";
+				INFOPLIST_FILE = "iGlobo/iGlobo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D7AFB7121474136200D66A37 /* Build configuration list for PBXProject "iGlobo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7AFB72E1474136200D66A37 /* Debug */,
+				D7AFB72F1474136200D66A37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7AFB7301474136200D66A37 /* Build configuration list for PBXNativeTarget "iGlobo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7AFB7311474136200D66A37 /* Debug */,
+				D7AFB7321474136200D66A37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D7AFB70F1474136200D66A37 /* Project object */;
+}
