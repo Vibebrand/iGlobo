@@ -7,9 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "iDelegadoControladorMapa.h"
 #import <WhirlyGlobe/WhirlyGlobe.h>
 
 @interface ControladorCapaDeInteraccion : NSObject<WhirlyGlobeLayer>
+{
+    id<iDelegadoControladorMapa> _delegadoControladorMapa;
+}
 
 -(void)cmdTocaLaPantalla:(NSNotification *)note;
 
@@ -19,5 +23,8 @@
 
 #pragma WhirlyGlobeLayer
 - (void)startWithThread:(WhirlyGlobeLayerThread *)inThread scene:(WhirlyGlobe::GlobeScene *)scene;
+
+
+@property(nonatomic, retain) id<iDelegadoControladorMapa>  delegadoControladorMapa;
 
 @end

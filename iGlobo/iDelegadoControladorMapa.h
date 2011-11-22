@@ -7,9 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <WhirlyGlobe/WhirlyGlobe.h>
 
 @protocol iDelegadoControladorMapa <NSObject>
 
+- (void)procesarBaseDeDatosVectorial;
+
 -(void)cmdGeoReferenciaSeleccionada:(NSNotification *)notificacion;
 
+-(WhirlyGlobeLayerThread *) obtenerlayerThread;
+
+-(void)establecerlayerThread:(WhirlyGlobeLayerThread *) layerThread;
+
+-(void)establecerScene:(WhirlyGlobe::GlobeScene *)scene;
 @end

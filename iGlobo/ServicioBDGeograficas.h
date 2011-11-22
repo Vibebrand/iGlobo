@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <WhirlyGlobe/WhirlyGlobe.h>
-
+//TODO crear protocolo de este servicio par el desacoplamiento
 @interface ServicioBDGeograficas : NSObject
 {
     NSDictionary *_countryDescription;
@@ -20,13 +20,15 @@
     WhirlyGlobe::VectorDatabase *regionDb;
 }
 
+-(void) llenarDiccionarios;
+
 -(void) procesarBasesDeDatosVectoriales;
 
--(WhirlyGlobe::VectorDatabase) obtenerBDPaises;
+-(WhirlyGlobe::VectorDatabase *) obtenerBDPaises;
 
--(WhirlyGlobe::VectorDatabase) obtenerBDOceanos;
+-(WhirlyGlobe::VectorDatabase *) obtenerBDOceanos;
 
--(WhirlyGlobe::VectorDatabase) obtenerBDRegiones;
+-(WhirlyGlobe::VectorDatabase *) obtenerBDRegiones;
 
 
 @property(nonatomic, retain) NSDictionary *countryDescription;

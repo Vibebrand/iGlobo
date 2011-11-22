@@ -6,6 +6,7 @@
 //  Copyright (c) 2011 INEGI. All rights reserved.
 //
 #import <Foundation/Foundation.h>
+#import <WhirlyGlobe/WhirlyGlobe.h>
 
 struct PunteroRepresentacionPoligono;
 struct PunteroVectorAreaRef;

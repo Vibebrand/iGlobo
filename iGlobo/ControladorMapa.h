@@ -54,6 +54,8 @@ typedef std::list<RepresentacionPoligono*> RepresentacionesDePoligono;
 //Desacoplar a un servicio de Datos    
 }
 
+-(SingleLabel*) createLabelInfunction:(WhirlyGlobe::ShapeSet) shapes withMinWidth:(float)minWidth andName:(NSString*)name minVis:(float)minVis maxVis:(float)maxVis withConfig:(NSMutableDictionary *) labelDescription;
+
 #pragma iControladorMapa
 
 -(RepresentacionPoligono *) agregarOceano: (WhirlyGlobe::VectorArealRef) area;
@@ -68,8 +70,15 @@ typedef std::list<RepresentacionPoligono*> RepresentacionesDePoligono;
 
 #pragma iDelegado Controlador Mapa
 
+- (void)procesarBaseDeDatosVectorial;
+
 -(void)cmdGeoReferenciaSeleccionada:(NSNotification *)notificacion;
 
+-(WhirlyGlobeLayerThread *) obtenerlayerThread;
+
+-(void)establecerlayerThread:(WhirlyGlobeLayerThread *) layerThread;
+
+-(void)establecerScene:(WhirlyGlobe::GlobeScene *)scene;
 
 #pragma Argumentos
 
