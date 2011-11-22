@@ -8,6 +8,12 @@
 
 #import "ControladorMapa.h"
 
+#pragma -
+#pragma RepresentacionPoligono
+RepresentacionPoligono::RepresentacionPoligono(): idFrontera(WhirlyGlobe::EmptyIdentity), idEtiqueta(WhirlyGlobe::EmptyIdentity), subEtiquetas(WhirlyGlobe::EmptyIdentity), puntoMedio(100.0){}
+
+RepresentacionPoligono::~RepresentacionPoligono(){}
+
 @implementation ControladorMapa
 
 @synthesize layerThread = _layerThread;
@@ -15,6 +21,7 @@
 @synthesize labelLayer = _labelLayer;
 @synthesize globeView = _globeView;
 @synthesize servicioBDGeograficas = _servicioBDGeograficas;
+@synthesize maxEdgelen;
 
 -(void) dealloc
 {
@@ -27,9 +34,20 @@
     
     for(RepresentacionesDePoligono::iterator it = _poligonosDibujados.begin(); it != _poligonosDibujados.end(); ++it)
         delete (*it);
+    
     [_servicioBDGeograficas release];
     [super dealloc];
 }
+
+-(id)init
+{
+    if ((self = [super init]))
+    {
+        //_scene = nil;
+    }
+    return self;
+}
+
 
 -(SingleLabel*) createLabelInfunction:(WhirlyGlobe::ShapeSet) shapes withMinWidth:(float)minWidth andName:(NSString*)name minVis:(float)minVis maxVis:(float)maxVis withConfig:(NSMutableDictionary *) labelDescription
 {
@@ -80,6 +98,62 @@
 
 -(void)cmdGeoReferenciaSeleccionada:(NSNotification *)notificacion
 {
+    TapMessage *msg = notificacion.object;
+    if(RotateToCountry)
+    {
+        [[self globeView] cancelAnimation];
+        Eigen::Quaternionf newRotQuat = [[self globeView] makeRotationToGeoCoord:msg.whereGeo keepNorthUp:YES];
+        self.globeView.delegate= [[[AnimateViewRotation alloc] initWithView:[self globeView] rot:newRotQuat howLong:1.0] autorelease ];
+    }
+    
+    WhirlyGlobe::GeoCoord coord = msg.whereGeo;
+    WhirlyGlobe::VectorShapeRef poligonoSeleccionado;
+    RepresentacionPoligono *representacionPoligono = [self buscarRepresentacionPoligono:coord height:msg.heightAboveGlobe whichShape:&poligonoSeleccionado];
+    
+    if(representacionPoligono)
+    {
+        switch(representacionPoligono->tipoPoligono)
+        {
+            case PoligonoPais:
+                NSLog(@"Pais");
+                break;
+            case PoligonoOceano:
+                NSLog(@"Oceano");
+                break;
+        }
+        
+        if(msg.heightAboveGlobe >= representacionPoligono->puntoMedio)
+            [self eliminarRepresentacionPoligono: representacionPoligono];
+        
+    }
+    else{
+        // Look for a country first
+        WhirlyGlobe::ShapeSet foundShapes;
+        
+        self.servicioBDGeograficas.obtenerBDPaises->findArealsForPoint(coord,foundShapes);
+        if (!foundShapes.empty())
+        {
+            // Toss in anything we found
+            for (WhirlyGlobe::ShapeSet::iterator it = foundShapes.begin();
+                 it != foundShapes.end(); ++it)
+            {
+                WhirlyGlobe::VectorArealRef ar = boost::dynamic_pointer_cast<WhirlyGlobe::VectorAreal>(*it);
+                _poligonosDibujados.push_back([self agregarPais:ar->getAttrDict()]);
+            }
+        } else {
+            // Look for an ocean
+            
+            self.servicioBDGeograficas.obtenerBDOceanos->findArealsForPoint(coord,foundShapes);
+            for (WhirlyGlobe::ShapeSet::iterator it = foundShapes.begin();
+                 it != foundShapes.end(); ++it)
+            {
+                WhirlyGlobe::VectorArealRef ar = boost::dynamic_pointer_cast<WhirlyGlobe::VectorAreal>(*it);
+                _poligonosDibujados.push_back([self agregarOceano:ar]);
+            }
+        }
+    }
+    while(_poligonosDibujados.size() > MaxRepresentacionesPoligono )
+        [self eliminarRepresentacionPoligono:*(_poligonosDibujados.begin())];
 
 }
 
@@ -135,9 +209,13 @@
          self.servicioBDGeograficas.obtenerBDRegiones->getMatchingVectors([NSString stringWithFormat:@"ISO like '%@'",regionSeleccionada],regionShapes);
 
         if (regionShapes.empty())
+        {
             poligono->puntoMedio = 0.0;
+            NSLog(@"regionDB Vacio");
+        }
+            
         // Don't let the country outline disappear too quickly
-        if (poligono->puntoMedio > 0.6)
+       if (poligono->puntoMedio > 0.6)
             poligono->puntoMedio = 0.6;
         
         [descripcionDelPais setObject:[NSNumber numberWithFloat:poligono->puntoMedio] forKey:@"minVis"];
@@ -163,12 +241,15 @@
 
 -(void) agregarEstados:(RepresentacionPoligono*) poligono conPoligonos:(WhirlyGlobe::ShapeSet) regionShapes
 {
+    NSLog(@"agrenado estados");
+    
     NSMutableDictionary *regionShapeDescription = [NSMutableDictionary dictionaryWithDictionary:[[[self servicioBDGeograficas] regionDescription] objectForKey:@"shape"]];
     
     [regionShapeDescription setObject:[NSNumber numberWithFloat:0.0] forKey:@"minVis"];
     
     [regionShapeDescription setObject:[NSNumber numberWithFloat:poligono->puntoMedio] forKey:@"maxVis"];
     
+
     poligono->idSubPoligonos = [[self vectorLayer] addVectors:&regionShapes desc:regionShapeDescription];
     
     poligono->subPoligonos= regionShapes;
@@ -233,6 +314,39 @@
         _poligonosDibujados.erase(it);
         delete poligono;
     }
+}
+
+- (RepresentacionPoligono *)buscarRepresentacionPoligono:(const WhirlyGlobe::GeoCoord &)geoCoord height:(float)heightAboveGlobe whichShape:(WhirlyGlobe::VectorShapeRef *)whichShape
+{
+    for (RepresentacionesDePoligono::iterator it = _poligonosDibujados.begin();it != _poligonosDibujados.end(); ++it)
+    {
+        RepresentacionPoligono *poligono = *it;
+        if (heightAboveGlobe > poligono->puntoMedio) {
+            for (WhirlyGlobe::ShapeSet::iterator it = poligono->frontera.begin();
+                 it != poligono->frontera.end(); ++it)
+            {
+                WhirlyGlobe::VectorArealRef ar = boost::dynamic_pointer_cast<WhirlyGlobe::VectorAreal>(*it);
+                if (ar->geoMbr.inside(geoCoord) && ar->pointInside(geoCoord))
+                {
+                    if (whichShape)
+                        *whichShape = ar;
+                    return poligono;
+                }
+            }
+        } else {
+            for (WhirlyGlobe::ShapeSet::iterator sit = poligono->subPoligonos.begin();sit != poligono->subPoligonos.end(); ++sit)
+            {
+                WhirlyGlobe::VectorArealRef ar = boost::dynamic_pointer_cast<WhirlyGlobe::VectorAreal>(*sit);
+                if (ar->geoMbr.inside(geoCoord) && ar->pointInside(geoCoord))
+                {
+                    if (whichShape)
+                        *whichShape = ar;
+                    return poligono;
+                }                    
+            }
+        }
+    }
+    return NULL;
 }
 
 -(void)calcLabelPlacement:(WhirlyGlobe::ShapeSet *)shapes loc:(WhirlyGlobe::GeoCoord &)loc  minWidth:(float)minWidth width:(float *)retWidth height:(float *)retHeight

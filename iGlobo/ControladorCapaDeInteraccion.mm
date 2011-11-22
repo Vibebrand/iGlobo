@@ -14,8 +14,13 @@
 
 @synthesize delegadoControladorMapa= _delegadoControladorMapa;
 
--(id)init
+-(id)initWithMapDelegate:(id<iDelegadoControladorMapa>) delegate
 {    
+    if ((self = [super init]))
+    {
+        [self setDelegadoControladorMapa:delegate];
+        [self registrarNotificaciones];
+    }
     return self;
 }
 
@@ -23,14 +28,15 @@
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [_delegadoControladorMapa release];
-    [self dealloc];
+    [super dealloc];
 }
 
 - (void)startWithThread:(WhirlyGlobeLayerThread *)inThread scene:(WhirlyGlobe::GlobeScene *)scene
 {
     [_delegadoControladorMapa establecerlayerThread:inThread];
+    [_delegadoControladorMapa establecerScene:scene];
     
-    [self performSelector:@selector(process:) onThread:[_delegadoControladorMapa obtenerlayerThread] withObject:nil waitUntilDone:NO];
+    [self performSelector:@selector(procesarBaseDeDatosVectorial:) onThread:[_delegadoControladorMapa obtenerlayerThread] withObject:nil waitUntilDone:NO];
 
 }
 

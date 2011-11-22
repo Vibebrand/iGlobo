@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <WhirlyGlobe/WhirlyGlobe.h>
 #import "PanDelegateFixed.h"
+#import "ControladorMapa.h"
+#import "ControladorCapaDeInteraccion.h"
 
 @interface ControladorRepresentacionGlobo : UIViewController
 {
@@ -35,6 +37,10 @@
 	SphericalEarthLayer *earthLayer;
 	VectorLayer *vectorLayer;
 	LabelLayer *labelLayer;
+    ControladorCapaDeInteraccion * controladorCapaDeInteraccion;
+    
+    ControladorMapa * controladorMapa;
+    
     
 	//InteractionLayer *interactLayer;
     //CapaInteraccion * capaInteraccion;
@@ -59,6 +65,7 @@
 @property (nonatomic,retain) SphericalEarthLayer *earthLayer;
 @property (nonatomic,retain) VectorLayer *vectorLayer;
 @property (nonatomic,retain) LabelLayer *labelLayer;
+@property (nonatomic,retain) ControladorCapaDeInteraccion * controladorCapaDeInteraccion;
 
 
 @end

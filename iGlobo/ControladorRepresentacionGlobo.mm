@@ -7,6 +7,7 @@
 //
 
 #import "ControladorRepresentacionGlobo.h"
+#import "ServicioBDGeograficas.h"
 
 #define CENTER_COORD1 512.0
 #define CENTER_COORD2 384.0
@@ -28,6 +29,7 @@
 @synthesize earthLayer;
 @synthesize vectorLayer;
 @synthesize labelLayer;
+@synthesize controladorCapaDeInteraccion;
 
 - (void)clear
 {
@@ -63,6 +65,9 @@
     self.earthLayer = nil;
     self.vectorLayer = nil;
     self.labelLayer = nil;
+    self.controladorCapaDeInteraccion = nil;
+    
+    [controladorMapa release];
     // self.interactLayer = nil;
     // self.capatInteraccion = nil;
     // self.loftLayer = nil;
@@ -130,6 +135,20 @@
 	// General purpose label layer.
 	self.labelLayer = [[[LabelLayer alloc] init] autorelease];
 	[self.layerThread addLayer:labelLayer];
+    
+    
+    controladorMapa = [[ControladorMapa alloc] init];
+    [controladorMapa setServicioBDGeograficas:[[ServicioBDGeograficas new] autorelease] ];
+    [controladorMapa setLayerThread:self.layerThread];
+    [controladorMapa setGlobeView:self.theView];
+    [controladorMapa setLabelLayer:self.labelLayer];
+    [controladorMapa setVectorLayer:self.vectorLayer];
+    
+    controladorMapa.maxEdgelen = [self.earthLayer smallestTesselation]/10.0;
+    
+    self.controladorCapaDeInteraccion = [[[ControladorCapaDeInteraccion alloc] initWithMapDelegate:controladorMapa] autorelease];
+  
+    [self.layerThread addLayer:controladorCapaDeInteraccion];
     
     // Give the renderer what it needs
 	sceneRenderer.scene = theScene;

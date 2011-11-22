@@ -10,10 +10,13 @@
 #import "iDelegadoControladorMapa.h"
 #import <WhirlyGlobe/WhirlyGlobe.h>
 
+
 @interface ControladorCapaDeInteraccion : NSObject<WhirlyGlobeLayer>
 {
-    id<iDelegadoControladorMapa> _delegadoControladorMapa;
+    id<iDelegadoControladorMapa>  _delegadoControladorMapa;
 }
+
+-(id)initWithMapDelegate:(id<iDelegadoControladorMapa>) delegate;
 
 -(void)cmdTocaLaPantalla:(NSNotification *)note;
 
@@ -25,6 +28,6 @@
 - (void)startWithThread:(WhirlyGlobeLayerThread *)inThread scene:(WhirlyGlobe::GlobeScene *)scene;
 
 
-@property(nonatomic, retain) id<iDelegadoControladorMapa>  delegadoControladorMapa;
+@property(nonatomic, retain)id<iDelegadoControladorMapa>delegadoControladorMapa;
 
 @end

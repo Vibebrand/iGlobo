@@ -17,9 +17,12 @@
 
 -(id)init
 {
-    if (self) 
+    if ((self = [super init])) 
     {
         [self llenarDiccionarios];
+        //countryDb = nil;
+        //oceanDb = nil;
+        //regionDb = nil;
     }
     return self;
 }

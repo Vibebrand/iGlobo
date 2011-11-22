@@ -14,13 +14,15 @@
 
 typedef std::set<WhirlyGlobe::SimpleIdentity> SimpleIDSet;
 typedef enum {PoligonoPais ,PoligonoOceano} TipoPoligono;
-static const unsigned int MaxRepresentacionesPoligono = 15;
+
+static const unsigned int MaxRepresentacionesPoligono = 3;
+#define RotateToCountry true
 
 class RepresentacionPoligono
 {
 public:
-    RepresentacionPoligono(){};
-    virtual ~RepresentacionPoligono(){};
+    RepresentacionPoligono();
+    virtual ~RepresentacionPoligono();
     
     TipoPoligono tipoPoligono;
     WhirlyGlobe::ShapeSet frontera;
@@ -66,6 +68,8 @@ typedef std::list<RepresentacionPoligono*> RepresentacionesDePoligono;
 
 -(void)eliminarRepresentacionPoligono:(RepresentacionPoligono *) poligono;
 
+- (RepresentacionPoligono *)buscarRepresentacionPoligono:(const WhirlyGlobe::GeoCoord &)geoCoord height:(float)heightAboveGlobe whichShape:(WhirlyGlobe::VectorShapeRef *)whichShape;
+
 -(void)calcLabelPlacement:(WhirlyGlobe::ShapeSet *)shapes loc:(WhirlyGlobe::GeoCoord &)loc  minWidth:(float)minWidth width:(float *)retWidth height:(float *)retHeight;
 
 #pragma iDelegado Controlador Mapa
@@ -86,6 +90,7 @@ typedef std::list<RepresentacionPoligono*> RepresentacionesDePoligono;
 @property(nonatomic,retain) VectorLayer *vectorLayer;
 @property(nonatomic,retain) LabelLayer *labelLayer;
 @property(nonatomic,retain) WhirlyGlobeView *globeView;
+@property(nonatomic, assign) float maxEdgelen;
 
 @property(nonatomic, retain) ServicioBDGeograficas *servicioBDGeograficas;
 
