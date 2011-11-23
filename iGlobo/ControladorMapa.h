@@ -15,7 +15,7 @@
 typedef std::set<WhirlyGlobe::SimpleIdentity> SimpleIDSet;
 typedef enum {PoligonoPais ,PoligonoOceano} TipoPoligono;
 
-static const unsigned int MaxRepresentacionesPoligono = 3;
+static const unsigned int MaxRepresentacionesPoligono = 15;
 #define RotateToCountry true
 
 class RepresentacionPoligono
@@ -71,6 +71,8 @@ typedef std::list<RepresentacionPoligono*> RepresentacionesDePoligono;
 - (RepresentacionPoligono *)buscarRepresentacionPoligono:(const WhirlyGlobe::GeoCoord &)geoCoord height:(float)heightAboveGlobe whichShape:(WhirlyGlobe::VectorShapeRef *)whichShape;
 
 -(void)calcLabelPlacement:(WhirlyGlobe::ShapeSet *)shapes loc:(WhirlyGlobe::GeoCoord &)loc  minWidth:(float)minWidth width:(float *)retWidth height:(float *)retHeight;
+
+- (void)cmdAccionSobreAreaGeografica:(TapMessage *)msg;
 
 #pragma iDelegado Controlador Mapa
 

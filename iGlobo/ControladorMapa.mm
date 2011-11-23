@@ -21,7 +21,7 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
 @synthesize labelLayer = _labelLayer;
 @synthesize globeView = _globeView;
 @synthesize servicioBDGeograficas = _servicioBDGeograficas;
-@synthesize maxEdgelen;
+@synthesize maxEdgelen = _maxEdgelen;
 
 -(void) dealloc
 {
@@ -106,6 +106,12 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
         self.globeView.delegate= [[[AnimateViewRotation alloc] initWithView:[self globeView] rot:newRotQuat howLong:1.0] autorelease ];
     }
     
+    [self performSelector:@selector(cmdAccionSobreAreaGeografica:) onThread:[self layerThread] withObject:msg waitUntilDone:NO];
+}
+
+- (void)cmdAccionSobreAreaGeografica:(TapMessage *)msg
+{
+    NSLog(@"accion sobre area Geografica");
     WhirlyGlobe::GeoCoord coord = msg.whereGeo;
     WhirlyGlobe::VectorShapeRef poligonoSeleccionado;
     RepresentacionPoligono *representacionPoligono = [self buscarRepresentacionPoligono:coord height:msg.heightAboveGlobe whichShape:&poligonoSeleccionado];
@@ -121,10 +127,8 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
                 NSLog(@"Oceano");
                 break;
         }
-        
         if(msg.heightAboveGlobe >= representacionPoligono->puntoMedio)
             [self eliminarRepresentacionPoligono: representacionPoligono];
-        
     }
     else{
         // Look for a country first
@@ -154,7 +158,6 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
     }
     while(_poligonosDibujados.size() > MaxRepresentacionesPoligono )
         [self eliminarRepresentacionPoligono:*(_poligonosDibujados.begin())];
-
 }
 
 #pragma iControladorMapa
@@ -192,6 +195,7 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
 
 -(RepresentacionPoligono *) agregarPais:(NSDictionary*) arDict
 {
+    NSLog(@"agrenado pais");
     RepresentacionPoligono *poligono = new RepresentacionPoligono();
     poligono->tipoPoligono = PoligonoPais;
     NSString* nombre = [arDict objectForKey:@"ADMIN"];
@@ -295,6 +299,7 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
             delete canShapes;
         }
     }
+    NSLog(@"poniendo Etiquetas a los estados");
     if ([etiquetas  count] > 0)
         poligono->subEtiquetas = [[self labelLayer] addLabels:etiquetas desc:regionLabelDescription];
 }
@@ -302,7 +307,7 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
 -(void)eliminarRepresentacionPoligono:(RepresentacionPoligono *) poligono
 {
     RepresentacionesDePoligono::iterator it = std::find(_poligonosDibujados.begin(), _poligonosDibujados.end(), poligono);
-    
+    NSLog(@"Eliminar representacion Poligonos");
     if( it != _poligonosDibujados.end())
     {
         [[self vectorLayer] removeVector:poligono->idFrontera];
@@ -318,6 +323,7 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
 
 - (RepresentacionPoligono *)buscarRepresentacionPoligono:(const WhirlyGlobe::GeoCoord &)geoCoord height:(float)heightAboveGlobe whichShape:(WhirlyGlobe::VectorShapeRef *)whichShape
 {
+    NSLog(@"buscando representacion");
     for (RepresentacionesDePoligono::iterator it = _poligonosDibujados.begin();it != _poligonosDibujados.end(); ++it)
     {
         RepresentacionPoligono *poligono = *it;
