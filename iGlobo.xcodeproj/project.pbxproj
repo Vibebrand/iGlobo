@@ -100,6 +100,7 @@
 		D7AFB7ED14743E9E00D66A37 /* GridClipper.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7AFB7E914743E9E00D66A37 /* GridClipper.mm */; };
 		D7AFB7EE14743E9E00D66A37 /* Tesselator.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7AFB7EB14743E9E00D66A37 /* Tesselator.mm */; };
 		D7AFB7F1147444A800D66A37 /* LoftLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7AFB7F0147444A800D66A37 /* LoftLayer.mm */; };
+		D7F46FAB147D512600EBC270 /* ServicioMosaicoGeografico.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7F46FAA147D512600EBC270 /* ServicioMosaicoGeografico.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -211,6 +212,10 @@
 		D7AFB7EB14743E9E00D66A37 /* Tesselator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Tesselator.mm; sourceTree = "<group>"; };
 		D7AFB7EF147444A800D66A37 /* LoftLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoftLayer.h; sourceTree = "<group>"; };
 		D7AFB7F0147444A800D66A37 /* LoftLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LoftLayer.mm; sourceTree = "<group>"; };
+		D7F46FA8147D491A00EBC270 /* iServicioBDGeograficas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iServicioBDGeograficas.h; sourceTree = "<group>"; };
+		D7F46FA9147D512600EBC270 /* ServicioMosaicoGeografico.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServicioMosaicoGeografico.h; sourceTree = "<group>"; };
+		D7F46FAA147D512600EBC270 /* ServicioMosaicoGeografico.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ServicioMosaicoGeografico.mm; sourceTree = "<group>"; };
+		D7F46FAC147D56D100EBC270 /* iServicioMosaicoGeografico.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iServicioMosaicoGeografico.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,8 +248,11 @@
 		D7934C8714770A80005B13C2 /* Servicio */ = {
 			isa = PBXGroup;
 			children = (
+				D7F46FA6147D48EA00EBC270 /* protocolo */,
 				D7934C8814770AA5005B13C2 /* ServicioBDGeograficas.h */,
 				D7934C8914770AA5005B13C2 /* ServicioBDGeograficas.mm */,
+				D7F46FA9147D512600EBC270 /* ServicioMosaicoGeografico.h */,
+				D7F46FAA147D512600EBC270 /* ServicioMosaicoGeografico.mm */,
 			);
 			name = Servicio;
 			sourceTree = "<group>";
@@ -497,6 +505,15 @@
 			name = Graficado;
 			sourceTree = "<group>";
 		};
+		D7F46FA6147D48EA00EBC270 /* protocolo */ = {
+			isa = PBXGroup;
+			children = (
+				D7F46FA8147D491A00EBC270 /* iServicioBDGeograficas.h */,
+				D7F46FAC147D56D100EBC270 /* iServicioMosaicoGeografico.h */,
+			);
+			name = protocolo;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -644,6 +661,7 @@
 				D798595E1475B0C600F98991 /* ControladorMapa.mm in Sources */,
 				D7934C8614770750005B13C2 /* ControladorCapaDeInteraccion.mm in Sources */,
 				D7934C8A14770AA5005B13C2 /* ServicioBDGeograficas.mm in Sources */,
+				D7F46FAB147D512600EBC270 /* ServicioMosaicoGeografico.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

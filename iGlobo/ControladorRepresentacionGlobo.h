@@ -11,7 +11,7 @@
 #import "PanDelegateFixed.h"
 #import "ControladorMapa.h"
 #import "ControladorCapaDeInteraccion.h"
-
+#import "LoftLayer.h"
 @interface ControladorRepresentacionGlobo : UIViewController
 {
     EAGLView *glView;
@@ -37,6 +37,9 @@
 	SphericalEarthLayer *earthLayer;
 	VectorLayer *vectorLayer;
 	LabelLayer *labelLayer;
+    LoftLayer * loftlayer;
+    
+    
     ControladorCapaDeInteraccion * controladorCapaDeInteraccion;
     
     ControladorMapa * controladorMapa;
@@ -66,6 +69,9 @@
 @property (nonatomic,retain) VectorLayer *vectorLayer;
 @property (nonatomic,retain) LabelLayer *labelLayer;
 @property (nonatomic,retain) ControladorCapaDeInteraccion * controladorCapaDeInteraccion;
+
+@property (nonatomic,retain)  LoftLayer * loftlayer;
+
 
 
 @end

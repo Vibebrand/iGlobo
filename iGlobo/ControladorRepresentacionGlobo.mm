@@ -8,6 +8,7 @@
 
 #import "ControladorRepresentacionGlobo.h"
 #import "ServicioBDGeograficas.h"
+#import "ServicioMosaicoGeografico.h"
 
 #define CENTER_COORD1 512.0
 #define CENTER_COORD2 384.0
@@ -30,6 +31,8 @@
 @synthesize vectorLayer;
 @synthesize labelLayer;
 @synthesize controladorCapaDeInteraccion;
+
+@synthesize loftlayer;
 
 - (void)clear
 {
@@ -66,6 +69,7 @@
     self.vectorLayer = nil;
     self.labelLayer = nil;
     self.controladorCapaDeInteraccion = nil;
+    self.loftlayer = nil;
     
     [controladorMapa release];
     // self.interactLayer = nil;
@@ -137,8 +141,22 @@
 	[self.layerThread addLayer:labelLayer];
     
     
+    self.loftlayer = [[[LoftLayer alloc] init] autorelease];
+    self.loftlayer.gridSize = [self.earthLayer smallestTesselation];
+    self.loftlayer.useCache = YES;
+    [self.layerThread addLayer:loftlayer];
+    
+    
     controladorMapa = [[ControladorMapa alloc] init];
     [controladorMapa setServicioBDGeograficas:[[ServicioBDGeograficas new] autorelease] ];
+    
+    
+    ServicioMosaicoGeografico *servicio = [[ServicioMosaicoGeografico alloc] initWithLoftLayer:[self loftlayer]];
+    
+    [controladorMapa setServicioMosaicoGeografico:servicio];
+    
+    [servicio release];
+    
     [controladorMapa setLayerThread:self.layerThread];
     [controladorMapa setGlobeView:self.theView];
     [controladorMapa setLabelLayer:self.labelLayer];

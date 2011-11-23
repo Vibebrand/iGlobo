@@ -10,6 +10,7 @@
 #import <WhirlyGlobe/WhirlyGlobe.h>
 #import "iDelegadoControladorMapa.h"
 #import "ServicioBDGeograficas.h"
+#import "iServicioMosaicoGeografico.h"
 #import <list>
 
 typedef std::set<WhirlyGlobe::SimpleIdentity> SimpleIDSet;
@@ -41,6 +42,9 @@ typedef std::list<RepresentacionPoligono*> RepresentacionesDePoligono;
 @interface ControladorMapa : NSObject<iDelegadoControladorMapa>
 {
     RepresentacionesDePoligono _poligonosDibujados;
+    PoligonosBajoLeyenda * _poligonosBajoLeyenda;
+    NSMutableDictionary * coloresBajoLeyenda;
+    
 #pragma Layers
     
     WhirlyGlobeLayerThread *_layerThread;
@@ -50,8 +54,9 @@ typedef std::list<RepresentacionPoligono*> RepresentacionesDePoligono;
     LabelLayer * _labelLayer;
     float _maxEdgelen;
     
-#pragma ServicioDeDatos
+#pragma Servicios
     ServicioBDGeograficas *_servicioBDGeograficas;
+    id<iServicioMosaicoGeografico> _servicioMosaicoGeografico;
     
 //Desacoplar a un servicio de Datos    
 }
@@ -95,6 +100,6 @@ typedef std::list<RepresentacionPoligono*> RepresentacionesDePoligono;
 @property(nonatomic, assign) float maxEdgelen;
 
 @property(nonatomic, retain) ServicioBDGeograficas *servicioBDGeograficas;
-
+@property(nonatomic, retain) id<iServicioMosaicoGeografico> servicioMosaicoGeografico;
 
 @end

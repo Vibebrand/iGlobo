@@ -8,6 +8,8 @@
 
 #import "ControladorMapa.h"
 
+typedef std::pair<std::string, WhirlyGlobe::ShapeSet *> Registro;
+
 #pragma -
 #pragma RepresentacionPoligono
 RepresentacionPoligono::RepresentacionPoligono(): idFrontera(WhirlyGlobe::EmptyIdentity), idEtiqueta(WhirlyGlobe::EmptyIdentity), subEtiquetas(WhirlyGlobe::EmptyIdentity), puntoMedio(100.0){}
@@ -20,8 +22,10 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
 @synthesize vectorLayer = _vectorLayer;
 @synthesize labelLayer = _labelLayer;
 @synthesize globeView = _globeView;
-@synthesize servicioBDGeograficas = _servicioBDGeograficas;
 @synthesize maxEdgelen = _maxEdgelen;
+
+@synthesize servicioBDGeograficas = _servicioBDGeograficas;
+@synthesize servicioMosaicoGeografico = _servicioMosaicoGeografico;
 
 -(void) dealloc
 {
@@ -35,7 +39,16 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
     for(RepresentacionesDePoligono::iterator it = _poligonosDibujados.begin(); it != _poligonosDibujados.end(); ++it)
         delete (*it);
     
+    for(PoligonosBajoLeyenda::iterator it= _poligonosBajoLeyenda->begin(); 
+      it != _poligonosBajoLeyenda->end();++it)
+    {
+      _poligonosBajoLeyenda->erase(it);
+    }
+    
+    delete _poligonosBajoLeyenda;
+    [coloresBajoLeyenda release];
     [_servicioBDGeograficas release];
+    [_servicioMosaicoGeografico release];
     [super dealloc];
 }
 
@@ -44,6 +57,9 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
     if ((self = [super init]))
     {
         //_scene = nil;
+        _poligonosBajoLeyenda = new PoligonosBajoLeyenda;
+        coloresBajoLeyenda = [[NSMutableDictionary alloc] init];
+        [coloresBajoLeyenda setValue:[UIColor redColor] forKey:@"rojo"];
     }
     return self;
 }
@@ -245,7 +261,7 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
 
 -(void) agregarEstados:(RepresentacionPoligono*) poligono conPoligonos:(WhirlyGlobe::ShapeSet) regionShapes
 {
-    NSLog(@"agrenado estados");
+    NSLog(@"agregando estados");
     
     NSMutableDictionary *regionShapeDescription = [NSMutableDictionary dictionaryWithDictionary:[[[self servicioBDGeograficas] regionDescription] objectForKey:@"shape"]];
     
@@ -266,6 +282,8 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
     
     NSMutableArray *etiquetas = [[[NSMutableArray alloc] init] autorelease];
     
+    WhirlyGlobe::ShapeSet *figuras = new WhirlyGlobe::ShapeSet;
+    
     for(WhirlyGlobe::ShapeSet::iterator _iterator = regionShapes.begin();
         _iterator != regionShapes.end(); ++_iterator)
     {
@@ -278,6 +296,7 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
             NSMutableDictionary *thisDesc = [NSMutableDictionary dictionary];
             WhirlyGlobe::ShapeSet *canShapes = new WhirlyGlobe::ShapeSet;
             canShapes->insert(*_iterator);
+            figuras->insert(*_iterator);
             //printf("%p", canShapes);
             
             // SingleLabel *label = [self createLabelInfunction:canShapes withMinWidth:0.005 andName:regionName minVis:0.0 maxVis:poligono->puntoMedio withConfig:regionLabelDescription];
@@ -300,6 +319,14 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
         }
     }
     NSLog(@"poniendo Etiquetas a los estados");
+    _poligonosBajoLeyenda->clear();
+    _poligonosBajoLeyenda->insert(Registro("rojo", figuras));
+    [_servicioMosaicoGeografico establecerColoresBajoLeyenda:coloresBajoLeyenda];
+    [_servicioMosaicoGeografico establecerPoligonosBajoLeyenda:_poligonosBajoLeyenda];
+    
+    [_servicioMosaicoGeografico agregarPoligonosAlMapa];
+    
+    
     if ([etiquetas  count] > 0)
         poligono->subEtiquetas = [[self labelLayer] addLabels:etiquetas desc:regionLabelDescription];
 }
@@ -315,6 +342,9 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
         if(poligono->idEtiqueta)
             [[self labelLayer] removeLabel:poligono->idEtiqueta];
         [[self labelLayer] removeLabel:poligono->subEtiquetas];
+        
+        //eliminar
+        [_servicioMosaicoGeografico eliminarPoligonosDelMapa];
         
         _poligonosDibujados.erase(it);
         delete poligono;
