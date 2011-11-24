@@ -319,16 +319,17 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
         }
     }
     NSLog(@"poniendo Etiquetas a los estados");
+    if ([etiquetas  count] > 0)
+        poligono->subEtiquetas = [[self labelLayer] addLabels:etiquetas desc:regionLabelDescription];
+    
     _poligonosBajoLeyenda->clear();
     _poligonosBajoLeyenda->insert(Registro("rojo", figuras));
+    
     [_servicioMosaicoGeografico establecerColoresBajoLeyenda:coloresBajoLeyenda];
     [_servicioMosaicoGeografico establecerPoligonosBajoLeyenda:_poligonosBajoLeyenda];
     
     [_servicioMosaicoGeografico agregarPoligonosAlMapa];
     
-    
-    if ([etiquetas  count] > 0)
-        poligono->subEtiquetas = [[self labelLayer] addLabels:etiquetas desc:regionLabelDescription];
 }
 
 -(void)eliminarRepresentacionPoligono:(RepresentacionPoligono *) poligono
