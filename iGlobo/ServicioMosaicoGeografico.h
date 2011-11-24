@@ -5,13 +5,13 @@
 //  Created by Jesus Cagide on 23/11/11.
 //  Copyright (c) 2011 INEGI. All rights reserved.
 //
-#import <list>
+
 #import <Foundation/Foundation.h>
 #import "iServicioMosaicoGeografico.h"
 #import "LoftLayer.h"
 #import <map>
 
-typedef std::map<std::string, std::set<WhirlyGlobe::SimpleIdentity> > PoligonosDibujados;
+typedef std::map<std::string, WhirlyGlobe::SimpleIdentity> PoligonosDibujados;
 
 enum accion{ AgregarPoligonos, EliminarPoligonos}; 
 

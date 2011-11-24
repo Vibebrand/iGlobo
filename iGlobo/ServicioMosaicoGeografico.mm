@@ -78,25 +78,20 @@
     PoligonosDibujados::iterator _it = _poligonosBajoLeyendaDibujados.find([leyenda UTF8String]);
     if( _it == _poligonosBajoLeyendaDibujados.end() )
     {
+        NSLog(@"agregandoPoligono al loftlayer");
+        LoftedPolyDesc *loftCountryDesc = [[[LoftedPolyDesc alloc] init] autorelease];
+        
+        loftCountryDesc.color = [[self coloresBajoLeyenda] objectForKey:leyenda];
+        
         PoligonosBajoLeyenda::iterator it = _poligonosBajoLeyenda->find( [leyenda UTF8String] );
         if(it != _poligonosBajoLeyenda->end())
         {
             WhirlyGlobe::ShapeSet * figuras =it->second ;
-            std::set<WhirlyGlobe::SimpleIdentity> listaElementos; 
-            for(WhirlyGlobe::ShapeSet::iterator _iterator = figuras->begin();
-                _iterator != figuras->end(); ++_iterator)
-            {
-                WhirlyGlobe::ShapeSet * figurasADibujar = new WhirlyGlobe::ShapeSet;
-                figurasADibujar->insert(*_iterator);
-                NSLog(@"agregandoPoligono al loftlayer");
-                LoftedPolyDesc *loftCountryDesc = [[[LoftedPolyDesc alloc] init] autorelease];
-                loftCountryDesc.color = [[self coloresBajoLeyenda] objectForKey:leyenda];//extraer metodo
-                loftCountryDesc.height = 0.001;
-                NSLog(@"agregando aa capaDibujado");
-                listaElementos.insert([_capaDeDibujado addLoftedPolys: figurasADibujar  desc:loftCountryDesc]);
-                delete figurasADibujar;
-            }
-            _poligonosBajoLeyendaDibujados[[leyenda UTF8String]]  = listaElementos;
+            
+            loftCountryDesc.height = 0.001;
+            
+             NSLog(@"agregando aa capaDibujado");
+            _poligonosBajoLeyendaDibujados[[leyenda UTF8String]] = [_capaDeDibujado addLoftedPolys: figuras  desc:loftCountryDesc];
         }
     }
 }
@@ -106,13 +101,7 @@
     PoligonosDibujados::iterator it =  _poligonosBajoLeyendaDibujados.find([ leyenda UTF8String] );
     if( it != _poligonosBajoLeyendaDibujados.end())
     {
-        std::set<WhirlyGlobe::SimpleIdentity> listaElementos =it->second;
-        for(std::set<WhirlyGlobe::SimpleIdentity>::iterator _it = listaElementos.begin();
-            _it != listaElementos.end(); ++_it)
-        {
-            [_capaDeDibujado removeLoftedPoly: *_it];
-        }
-        
+        [_capaDeDibujado removeLoftedPoly:it->second];
         _poligonosBajoLeyendaDibujados.erase(it);
     }
 }
