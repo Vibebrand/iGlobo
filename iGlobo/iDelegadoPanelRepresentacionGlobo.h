@@ -11,6 +11,6 @@
 @protocol iDelegadoPanelRepresentacionGlobo <NSObject>
 
 -(void) establecerNombrePais:(NSString *) nombrePais;
--(void) establecerNombreRegion(NSString *)nombreRegion;
+-(void) establecerNombreRegion:(NSString *)nombreRegion;
 
 @end

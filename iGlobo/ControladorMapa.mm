@@ -26,6 +26,8 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
 
 @synthesize servicioBDGeograficas = _servicioBDGeograficas;
 @synthesize servicioMosaicoGeografico = _servicioMosaicoGeografico;
+@synthesize delegadoPanelRepresentacionGlobo = _delegadoPanelRepresentacionGlobo;
+
 
 -(void) dealloc
 {
@@ -49,6 +51,7 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
     [coloresBajoLeyenda release];
     [_servicioBDGeograficas release];
     [_servicioMosaicoGeografico release];
+    [_delegadoPanelRepresentacionGlobo release];
     [super dealloc];
 }
 
@@ -130,6 +133,7 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
     NSLog(@"accion sobre area Geografica");
     WhirlyGlobe::GeoCoord coord = msg.whereGeo;
     WhirlyGlobe::VectorShapeRef poligonoSeleccionado;
+    
     RepresentacionPoligono *representacionPoligono = [self buscarRepresentacionPoligono:coord height:msg.heightAboveGlobe whichShape:&poligonoSeleccionado];
     
     if(representacionPoligono)
@@ -137,12 +141,21 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
         switch(representacionPoligono->tipoPoligono)
         {
             case PoligonoPais:
-                NSLog(@"Pais");
+                if (representacionPoligono->frontera.find(poligonoSeleccionado) != representacionPoligono->frontera.end())
+                {
+                    NSLog(@"User selected country:\n%@",[poligonoSeleccionado->getAttrDict() description]);
+                } else {
+                    
+                    [[self delegadoPanelRepresentacionGlobo] establecerNombrePais: [poligonoSeleccionado->getAttrDict() objectForKey:@"NAME_0"]];
+                    [[self delegadoPanelRepresentacionGlobo] establecerNombreRegion: [poligonoSeleccionado->getAttrDict() objectForKey:@"NAME_1"]];
+                    
+                } NSLog(@"Pais");
                 break;
             case PoligonoOceano:
                 NSLog(@"Oceano");
                 break;
         }
+        
         if(msg.heightAboveGlobe >= representacionPoligono->puntoMedio)
             [self eliminarRepresentacionPoligono: representacionPoligono];
     }
@@ -151,6 +164,7 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
         WhirlyGlobe::ShapeSet foundShapes;
         
         self.servicioBDGeograficas.obtenerBDPaises->findArealsForPoint(coord,foundShapes);
+        
         if (!foundShapes.empty())
         {
             // Toss in anything we found
@@ -215,6 +229,11 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
     RepresentacionPoligono *poligono = new RepresentacionPoligono();
     poligono->tipoPoligono = PoligonoPais;
     NSString* nombre = [arDict objectForKey:@"ADMIN"];
+    
+    [[self delegadoPanelRepresentacionGlobo] establecerNombrePais:nombre];
+    [[self delegadoPanelRepresentacionGlobo] establecerNombreRegion:@""];
+    
+    
     WhirlyGlobe::UIntSet iDsFrontera;
     
     self.servicioBDGeograficas.obtenerBDPaises->getMatchingVectors([NSString stringWithFormat:@"ADMIN like '%@'",nombre ], poligono->frontera);
@@ -343,6 +362,8 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
         if(poligono->idEtiqueta)
             [[self labelLayer] removeLabel:poligono->idEtiqueta];
         [[self labelLayer] removeLabel:poligono->subEtiquetas];
+        [[self delegadoPanelRepresentacionGlobo] establecerNombrePais:@""];
+        [[self delegadoPanelRepresentacionGlobo] establecerNombreRegion:@""];
         
         //eliminar
         [_servicioMosaicoGeografico eliminarPoligonosDelMapa];

@@ -13,10 +13,14 @@
 #import "ControladorCapaDeInteraccion.h"
 #import "LoftLayer.h"
 #import "PanelRedondo.h"
-@interface ControladorRepresentacionGlobo : UIViewController
+#import "iDelegadoPanelRepresentacionGlobo.h"
+
+@interface ControladorRepresentacionGlobo : UIViewController<iDelegadoPanelRepresentacionGlobo>
 {
     //Vista
     PanelRedondo * _panelRedondo;
+    UILabel * _etiquetaNombrePais;
+    UILabel * _etiquetaNombreRegion;
     
     EAGLView *glView;
 	SceneRendererES1 *sceneRenderer;
@@ -56,6 +60,14 @@
 -(id)initWithView:(UIView*)view;
 - (void)lightingSetup:(SceneRendererES1 *)sceneRenderer;
 - (void)clear;
+
+#pragma iDelegadoPanelRepresentacionGlobo
+-(void) establecerNombrePais:(NSString *) nombrePais;
+-(void) establecerNombreRegion:(NSString *)nombreRegion;
+
+//Vista
+@property (nonatomic,retain) IBOutlet UILabel * etiquetaNombrePais;
+@property (nonatomic,retain) IBOutlet UILabel * etiquetaNombreRegion;
 
 @property (nonatomic,retain) EAGLView *glView;
 @property (nonatomic,retain) SceneRendererES1 *sceneRenderer;

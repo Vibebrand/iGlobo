@@ -15,6 +15,11 @@
 
 @implementation ControladorRepresentacionGlobo
 
+//Vista
+@synthesize etiquetaNombrePais = _etiquetaNombrePais;
+@synthesize etiquetaNombreRegion = _etiquetaNombreRegion;
+
+
 @synthesize glView;
 @synthesize sceneRenderer;
 @synthesize fpsLabel,drawLabel;
@@ -46,6 +51,9 @@
     }
     
     [_panelRedondo release];
+    
+    [_etiquetaNombreRegion release];
+    [_etiquetaNombrePais release];
     
     self.glView = nil;
     self.sceneRenderer = nil;
@@ -177,6 +185,7 @@
     [controladorMapa setGlobeView:self.theView];
     [controladorMapa setLabelLayer:self.labelLayer];
     [controladorMapa setVectorLayer:self.vectorLayer];
+    [controladorMapa setDelegadoPanelRepresentacionGlobo:self];
     
     controladorMapa.maxEdgelen = [self.earthLayer smallestTesselation]/10.0;
     
@@ -222,7 +231,17 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return YES;
+    return NO;
+}
+
+#pragma iDelegadoPanelRepresentacionGlobo
+-(void) establecerNombrePais:(NSString *) nombrePais
+{
+    [[self etiquetaNombrePais] setText:nombrePais];
+}
+-(void) establecerNombreRegion:(NSString *)nombreRegion
+{
+    [[self etiquetaNombreRegion] setText:nombreRegion];
 }
 
 - (void)lightingSetup:(SceneRendererES1 *)sceneRenderer

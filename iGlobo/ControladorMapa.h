@@ -11,6 +11,7 @@
 #import "iDelegadoControladorMapa.h"
 #import "ServicioBDGeograficas.h"
 #import "iServicioMosaicoGeografico.h"
+#import "iDelegadoPanelRepresentacionGlobo.h"
 #import <list>
 
 typedef std::set<WhirlyGlobe::SimpleIdentity> SimpleIDSet;
@@ -57,6 +58,7 @@ typedef std::list<RepresentacionPoligono*> RepresentacionesDePoligono;
 #pragma Servicios
     ServicioBDGeograficas *_servicioBDGeograficas;
     id<iServicioMosaicoGeografico> _servicioMosaicoGeografico;
+    id<iDelegadoPanelRepresentacionGlobo> _delegadoPanelRepresentacionGlobo;
     
 //Desacoplar a un servicio de Datos    
 }
@@ -101,5 +103,6 @@ typedef std::list<RepresentacionPoligono*> RepresentacionesDePoligono;
 
 @property(nonatomic, retain) ServicioBDGeograficas *servicioBDGeograficas;
 @property(nonatomic, retain) id<iServicioMosaicoGeografico> servicioMosaicoGeografico;
+@property(nonatomic, retain) id<iDelegadoPanelRepresentacionGlobo> delegadoPanelRepresentacionGlobo;
 
 @end
