@@ -8,14 +8,16 @@
 
 #import "AppDelegate.h"
 #import "ControladorRepresentacionGlobo.h"
-
+#import "PantallaPrincipal.h"
 @implementation AppDelegate
 
 @synthesize window = _window;
 
 - (void)dealloc
 {
-    [_controladorRepresentacionGlobo release];
+   
+    //[_controladorRepresentacionGlobo release];
+    [_pantallaPrincipal release];
     [_window release];
     [super dealloc];
 }
@@ -23,14 +25,21 @@
 - (void)postLaunch:(NSObject *)what
 {
     // Add the view controller's view to the window and display.
-    [self.window addSubview:_controladorRepresentacionGlobo.view];
+    //[[_pantallaPrincipal representacionGlobo] addSubview:_controladorRepresentacionGlobo.view];
+    [self.window addSubview:_pantallaPrincipal.view];
     [self.window makeKeyAndVisible];
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     self.window.backgroundColor = [UIColor whiteColor];
-    _controladorRepresentacionGlobo = [[ControladorRepresentacionGlobo alloc]  initWithNibName:@"ControladorRepresentacionGlobo" bundle:[NSBundle mainBundle]];
+    
+    _pantallaPrincipal = [[ PantallaPrincipal alloc ] initWithNibName:@"PantallaPrincipal" bundle:[NSBundle mainBundle]];
+    
+    
+   // _controladorRepresentacionGlobo = [[ControladorRepresentacionGlobo alloc ] initWithView:_pantallaPrincipal.view];
+    //_controladorRepresentacionGlobo = [[ControladorRepresentacionGlobo alloc]  initWithNibName:@"ControladorRepresentacionGlobo" bundle:nil ];
+    //[_pantallaPrincipal setRepresentacionGlobo:_controladorRepresentacionGlobo.view] ;
     
     [self performSelectorOnMainThread:@selector(postLaunch:) withObject:nil waitUntilDone:NO];
     return YES;

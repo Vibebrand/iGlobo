@@ -12,8 +12,12 @@
 #import "ControladorMapa.h"
 #import "ControladorCapaDeInteraccion.h"
 #import "LoftLayer.h"
+#import "PanelRedondo.h"
 @interface ControladorRepresentacionGlobo : UIViewController
 {
+    //Vista
+    PanelRedondo * _panelRedondo;
+    
     EAGLView *glView;
 	SceneRendererES1 *sceneRenderer;
     
@@ -49,7 +53,7 @@
     //CapaInteraccion * capaInteraccion;
     //LoftLayer * loftLayer;
 }
-
+-(id)initWithView:(UIView*)view;
 - (void)lightingSetup:(SceneRendererES1 *)sceneRenderer;
 - (void)clear;
 

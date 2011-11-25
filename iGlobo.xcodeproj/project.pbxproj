@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		D7934C8614770750005B13C2 /* ControladorCapaDeInteraccion.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7934C8514770750005B13C2 /* ControladorCapaDeInteraccion.mm */; };
 		D7934C8A14770AA5005B13C2 /* ServicioBDGeograficas.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7934C8914770AA5005B13C2 /* ServicioBDGeograficas.mm */; };
+		D797521E147FEF5F003F331A /* PanelRedondo.mm in Sources */ = {isa = PBXBuildFile; fileRef = D797521D147FEF5F003F331A /* PanelRedondo.mm */; };
 		D798595E1475B0C600F98991 /* ControladorMapa.mm in Sources */ = {isa = PBXBuildFile; fileRef = D798595D1475B0C600F98991 /* ControladorMapa.mm */; };
+		D79E269D147EAAE400985242 /* PantallaPrincipal.mm in Sources */ = {isa = PBXBuildFile; fileRef = D79E269B147EAAE400985242 /* PantallaPrincipal.mm */; };
+		D79E269E147EAAE400985242 /* PantallaPrincipal.xib in Resources */ = {isa = PBXBuildFile; fileRef = D79E269C147EAAE400985242 /* PantallaPrincipal.xib */; };
 		D7AFB71D1474136200D66A37 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AFB71C1474136200D66A37 /* UIKit.framework */; };
 		D7AFB71F1474136200D66A37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AFB71E1474136200D66A37 /* Foundation.framework */; };
 		D7AFB7211474136200D66A37 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AFB7201474136200D66A37 /* CoreGraphics.framework */; };
@@ -109,9 +112,15 @@
 		D7934C8514770750005B13C2 /* ControladorCapaDeInteraccion.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ControladorCapaDeInteraccion.mm; sourceTree = "<group>"; };
 		D7934C8814770AA5005B13C2 /* ServicioBDGeograficas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServicioBDGeograficas.h; sourceTree = "<group>"; };
 		D7934C8914770AA5005B13C2 /* ServicioBDGeograficas.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ServicioBDGeograficas.mm; sourceTree = "<group>"; };
+		D797521C147FEF5F003F331A /* PanelRedondo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelRedondo.h; sourceTree = "<group>"; };
+		D797521D147FEF5F003F331A /* PanelRedondo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PanelRedondo.mm; sourceTree = "<group>"; };
+		D7975220147FF030003F331A /* iDelegadoPanelRepresentacionGlobo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iDelegadoPanelRepresentacionGlobo.h; sourceTree = "<group>"; };
 		D79859361475ABE800F98991 /* iControladorMapa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iControladorMapa.h; sourceTree = "<group>"; };
 		D798595C1475B0C600F98991 /* ControladorMapa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControladorMapa.h; sourceTree = "<group>"; };
 		D798595D1475B0C600F98991 /* ControladorMapa.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ControladorMapa.mm; sourceTree = "<group>"; };
+		D79E269A147EAAE400985242 /* PantallaPrincipal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PantallaPrincipal.h; sourceTree = "<group>"; };
+		D79E269B147EAAE400985242 /* PantallaPrincipal.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PantallaPrincipal.mm; sourceTree = "<group>"; };
+		D79E269C147EAAE400985242 /* PantallaPrincipal.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PantallaPrincipal.xib; sourceTree = "<group>"; };
 		D7AFB7181474136200D66A37 /* iGlobo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGlobo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7AFB71C1474136200D66A37 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D7AFB71E1474136200D66A37 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -262,6 +271,7 @@
 			children = (
 				D79859361475ABE800F98991 /* iControladorMapa.h */,
 				D7934C8114770412005B13C2 /* iDelegadoControladorMapa.h */,
+				D7975220147FF030003F331A /* iDelegadoPanelRepresentacionGlobo.h */,
 			);
 			name = protocolos;
 			sourceTree = "<group>";
@@ -456,6 +466,9 @@
 			isa = PBXGroup;
 			children = (
 				D7AFB7DB147432DC00D66A37 /* ControladorRepresentacionGlobo.xib */,
+				D79E269A147EAAE400985242 /* PantallaPrincipal.h */,
+				D79E269B147EAAE400985242 /* PantallaPrincipal.mm */,
+				D79E269C147EAAE400985242 /* PantallaPrincipal.xib */,
 			);
 			name = Vista;
 			sourceTree = "<group>";
@@ -501,6 +514,8 @@
 				D7AFB7E914743E9E00D66A37 /* GridClipper.mm */,
 				D7AFB7EA14743E9E00D66A37 /* Tesselator.h */,
 				D7AFB7EB14743E9E00D66A37 /* Tesselator.mm */,
+				D797521C147FEF5F003F331A /* PanelRedondo.h */,
+				D797521D147FEF5F003F331A /* PanelRedondo.mm */,
 			);
 			name = Graficado;
 			sourceTree = "<group>";
@@ -640,6 +655,7 @@
 				D7AFB7D51474324800D66A37 /* regions.mbr in Resources */,
 				D7AFB7D61474324800D66A37 /* regions.sqlite in Resources */,
 				D7AFB7DD147432DC00D66A37 /* ControladorRepresentacionGlobo.xib in Resources */,
+				D79E269E147EAAE400985242 /* PantallaPrincipal.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +678,8 @@
 				D7934C8614770750005B13C2 /* ControladorCapaDeInteraccion.mm in Sources */,
 				D7934C8A14770AA5005B13C2 /* ServicioBDGeograficas.mm in Sources */,
 				D7F46FAB147D512600EBC270 /* ServicioMosaicoGeografico.mm in Sources */,
+				D79E269D147EAAE400985242 /* PantallaPrincipal.mm in Sources */,
+				D797521E147FEF5F003F331A /* PanelRedondo.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

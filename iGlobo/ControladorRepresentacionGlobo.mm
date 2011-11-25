@@ -45,6 +45,8 @@
             [NSThread sleepForTimeInterval:0.001];
     }
     
+    [_panelRedondo release];
+    
     self.glView = nil;
     self.sceneRenderer = nil;
     
@@ -84,6 +86,16 @@
     [super dealloc];
 }
 
+-(id)initWithView:(UIView*)view
+{
+    self = [super init];
+    if(self)
+    {
+        [self setView:view];
+    }
+    return self;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -102,18 +114,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _panelRedondo = [[PanelRedondo alloc] initWithFrame: self.view.bounds];
     
     // Set up an OpenGL ES view and renderer
 	self.glView = [[[EAGLView alloc] init] autorelease];
 	self.sceneRenderer = [[[SceneRendererES1 alloc] init] autorelease];
 	glView.renderer = sceneRenderer;
 	glView.frameInterval = 2;  // 60 fps
-	[self.view addSubview:glView];
-    self.view.backgroundColor = [UIColor blackColor];
-    self.view.opaque = YES;
+    
+    [_panelRedondo insertSubview:glView atIndex:0];
+	[self.view insertSubview:_panelRedondo atIndex:0];
+    //self.view.backgroundColor = [UIColor blackColor];
+    //self.view.opaque = YES;
 	self.view.autoresizesSubviews = YES;
-	glView.frame = self.view.bounds;
-    glView.backgroundColor = [UIColor blackColor];
+    
+	glView.frame =   CGRectMake(_panelRedondo.frame.origin.x +10 , _panelRedondo.frame.origin.y +10, _panelRedondo.frame.size.width -20, _panelRedondo.frame.size.height -20);
+    glView.backgroundColor = [UIColor clearColor];
     
     // Create the textures and geometry, but in the right GL context
 	[sceneRenderer useContext];
