@@ -26,6 +26,8 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
 
 @synthesize servicioBDGeograficas = _servicioBDGeograficas;
 @synthesize servicioMosaicoGeografico = _servicioMosaicoGeografico;
+@synthesize servicioIluminacion = _servicioIluminacion;
+
 @synthesize delegadoPanelRepresentacionGlobo = _delegadoPanelRepresentacionGlobo;
 
 
@@ -51,6 +53,7 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
     [coloresBajoLeyenda release];
     [_servicioBDGeograficas release];
     [_servicioMosaicoGeografico release];
+    [_servicioIluminacion release];
     [_delegadoPanelRepresentacionGlobo release];
     [super dealloc];
 }
@@ -145,10 +148,34 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
                 {
                     NSLog(@"User selected country:\n%@",[poligonoSeleccionado->getAttrDict() description]);
                 } else {
+                    //SupeRefactor
+                     NSLog(@"User selected region:\n%@",[poligonoSeleccionado->getAttrDict() description]);
                     
-                    [[self delegadoPanelRepresentacionGlobo] establecerNombrePais: [poligonoSeleccionado->getAttrDict() objectForKey:@"NAME_0"]];
-                    [[self delegadoPanelRepresentacionGlobo] establecerNombreRegion: [poligonoSeleccionado->getAttrDict() objectForKey:@"NAME_1"]];
+                    NSString * nombreRegion =[poligonoSeleccionado->getAttrDict() objectForKey:@"NAME_1"] ;
+                    NSString * nombrePais = [poligonoSeleccionado->getAttrDict() objectForKey:@"NAME_0"];
+                    NSString * nombreISO = [poligonoSeleccionado->getAttrDict() objectForKey:@"ADM0_A3"];
+ 
+                    [[self delegadoPanelRepresentacionGlobo] establecerNombrePais: nombrePais];
+                    [[self delegadoPanelRepresentacionGlobo] establecerNombreRegion: nombreRegion];
                     
+                    WhirlyGlobe::ShapeSet regionShapes;
+                    self.servicioBDGeograficas.obtenerBDRegiones->getMatchingVectors([NSString stringWithFormat:@"ISO like '%@'",nombreISO],regionShapes);
+                    
+                    NSLog(@"buscando representacion");
+                    //buscar hacer un extract method o ponerlo sobre un diccionario para veluar eficiencia 
+                    
+                    for(WhirlyGlobe::ShapeSet::iterator _iterator = regionShapes.begin();
+                        _iterator != regionShapes.end(); ++_iterator)
+                    {
+                        if( [nombreRegion isEqualToString:[(*_iterator)->getAttrDict() objectForKey:@"NAME_1"] ] )
+                        {
+                            NSLog(@"nombre region si concide");
+                            WhirlyGlobe::ShapeSet *canShapes = new WhirlyGlobe::ShapeSet;
+                            canShapes->insert(*_iterator);
+                            [[self servicioIluminacion] iluminarRegionBajoShapeSet:canShapes];
+                            delete canShapes;
+                        }
+                    }
                 } NSLog(@"Pais");
                 break;
             case PoligonoOceano:
@@ -301,7 +328,7 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
     
     NSMutableArray *etiquetas = [[[NSMutableArray alloc] init] autorelease];
     
-    WhirlyGlobe::ShapeSet *figuras = new WhirlyGlobe::ShapeSet;
+   // WhirlyGlobe::ShapeSet *figuras = new WhirlyGlobe::ShapeSet;
     
     for(WhirlyGlobe::ShapeSet::iterator _iterator = regionShapes.begin();
         _iterator != regionShapes.end(); ++_iterator)
@@ -315,7 +342,7 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
             NSMutableDictionary *thisDesc = [NSMutableDictionary dictionary];
             WhirlyGlobe::ShapeSet *canShapes = new WhirlyGlobe::ShapeSet;
             canShapes->insert(*_iterator);
-            figuras->insert(*_iterator);
+            //figuras->insert(*_iterator);
             //printf("%p", canShapes);
             
             // SingleLabel *label = [self createLabelInfunction:canShapes withMinWidth:0.005 andName:regionName minVis:0.0 maxVis:poligono->puntoMedio withConfig:regionLabelDescription];
@@ -364,9 +391,10 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
         [[self labelLayer] removeLabel:poligono->subEtiquetas];
         [[self delegadoPanelRepresentacionGlobo] establecerNombrePais:@""];
         [[self delegadoPanelRepresentacionGlobo] establecerNombreRegion:@""];
+        [[self servicioIluminacion] eliminarRegionIliminada];
         
         //eliminar
-        [_servicioMosaicoGeografico eliminarPoligonosDelMapa];
+        //[_servicioMosaicoGeografico eliminarPoligonosDelMapa];
         
         _poligonosDibujados.erase(it);
         delete poligono;

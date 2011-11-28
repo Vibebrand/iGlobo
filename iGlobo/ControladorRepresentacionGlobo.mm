@@ -9,6 +9,7 @@
 #import "ControladorRepresentacionGlobo.h"
 #import "ServicioBDGeograficas.h"
 #import "ServicioMosaicoGeografico.h"
+#import "ServicioDeIluminacionPorRegion.h"
 
 #define CENTER_COORD1 512.0
 #define CENTER_COORD2 384.0
@@ -175,10 +176,15 @@
     [controladorMapa setServicioBDGeograficas:[[ServicioBDGeograficas new] autorelease] ];
     
     
-    ServicioMosaicoGeografico *servicio = [[ServicioMosaicoGeografico alloc] initWithLoftLayer:[self loftlayer]];
+   // ServicioMosaicoGeografico *servicio = [[ServicioMosaicoGeografico alloc] initWithLoftLayer:[self loftlayer]];
     
-    [controladorMapa setServicioMosaicoGeografico:servicio];
+   // [controladorMapa setServicioMosaicoGeografico:servicio];
     
+    //[servicio release];
+    
+    
+    ServicioDeIluminacionPorRegion *servicio = [[ServicioDeIluminacionPorRegion alloc] initWithLoftLayer:[self loftlayer]];
+    [controladorMapa setServicioIluminacion:servicio];
     [servicio release];
     
     [controladorMapa setLayerThread:self.layerThread];
@@ -267,5 +273,20 @@
     glShadeModel(GL_SMOOTH);
     glEnable(GL_COLOR_MATERIAL);
 }
+
+#pragma iControladorVista
+
+-(UIView *) obtenerRepresentacionBajoMarco:(CGRect) tamanioVentana
+{
+    [[self view] setFrame:tamanioVentana];
+    [_panelRedondo setFrame:  self.view.bounds];
+    return [self view];
+}
+-(UIView *) obtenerRepresentacion
+{
+    return [self view];
+}
+
+
 
 @end

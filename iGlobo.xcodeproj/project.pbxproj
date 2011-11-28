@@ -10,6 +10,7 @@
 		D7934C8614770750005B13C2 /* ControladorCapaDeInteraccion.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7934C8514770750005B13C2 /* ControladorCapaDeInteraccion.mm */; };
 		D7934C8A14770AA5005B13C2 /* ServicioBDGeograficas.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7934C8914770AA5005B13C2 /* ServicioBDGeograficas.mm */; };
 		D797521E147FEF5F003F331A /* PanelRedondo.mm in Sources */ = {isa = PBXBuildFile; fileRef = D797521D147FEF5F003F331A /* PanelRedondo.mm */; };
+		D797526214804147003F331A /* ServicioDeIluminacionPorRegion.mm in Sources */ = {isa = PBXBuildFile; fileRef = D797526114804147003F331A /* ServicioDeIluminacionPorRegion.mm */; };
 		D798595E1475B0C600F98991 /* ControladorMapa.mm in Sources */ = {isa = PBXBuildFile; fileRef = D798595D1475B0C600F98991 /* ControladorMapa.mm */; };
 		D79E269D147EAAE400985242 /* PantallaPrincipal.mm in Sources */ = {isa = PBXBuildFile; fileRef = D79E269B147EAAE400985242 /* PantallaPrincipal.mm */; };
 		D79E269E147EAAE400985242 /* PantallaPrincipal.xib in Resources */ = {isa = PBXBuildFile; fileRef = D79E269C147EAAE400985242 /* PantallaPrincipal.xib */; };
@@ -107,6 +108,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D73EAE0714840020006DE184 /* iControladorVista.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iControladorVista.h; sourceTree = "<group>"; };
 		D7934C8114770412005B13C2 /* iDelegadoControladorMapa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iDelegadoControladorMapa.h; sourceTree = "<group>"; };
 		D7934C8414770750005B13C2 /* ControladorCapaDeInteraccion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControladorCapaDeInteraccion.h; sourceTree = "<group>"; };
 		D7934C8514770750005B13C2 /* ControladorCapaDeInteraccion.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ControladorCapaDeInteraccion.mm; sourceTree = "<group>"; };
@@ -115,6 +117,9 @@
 		D797521C147FEF5F003F331A /* PanelRedondo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelRedondo.h; sourceTree = "<group>"; };
 		D797521D147FEF5F003F331A /* PanelRedondo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PanelRedondo.mm; sourceTree = "<group>"; };
 		D7975220147FF030003F331A /* iDelegadoPanelRepresentacionGlobo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iDelegadoPanelRepresentacionGlobo.h; sourceTree = "<group>"; };
+		D797525F1480400E003F331A /* iServicioDeIluminacionPorRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iServicioDeIluminacionPorRegion.h; sourceTree = "<group>"; };
+		D797526014804147003F331A /* ServicioDeIluminacionPorRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServicioDeIluminacionPorRegion.h; sourceTree = "<group>"; };
+		D797526114804147003F331A /* ServicioDeIluminacionPorRegion.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ServicioDeIluminacionPorRegion.mm; sourceTree = "<group>"; };
 		D79859361475ABE800F98991 /* iControladorMapa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iControladorMapa.h; sourceTree = "<group>"; };
 		D798595C1475B0C600F98991 /* ControladorMapa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControladorMapa.h; sourceTree = "<group>"; };
 		D798595D1475B0C600F98991 /* ControladorMapa.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ControladorMapa.mm; sourceTree = "<group>"; };
@@ -262,6 +267,8 @@
 				D7934C8914770AA5005B13C2 /* ServicioBDGeograficas.mm */,
 				D7F46FA9147D512600EBC270 /* ServicioMosaicoGeografico.h */,
 				D7F46FAA147D512600EBC270 /* ServicioMosaicoGeografico.mm */,
+				D797526014804147003F331A /* ServicioDeIluminacionPorRegion.h */,
+				D797526114804147003F331A /* ServicioDeIluminacionPorRegion.mm */,
 			);
 			name = Servicio;
 			sourceTree = "<group>";
@@ -272,6 +279,7 @@
 				D79859361475ABE800F98991 /* iControladorMapa.h */,
 				D7934C8114770412005B13C2 /* iDelegadoControladorMapa.h */,
 				D7975220147FF030003F331A /* iDelegadoPanelRepresentacionGlobo.h */,
+				D73EAE0714840020006DE184 /* iControladorVista.h */,
 			);
 			name = protocolos;
 			sourceTree = "<group>";
@@ -525,6 +533,7 @@
 			children = (
 				D7F46FA8147D491A00EBC270 /* iServicioBDGeograficas.h */,
 				D7F46FAC147D56D100EBC270 /* iServicioMosaicoGeografico.h */,
+				D797525F1480400E003F331A /* iServicioDeIluminacionPorRegion.h */,
 			);
 			name = protocolo;
 			sourceTree = "<group>";
@@ -680,6 +689,7 @@
 				D7F46FAB147D512600EBC270 /* ServicioMosaicoGeografico.mm in Sources */,
 				D79E269D147EAAE400985242 /* PantallaPrincipal.mm in Sources */,
 				D797521E147FEF5F003F331A /* PanelRedondo.mm in Sources */,
+				D797526214804147003F331A /* ServicioDeIluminacionPorRegion.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

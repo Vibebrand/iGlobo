@@ -14,8 +14,9 @@
 #import "LoftLayer.h"
 #import "PanelRedondo.h"
 #import "iDelegadoPanelRepresentacionGlobo.h"
+#import "iControladorVista.h"
 
-@interface ControladorRepresentacionGlobo : UIViewController<iDelegadoPanelRepresentacionGlobo>
+@interface ControladorRepresentacionGlobo : UIViewController<iDelegadoPanelRepresentacionGlobo, iControladorVista>
 {
     //Vista
     PanelRedondo * _panelRedondo;
@@ -64,6 +65,12 @@
 #pragma iDelegadoPanelRepresentacionGlobo
 -(void) establecerNombrePais:(NSString *) nombrePais;
 -(void) establecerNombreRegion:(NSString *)nombreRegion;
+
+#pragma iControladorVista
+
+-(UIView *) obtenerRepresentacionBajoMarco:(CGRect) tamanioVentana;
+-(UIView *) obtenerRepresentacion;
+
 
 //Vista
 @property (nonatomic,retain) IBOutlet UILabel * etiquetaNombrePais;

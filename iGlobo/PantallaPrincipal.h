@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "ControladorRepresentacionGlobo.h"
+#import "iControladorVista.h"
 
 @interface PantallaPrincipal : UIViewController
 {
     UIView * _representacionGlobo;
-    ControladorRepresentacionGlobo *_controlador;
+    id<iControladorVista> _controladorRepresentacionGlobo;
 }
 
 @property(nonatomic, retain)IBOutlet UIView* representacionGlobo;

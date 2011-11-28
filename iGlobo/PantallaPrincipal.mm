@@ -15,8 +15,8 @@
 
 -(void)dealloc
 {
-    [_controlador release];
     [_representacionGlobo release];
+    [_controladorRepresentacionGlobo release];
     [super dealloc];
 }
 
@@ -42,9 +42,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _controlador = [[ControladorRepresentacionGlobo alloc]  initWithNibName:@"ControladorRepresentacionGlobo" bundle:nil ];
+    _controladorRepresentacionGlobo = [[ControladorRepresentacionGlobo alloc]  initWithNibName:@"ControladorRepresentacionGlobo" bundle:nil ];
     self.representacionGlobo.layer.cornerRadius = 5;
-    [[self representacionGlobo] addSubview:_controlador.view];
+    
+    
+[[self representacionGlobo] addSubview: _controladorRepresentacionGlobo.obtenerRepresentacion ];
     // Do any additional setup after loading the view from its nib.
 }
 
