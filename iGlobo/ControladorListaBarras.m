@@ -88,9 +88,10 @@
     if (celda == nil) {
         [self.cellNib  instantiateWithOwner:self options:nil];
         celda = [self celdaBarras];
+        [celda agregarBarraAlaCelda];
         self.celdaBarras = nil;
     }
-    [celda establecerNombreCelda:@"35-89" conValor: 0.0f ];
+    [celda establecerNombreCelda:@"35-89" conValor: 0.70f ];
     
     return celda;
 }

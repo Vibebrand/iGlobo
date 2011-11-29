@@ -13,7 +13,7 @@
 {
     UILabel *_rangoEdad;
     UIView  *_contenedorGraficaBarra;
-    //PDColoredProgressView *_representacionGraficaBarra;
+    PDColoredProgressView *_representacionGraficaBarra;
 }
 
 @property(nonatomic, retain) IBOutlet UILabel * rangoEdad;

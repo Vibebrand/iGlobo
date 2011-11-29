@@ -18,19 +18,24 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self agregarBarraAlaCelda];
     }
     return self;
 }
 
 -(void)agregarBarraAlaCelda
 {
-    //_representacionGraficaBarra = [[PDColoredProgressView alloc] initWithProgressViewStyle: UIProgressViewStyleDefault];
+    _representacionGraficaBarra = [[PDColoredProgressView alloc] initWithProgressViewStyle: UIProgressViewStyleDefault];
     if( _contenedorGraficaBarra )
     {
-       // [_representacionGraficaBarra setFrame:[[self contenedorGraficaBarra] frame]];
-        //[[self contenedorGraficaBarra] insertSubview:_representacionGraficaBarra atIndex:0];
-        //[_representacionGraficaBarra setTintColor:[UIColor purpleColor]];
+       
+        CGRect _frame = [[self contenedorGraficaBarra] frame];
+		_frame.origin.x = 0;
+		_frame.origin.y = 0;
+       [_representacionGraficaBarra setFrame:_frame];
+       
+        [[self contenedorGraficaBarra] insertSubview:_representacionGraficaBarra atIndex:0];
+        
+        [_representacionGraficaBarra setTintColor:[UIColor purpleColor]];
     }
 }
 
@@ -38,7 +43,7 @@
 {
     [_rangoEdad release];
     [_contenedorGraficaBarra release];
-    //[_representacionGraficaBarra release];
+    [_representacionGraficaBarra release];
     [super dealloc];
 }
 
@@ -51,7 +56,7 @@
 -(void)establecerNombreCelda:(NSString*)nombre conValor:(float) valor
 {
     [[self rangoEdad] setText:nombre];
-    //[_representacionGraficaBarra setProgress:valor animated:TRUE];
+    [_representacionGraficaBarra setProgress:valor animated:TRUE];
 }
 
 @end
