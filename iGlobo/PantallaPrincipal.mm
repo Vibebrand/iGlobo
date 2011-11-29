@@ -13,9 +13,15 @@
 @synthesize representacionGlobo = _representacionGlobo;
 
 
+@synthesize representacionGraficaBarrasIzquierdo = _representacionGraficaBarrasIzquierdo;
+
+
 -(void)dealloc
 {
     [_representacionGlobo release];
+    [_representacionGraficaBarrasIzquierdo release];
+    [_controladorRepresentacionListaGraficaBarras release];
+    
     [_controladorRepresentacionGlobo release];
     [super dealloc];
 }
@@ -45,8 +51,13 @@
     _controladorRepresentacionGlobo = [[ControladorRepresentacionGlobo alloc]  initWithNibName:@"ControladorRepresentacionGlobo" bundle:nil ];
     self.representacionGlobo.layer.cornerRadius = 5;
     
+    _controladorRepresentacionListaGraficaBarras = [[ ControladorListaBarras alloc] initWithNibName:@"ControladorListaBarras" bundle:nil ];
+    
     
 [[self representacionGlobo] addSubview: _controladorRepresentacionGlobo.obtenerRepresentacion ];
+
+[[self representacionGraficaBarrasIzquierdo] addSubview: _controladorRepresentacionListaGraficaBarras.obtenerRepresentacion];
+    
     // Do any additional setup after loading the view from its nib.
 }
 

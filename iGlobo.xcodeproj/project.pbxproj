@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D71E44991485467400A9E422 /* ControladorListaBarras.m in Sources */ = {isa = PBXBuildFile; fileRef = D71E44971485467400A9E422 /* ControladorListaBarras.m */; };
+		D71E449A1485467400A9E422 /* ControladorListaBarras.xib in Resources */ = {isa = PBXBuildFile; fileRef = D71E44981485467400A9E422 /* ControladorListaBarras.xib */; };
+		D71E449F14855D2900A9E422 /* CeldaGraficaDeBarras.mm in Sources */ = {isa = PBXBuildFile; fileRef = D71E449E14855D2900A9E422 /* CeldaGraficaDeBarras.mm */; };
+		D71E44A414855F9000A9E422 /* drawing.m in Sources */ = {isa = PBXBuildFile; fileRef = D71E44A114855F9000A9E422 /* drawing.m */; };
+		D71E44A514855F9000A9E422 /* PDColoredProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = D71E44A314855F9000A9E422 /* PDColoredProgressView.m */; };
 		D7934C8614770750005B13C2 /* ControladorCapaDeInteraccion.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7934C8514770750005B13C2 /* ControladorCapaDeInteraccion.mm */; };
 		D7934C8A14770AA5005B13C2 /* ServicioBDGeograficas.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7934C8914770AA5005B13C2 /* ServicioBDGeograficas.mm */; };
 		D797521E147FEF5F003F331A /* PanelRedondo.mm in Sources */ = {isa = PBXBuildFile; fileRef = D797521D147FEF5F003F331A /* PanelRedondo.mm */; };
@@ -14,6 +19,7 @@
 		D798595E1475B0C600F98991 /* ControladorMapa.mm in Sources */ = {isa = PBXBuildFile; fileRef = D798595D1475B0C600F98991 /* ControladorMapa.mm */; };
 		D79E269D147EAAE400985242 /* PantallaPrincipal.mm in Sources */ = {isa = PBXBuildFile; fileRef = D79E269B147EAAE400985242 /* PantallaPrincipal.mm */; };
 		D79E269E147EAAE400985242 /* PantallaPrincipal.xib in Resources */ = {isa = PBXBuildFile; fileRef = D79E269C147EAAE400985242 /* PantallaPrincipal.xib */; };
+		D7A75B1614857EB500B4D5E5 /* CeldagraficaBarras.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A75B1414857EB500B4D5E5 /* CeldagraficaBarras.xib */; };
 		D7AFB71D1474136200D66A37 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AFB71C1474136200D66A37 /* UIKit.framework */; };
 		D7AFB71F1474136200D66A37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AFB71E1474136200D66A37 /* Foundation.framework */; };
 		D7AFB7211474136200D66A37 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AFB7201474136200D66A37 /* CoreGraphics.framework */; };
@@ -108,6 +114,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D71E44961485467400A9E422 /* ControladorListaBarras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControladorListaBarras.h; sourceTree = "<group>"; };
+		D71E44971485467400A9E422 /* ControladorListaBarras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControladorListaBarras.m; sourceTree = "<group>"; };
+		D71E44981485467400A9E422 /* ControladorListaBarras.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ControladorListaBarras.xib; sourceTree = "<group>"; };
+		D71E449D14855D2900A9E422 /* CeldaGraficaDeBarras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CeldaGraficaDeBarras.h; sourceTree = "<group>"; };
+		D71E449E14855D2900A9E422 /* CeldaGraficaDeBarras.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CeldaGraficaDeBarras.mm; sourceTree = "<group>"; };
+		D71E44A114855F9000A9E422 /* drawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = drawing.m; sourceTree = "<group>"; };
+		D71E44A214855F9000A9E422 /* PDColoredProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDColoredProgressView.h; sourceTree = "<group>"; };
+		D71E44A314855F9000A9E422 /* PDColoredProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDColoredProgressView.m; sourceTree = "<group>"; };
 		D73EAE0714840020006DE184 /* iControladorVista.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iControladorVista.h; sourceTree = "<group>"; };
 		D7934C8114770412005B13C2 /* iDelegadoControladorMapa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iDelegadoControladorMapa.h; sourceTree = "<group>"; };
 		D7934C8414770750005B13C2 /* ControladorCapaDeInteraccion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControladorCapaDeInteraccion.h; sourceTree = "<group>"; };
@@ -126,6 +140,7 @@
 		D79E269A147EAAE400985242 /* PantallaPrincipal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PantallaPrincipal.h; sourceTree = "<group>"; };
 		D79E269B147EAAE400985242 /* PantallaPrincipal.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PantallaPrincipal.mm; sourceTree = "<group>"; };
 		D79E269C147EAAE400985242 /* PantallaPrincipal.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PantallaPrincipal.xib; sourceTree = "<group>"; };
+		D7A75B1414857EB500B4D5E5 /* CeldagraficaBarras.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CeldagraficaBarras.xib; sourceTree = "<group>"; };
 		D7AFB7181474136200D66A37 /* iGlobo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGlobo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7AFB71C1474136200D66A37 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D7AFB71E1474136200D66A37 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -250,6 +265,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D71E449C14855CD300A9E422 /* componentes */ = {
+			isa = PBXGroup;
+			children = (
+				D71E449D14855D2900A9E422 /* CeldaGraficaDeBarras.h */,
+				D71E449E14855D2900A9E422 /* CeldaGraficaDeBarras.mm */,
+				D7A75B1414857EB500B4D5E5 /* CeldagraficaBarras.xib */,
+			);
+			name = componentes;
+			sourceTree = "<group>";
+		};
+		D71E44A014855F3500A9E422 /* utilidades */ = {
+			isa = PBXGroup;
+			children = (
+				D71E44A114855F9000A9E422 /* drawing.m */,
+				D71E44A214855F9000A9E422 /* PDColoredProgressView.h */,
+				D71E44A314855F9000A9E422 /* PDColoredProgressView.m */,
+			);
+			name = utilidades;
+			sourceTree = "<group>";
+		};
 		D7934C831477071C005B13C2 /* Capas */ = {
 			isa = PBXGroup;
 			children = (
@@ -473,10 +508,13 @@
 		D7AFB7D71474325100D66A37 /* Vista */ = {
 			isa = PBXGroup;
 			children = (
+				D71E44A014855F3500A9E422 /* utilidades */,
+				D71E449C14855CD300A9E422 /* componentes */,
 				D7AFB7DB147432DC00D66A37 /* ControladorRepresentacionGlobo.xib */,
 				D79E269A147EAAE400985242 /* PantallaPrincipal.h */,
 				D79E269B147EAAE400985242 /* PantallaPrincipal.mm */,
 				D79E269C147EAAE400985242 /* PantallaPrincipal.xib */,
+				D71E44981485467400A9E422 /* ControladorListaBarras.xib */,
 			);
 			name = Vista;
 			sourceTree = "<group>";
@@ -489,6 +527,8 @@
 				D7AFB7D9147432DC00D66A37 /* ControladorRepresentacionGlobo.h */,
 				D798595C1475B0C600F98991 /* ControladorMapa.h */,
 				D798595D1475B0C600F98991 /* ControladorMapa.mm */,
+				D71E44961485467400A9E422 /* ControladorListaBarras.h */,
+				D71E44971485467400A9E422 /* ControladorListaBarras.m */,
 			);
 			name = Controlador;
 			sourceTree = "<group>";
@@ -665,6 +705,8 @@
 				D7AFB7D61474324800D66A37 /* regions.sqlite in Resources */,
 				D7AFB7DD147432DC00D66A37 /* ControladorRepresentacionGlobo.xib in Resources */,
 				D79E269E147EAAE400985242 /* PantallaPrincipal.xib in Resources */,
+				D71E449A1485467400A9E422 /* ControladorListaBarras.xib in Resources */,
+				D7A75B1614857EB500B4D5E5 /* CeldagraficaBarras.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,6 +732,10 @@
 				D79E269D147EAAE400985242 /* PantallaPrincipal.mm in Sources */,
 				D797521E147FEF5F003F331A /* PanelRedondo.mm in Sources */,
 				D797526214804147003F331A /* ServicioDeIluminacionPorRegion.mm in Sources */,
+				D71E44991485467400A9E422 /* ControladorListaBarras.m in Sources */,
+				D71E449F14855D2900A9E422 /* CeldaGraficaDeBarras.mm in Sources */,
+				D71E44A414855F9000A9E422 /* drawing.m in Sources */,
+				D71E44A514855F9000A9E422 /* PDColoredProgressView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
