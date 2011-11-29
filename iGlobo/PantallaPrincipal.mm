@@ -15,12 +15,17 @@
 
 @synthesize representacionGraficaBarrasIzquierdo = _representacionGraficaBarrasIzquierdo;
 
+@synthesize  representacionGraficaBarrasDerecha = _representacionGraficaBarrasDerecha;
 
 -(void)dealloc
 {
     [_representacionGlobo release];
     [_representacionGraficaBarrasIzquierdo release];
-    [_controladorRepresentacionListaGraficaBarras release];
+    [_controladorRepresentacionListaGraficaBarrasIzquierda release];
+    
+    
+    [_representacionGraficaBarrasDerecha release];
+    [_controladorRepresentacionListaGraficaBarrasDerecha release];
     
     [_controladorRepresentacionGlobo release];
     [super dealloc];
@@ -51,12 +56,17 @@
     _controladorRepresentacionGlobo = [[ControladorRepresentacionGlobo alloc]  initWithNibName:@"ControladorRepresentacionGlobo" bundle:nil ];
     self.representacionGlobo.layer.cornerRadius = 5;
     
-    _controladorRepresentacionListaGraficaBarras = [[ ControladorListaBarras alloc] initWithNibName:@"ControladorListaBarras" bundle:nil ];
+    _controladorRepresentacionListaGraficaBarrasIzquierda = [[ ControladorListaBarras alloc] initWithNibName:@"ControladorListaBarras" bundle:nil ];
+    
+    
+     _controladorRepresentacionListaGraficaBarrasDerecha = [[ ControladorListaBarras alloc] initWithNibName:@"ControladorListaBarras" bundle:nil ];
     
     
 [[self representacionGlobo] addSubview: _controladorRepresentacionGlobo.obtenerRepresentacion ];
 
-[[self representacionGraficaBarrasIzquierdo] addSubview: _controladorRepresentacionListaGraficaBarras.obtenerRepresentacion];
+[[self representacionGraficaBarrasIzquierdo] addSubview: _controladorRepresentacionListaGraficaBarrasIzquierda.obtenerRepresentacion];
+    
+[[self representacionGraficaBarrasDerecha] addSubview: _controladorRepresentacionListaGraficaBarrasDerecha.obtenerRepresentacion];
     
     // Do any additional setup after loading the view from its nib.
 }

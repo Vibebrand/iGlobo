@@ -15,11 +15,15 @@
 {
     UIView * _representacionGlobo;
     UIView * _representacionGraficaBarrasIzquierdo;
+    UIView * _representacionGraficaBarrasDerecha;
     id<iControladorVista> _controladorRepresentacionGlobo;
-    id<iControladorVista> _controladorRepresentacionListaGraficaBarras;
+    id<iControladorVista> _controladorRepresentacionListaGraficaBarrasIzquierda;
+    id<iControladorVista> _controladorRepresentacionListaGraficaBarrasDerecha;
+
 }
 
 @property(nonatomic, retain)IBOutlet UIView* representacionGlobo;
 @property(nonatomic, retain)IBOutlet UIView* representacionGraficaBarrasIzquierdo;
+@property(nonatomic, retain)IBOutlet UIView* representacionGraficaBarrasDerecha;
 
 @end
