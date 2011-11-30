@@ -17,8 +17,13 @@
     UIView * _representacionGraficaBarrasIzquierdo;
     UIView * _representacionGraficaBarrasDerecha;
     id<iControladorVista> _controladorRepresentacionGlobo;
-    id<iControladorVista> _controladorRepresentacionListaGraficaBarrasIzquierda;
-    id<iControladorVista> _controladorRepresentacionListaGraficaBarrasDerecha;
+    
+    
+    ControladorListaBarras *_controladorRepresentacionListaGraficaBarrasIzquierda;
+    ControladorListaBarras *_controladorRepresentacionListaGraficaBarrasDerecha;
+    
+    //id<iControladorVista> _controladorRepresentacionListaGraficaBarrasIzquierda;
+    //id<iControladorVista> _controladorRepresentacionListaGraficaBarrasDerecha;
 
 }
 

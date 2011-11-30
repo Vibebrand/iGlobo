@@ -14,6 +14,9 @@
 		D71E44A514855F9000A9E422 /* PDColoredProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = D71E44A314855F9000A9E422 /* PDColoredProgressView.m */; };
 		D7934C8614770750005B13C2 /* ControladorCapaDeInteraccion.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7934C8514770750005B13C2 /* ControladorCapaDeInteraccion.mm */; };
 		D7934C8A14770AA5005B13C2 /* ServicioBDGeograficas.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7934C8914770AA5005B13C2 /* ServicioBDGeograficas.mm */; };
+		D794F08F148686C3000855BB /* Hombres.png in Resources */ = {isa = PBXBuildFile; fileRef = D794F08D148686C3000855BB /* Hombres.png */; };
+		D794F090148686C3000855BB /* Mujeres.png in Resources */ = {isa = PBXBuildFile; fileRef = D794F08E148686C3000855BB /* Mujeres.png */; };
+		D794F09214868B2A000855BB /* hombre gde.png in Resources */ = {isa = PBXBuildFile; fileRef = D794F09114868B2A000855BB /* hombre gde.png */; };
 		D797521E147FEF5F003F331A /* PanelRedondo.mm in Sources */ = {isa = PBXBuildFile; fileRef = D797521D147FEF5F003F331A /* PanelRedondo.mm */; };
 		D797526214804147003F331A /* ServicioDeIluminacionPorRegion.mm in Sources */ = {isa = PBXBuildFile; fileRef = D797526114804147003F331A /* ServicioDeIluminacionPorRegion.mm */; };
 		D798595E1475B0C600F98991 /* ControladorMapa.mm in Sources */ = {isa = PBXBuildFile; fileRef = D798595D1475B0C600F98991 /* ControladorMapa.mm */; };
@@ -128,6 +131,9 @@
 		D7934C8514770750005B13C2 /* ControladorCapaDeInteraccion.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ControladorCapaDeInteraccion.mm; sourceTree = "<group>"; };
 		D7934C8814770AA5005B13C2 /* ServicioBDGeograficas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServicioBDGeograficas.h; sourceTree = "<group>"; };
 		D7934C8914770AA5005B13C2 /* ServicioBDGeograficas.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ServicioBDGeograficas.mm; sourceTree = "<group>"; };
+		D794F08D148686C3000855BB /* Hombres.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Hombres.png; path = resources/imagenes/Hombres.png; sourceTree = SOURCE_ROOT; };
+		D794F08E148686C3000855BB /* Mujeres.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Mujeres.png; path = resources/imagenes/Mujeres.png; sourceTree = SOURCE_ROOT; };
+		D794F09114868B2A000855BB /* hombre gde.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hombre gde.png"; path = "resources/imagenes/hombre gde.png"; sourceTree = SOURCE_ROOT; };
 		D797521C147FEF5F003F331A /* PanelRedondo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelRedondo.h; sourceTree = "<group>"; };
 		D797521D147FEF5F003F331A /* PanelRedondo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PanelRedondo.mm; sourceTree = "<group>"; };
 		D7975220147FF030003F331A /* iDelegadoPanelRepresentacionGlobo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iDelegadoPanelRepresentacionGlobo.h; sourceTree = "<group>"; };
@@ -308,6 +314,16 @@
 			name = Servicio;
 			sourceTree = "<group>";
 		};
+		D794F08B14868679000855BB /* imagenes */ = {
+			isa = PBXGroup;
+			children = (
+				D794F09114868B2A000855BB /* hombre gde.png */,
+				D794F08D148686C3000855BB /* Hombres.png */,
+				D794F08E148686C3000855BB /* Mujeres.png */,
+			);
+			name = imagenes;
+			sourceTree = "<group>";
+		};
 		D79859341475AB8400F98991 /* protocolos */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +385,7 @@
 		D7AFB7231474136200D66A37 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D794F08B14868679000855BB /* imagenes */,
 				D7AFB7241474136200D66A37 /* iGlobo-Info.plist */,
 				D7AFB7251474136200D66A37 /* InfoPlist.strings */,
 				D7AFB7281474136200D66A37 /* main.m */,
@@ -707,6 +724,9 @@
 				D79E269E147EAAE400985242 /* PantallaPrincipal.xib in Resources */,
 				D71E449A1485467400A9E422 /* ControladorListaBarras.xib in Resources */,
 				D7A75B1614857EB500B4D5E5 /* CeldagraficaBarras.xib in Resources */,
+				D794F08F148686C3000855BB /* Hombres.png in Resources */,
+				D794F090148686C3000855BB /* Mujeres.png in Resources */,
+				D794F09214868B2A000855BB /* hombre gde.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

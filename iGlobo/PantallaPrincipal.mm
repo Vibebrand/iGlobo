@@ -59,14 +59,22 @@
     _controladorRepresentacionListaGraficaBarrasIzquierda = [[ ControladorListaBarras alloc] initWithNibName:@"ControladorListaBarras" bundle:nil ];
     
     
+    
+    
      _controladorRepresentacionListaGraficaBarrasDerecha = [[ ControladorListaBarras alloc] initWithNibName:@"ControladorListaBarras" bundle:nil ];
     
-    
-[[self representacionGlobo] addSubview: _controladorRepresentacionGlobo.obtenerRepresentacion ];
+    [[self representacionGlobo] addSubview: _controladorRepresentacionGlobo.obtenerRepresentacion ];
 
-[[self representacionGraficaBarrasIzquierdo] addSubview: _controladorRepresentacionListaGraficaBarrasIzquierda.obtenerRepresentacion];
+    [[self representacionGraficaBarrasIzquierdo] addSubview: _controladorRepresentacionListaGraficaBarrasIzquierda.obtenerRepresentacion];
     
-[[self representacionGraficaBarrasDerecha] addSubview: _controladorRepresentacionListaGraficaBarrasDerecha.obtenerRepresentacion];
+    [[self representacionGraficaBarrasDerecha] addSubview: _controladorRepresentacionListaGraficaBarrasDerecha.obtenerRepresentacion];
+    
+    
+    [_controladorRepresentacionListaGraficaBarrasIzquierda establcerGenero:@"Hombres"];
+    [_controladorRepresentacionListaGraficaBarrasIzquierda establecerPorcentajeDeLaPoblacion:@"40%" enBaseAlaSumatoriaTotal:@"234,500"];
+    
+    [_controladorRepresentacionListaGraficaBarrasDerecha establcerGenero:@"Mujeres"];
+    [_controladorRepresentacionListaGraficaBarrasDerecha establecerPorcentajeDeLaPoblacion:@"60%" enBaseAlaSumatoriaTotal:@"888,5400"];
     
     // Do any additional setup after loading the view from its nib.
 }
@@ -83,5 +91,8 @@
     // Return YES for supported orientations
 	return YES;
 }
+
+
+
 
 @end

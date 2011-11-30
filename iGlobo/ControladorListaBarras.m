@@ -14,16 +14,25 @@
 @synthesize porcentajeResultante = _porcentajeResultante;
 @synthesize celdaBarras  = _celdaBarras;
 @synthesize cellNib = _cellNib;
-
+@synthesize etiquetaNumeroTotalPorGenero = _etiquetaNumeroTotalPorGenero;
+@synthesize genero = _genero;
+@synthesize imagen = _imagen;
 
 
 -(void)dealloc
 {
     [_tablaDatos release];
     //[_rangosDeEdad release];
-    [_porcentajeResultante release];
-    [_celdaBarras release];
+       [_celdaBarras release];
     [_cellNib release];
+    
+    [_genero release];
+    
+    [_porcentajeResultante release];
+    [_etiquetaNumeroTotalPorGenero release];
+    [_imagen release];
+    
+    
     [super dealloc];
 }
 
@@ -123,6 +132,22 @@
 -(UIView *) obtenerRepresentacion
 {
     return [self view];
+}
+
+
+-(void) establcerGenero:(NSString*)genero
+{
+    [self setGenero: genero];
+    if([[self genero] length] > 0 )
+    {
+        [[self imagen] setImage:[UIImage imageNamed:[NSString stringWithFormat: @"%@.png",[self genero] ]  ]];
+    }
+}
+
+-(void) establecerPorcentajeDeLaPoblacion:(NSString*) porcentajePoblacion enBaseAlaSumatoriaTotal:(NSString*)sumatorialTotal
+{
+    [[self porcentajeResultante] setText:porcentajePoblacion];
+    [[self etiquetaNumeroTotalPorGenero] setText: [NSString stringWithFormat:@"%@ %@", sumatorialTotal, [self genero]]];
 }
 
 @end
