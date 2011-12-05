@@ -22,7 +22,20 @@
 
 - (void)dealloc {
     delete motor;
+    
+    for(std::set<GestorCpp *>::iterator it_gestores = gestores.begin(); 
+        it_gestores != gestores.end(); ++it_gestores) {
+        delete *it_gestores;
+    }
+    gestores.clear();
+    
     [super dealloc];
+}
+
+- (void) registraGestor: (id<iGestorObjectiveC>) gestor {
+    GestorCpp * gestorCppInteres = new GestorCpp(gestor);
+    gestores.insert(gestorCppInteres);
+    motor->registraGestorSecciones(gestorCppInteres);
 }
 
 @end

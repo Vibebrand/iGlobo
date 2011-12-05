@@ -17,6 +17,7 @@ class GestorCpp : public MotorIMapaAPI::IGestorSecciones {
 public:
     
     GestorCpp(id<iGestorObjectiveC> gestor);
+    ~GestorCpp();
     
     void procesaSeccion(MotorIMapaAPI::modelo::Seccion * seccion);
 	void seccionInvalida(MotorIMapaAPI::modelo::Seccion * seccion);

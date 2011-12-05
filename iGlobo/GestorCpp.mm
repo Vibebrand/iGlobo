@@ -6,13 +6,16 @@
 //  Copyright (c) 2011 INEGI. All rights reserved.
 //
 
-#include <iostream>
 #include "GestorCpp.h"
 
 GestorCpp::GestorCpp(id<iGestorObjectiveC> gestor) {
     this->gestor = gestor;
+    [this->gestor retain];
 }
 
+GestorCpp::~GestorCpp() {
+    [this->gestor release];
+}
 
 void GestorCpp::procesaSeccion(MotorIMapaAPI::modelo::Seccion * seccion) {
     [gestor procesaSeccion: generaModelo(seccion)];
