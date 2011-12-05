@@ -203,6 +203,7 @@
 		D7139A5E148D4A6100C0508A /* MotorIMapaAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotorIMapaAPI.h; sourceTree = "<group>"; };
 		D7139A5F148D4B7600C0508A /* GestorCpp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GestorCpp.mm; sourceTree = "<group>"; };
 		D7139A62148D4C8C00C0508A /* iGestorObjectiveC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iGestorObjectiveC.h; sourceTree = "<group>"; };
+		D7139A63148D714300C0508A /* iControlMaestro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iControlMaestro.h; sourceTree = "<group>"; };
 		D71E44961485467400A9E422 /* ControladorListaBarras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControladorListaBarras.h; sourceTree = "<group>"; };
 		D71E44971485467400A9E422 /* ControladorListaBarras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControladorListaBarras.m; sourceTree = "<group>"; };
 		D71E44981485467400A9E422 /* ControladorListaBarras.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ControladorListaBarras.xib; sourceTree = "<group>"; };
@@ -534,6 +535,7 @@
 			isa = PBXGroup;
 			children = (
 				D7139A62148D4C8C00C0508A /* iGestorObjectiveC.h */,
+				D7139A63148D714300C0508A /* iControlMaestro.h */,
 			);
 			name = Protocolos;
 			sourceTree = "<group>";

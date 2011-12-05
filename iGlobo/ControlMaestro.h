@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+#import "iControlMaestro.h"
 #import "iGestorObjectiveC.h"
 
 #include "GestorCpp.h"
@@ -15,12 +16,13 @@
 
 struct MotorIMapa;
 
-@interface ControlMaestro : NSObject
+@interface ControlMaestro : NSObject<iControlMaestro>
 {
     MotorIMapa * motor;
     std::set<GestorCpp *> gestores;
 }
 
 - (void) registraGestor: (id<iGestorObjectiveC>) gestor;
+- (void) estableceVariable:(NSString *) nombre valor: (NSString *) valor;
 
 @end

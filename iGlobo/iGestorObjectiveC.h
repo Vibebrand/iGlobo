@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "iControlMaestro.h"
 
 @protocol iGestorObjectiveC <NSObject>
 
@@ -15,5 +16,6 @@
 - (void) finalizadaActualizacionSecciones;
 - (NSArray *) obtenNombreSeccionesGestionadas;
 - (NSArray *) obtenNombreSeccionesNoGestionadas;
+- (void) registraControlMaestro: (id<iControlMaestro>) controlMaestro;
 
 @end

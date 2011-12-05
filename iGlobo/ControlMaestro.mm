@@ -38,4 +38,12 @@
     motor->registraGestorSecciones(gestorCppInteres);
 }
 
+- (void) estableceVariable:(NSString *) nombre valor: (NSString *) valor {
+    motor->estableceCambioVariable([nombre UTF8String], [valor UTF8String]);
+}
+
+- (void) actualizaSecciones {
+    motor->actualizaSecciones();
+}
+
 @end

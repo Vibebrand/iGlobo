@@ -8,9 +8,11 @@
 
 #include "GestorCpp.h"
 
-GestorCpp::GestorCpp(id<iGestorObjectiveC> gestor) {
+GestorCpp::GestorCpp(id<iGestorObjectiveC> gestor, id<iControlMaestro> controlMaestro) {
     this->gestor = gestor;
     [this->gestor retain];
+    
+    this->controlMaestro = controlMaestro;
 }
 
 GestorCpp::~GestorCpp() {
@@ -55,6 +57,7 @@ std::set<std::string> GestorCpp::obtenNombreSeccionesNoGestionadas() {
 
 void GestorCpp::registraMotor(MotorIMapaAPI::IMotorIMapa * motor) {
     this->motor = motor;
+    [this->gestor registraControlMaestro: this->controlMaestro];
 }
 
 NSDictionary * GestorCpp::generaModelo(MotorIMapaAPI::modelo::Seccion * seccion) {

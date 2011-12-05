@@ -10,13 +10,15 @@
 #define iGlobo_GestorCpp_h
 
 #import "MotorIMapaAPI.h"
+#import "iControlMaestro.h"
+
 #include "iGestorObjectiveC.h"
 
 class GestorCpp : public MotorIMapaAPI::IGestorSecciones {
   
 public:
     
-    GestorCpp(id<iGestorObjectiveC> gestor);
+    GestorCpp(id<iGestorObjectiveC> gestor, id<iControlMaestro> controlMaestro);
     ~GestorCpp();
     
     void procesaSeccion(MotorIMapaAPI::modelo::Seccion * seccion);
@@ -30,6 +32,8 @@ public:
     
 private:
     id<iGestorObjectiveC> gestor;
+    id<iControlMaestro> controlMaestro;
+    
     MotorIMapaAPI::IMotorIMapa * motor;
     
     NSDictionary * generaModelo(MotorIMapaAPI::modelo::Seccion *);
