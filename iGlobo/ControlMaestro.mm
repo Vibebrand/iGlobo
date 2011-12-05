@@ -33,7 +33,7 @@
 }
 
 - (void) registraGestor: (id<iGestorObjectiveC>) gestor {
-    GestorCpp * gestorCppInteres = new GestorCpp(gestor);
+    GestorCpp * gestorCppInteres = new GestorCpp(gestor, self);
     gestores.insert(gestorCppInteres);
     motor->registraGestorSecciones(gestorCppInteres);
 }

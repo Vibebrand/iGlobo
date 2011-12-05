@@ -15,8 +15,9 @@
 #import "PanelRedondo.h"
 #import "iDelegadoPanelRepresentacionGlobo.h"
 #import "iControladorVista.h"
+#import "iGestorObjectiveC.h"
 
-@interface ControladorRepresentacionGlobo : UIViewController<iDelegadoPanelRepresentacionGlobo, iControladorVista>
+@interface ControladorRepresentacionGlobo : UIViewController<iDelegadoPanelRepresentacionGlobo, iControladorVista, iGestorObjectiveC >
 {
     //Vista
     PanelRedondo * _panelRedondo;
@@ -53,6 +54,9 @@
     
     ControladorMapa * controladorMapa;
     
+    id<iControlMaestro> _controlMaestro;
+    
+    
     
 	//InteractionLayer *interactLayer;
     //CapaInteraccion * capaInteraccion;
@@ -71,6 +75,15 @@
 -(UIView *) obtenerRepresentacionBajoMarco:(CGRect) tamanioVentana;
 -(UIView *) obtenerRepresentacion;
 
+
+#pragma iGestorObjectiveC
+
+- (void) procesaSeccion: (NSDictionary *) seccion;
+- (void) seccionInvalida: (NSDictionary *) seccion;
+- (void) finalizadaActualizacionSecciones;
+- (NSArray *) obtenNombreSeccionesGestionadas;
+- (NSArray *) obtenNombreSeccionesNoGestionadas;
+- (void) registraControlMaestro: (id<iControlMaestro>) controlMaestro;
 
 //Vista
 @property (nonatomic,retain) IBOutlet UILabel * etiquetaNombrePais;
@@ -94,6 +107,7 @@
 @property (nonatomic,retain) ControladorCapaDeInteraccion * controladorCapaDeInteraccion;
 
 @property (nonatomic,retain)  LoftLayer * loftlayer;
+@property (nonatomic, retain) id<iControlMaestro> controlMaestro;
 
 
 
