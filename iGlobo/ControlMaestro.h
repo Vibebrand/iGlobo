@@ -1,5 +1,5 @@
 //
-//  ControladorMotorIMapa.h
+//  ControlMaestro.h
 //  iGlobo
 //
 //  Created by Jesus Cagide on 05/12/11.
@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ControladorMotorIMapa : NSObject
+struct MotorIMapa;
+
+@interface ControlMaestro : NSObject
+{
+    MotorIMapa * motor;
+}
 
 @end

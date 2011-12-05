@@ -1,13 +1,13 @@
 //
-//  ControladorMotorIMapa.m
+//  iGestorObjectiveC.h
 //  iGlobo
 //
 //  Created by Jesus Cagide on 05/12/11.
 //  Copyright (c) 2011 INEGI. All rights reserved.
 //
 
-#import "ControladorMotorIMapa.h"
+#import <Foundation/Foundation.h>
 
-@implementation ControladorMotorIMapa
+@protocol iGestorObjectiveC <NSObject>
 
 @end

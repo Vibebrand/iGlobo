@@ -36,7 +36,8 @@
 		D7139A44148D33B400C0508A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D7139A43148D33B400C0508A /* libxml2.dylib */; };
 		D7139A46148D33BB00C0508A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D7139A45148D33BB00C0508A /* libz.dylib */; };
 		D7139A48148D33C300C0508A /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D7139A47148D33C300C0508A /* libiconv.dylib */; };
-		D7139A50148D395F00C0508A /* ControladorMotorIMapa.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7139A4F148D395F00C0508A /* ControladorMotorIMapa.mm */; };
+		D7139A53148D461A00C0508A /* ControlMaestro.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7139A52148D461A00C0508A /* ControlMaestro.mm */; };
+		D7139A60148D4B7600C0508A /* GestorCpp.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7139A5F148D4B7600C0508A /* GestorCpp.mm */; };
 		D71E44991485467400A9E422 /* ControladorListaBarras.m in Sources */ = {isa = PBXBuildFile; fileRef = D71E44971485467400A9E422 /* ControladorListaBarras.m */; };
 		D71E449A1485467400A9E422 /* ControladorListaBarras.xib in Resources */ = {isa = PBXBuildFile; fileRef = D71E44981485467400A9E422 /* ControladorListaBarras.xib */; };
 		D71E449F14855D2900A9E422 /* CeldaGraficaDeBarras.mm in Sources */ = {isa = PBXBuildFile; fileRef = D71E449E14855D2900A9E422 /* CeldaGraficaDeBarras.mm */; };
@@ -196,8 +197,12 @@
 		D7139A43148D33B400C0508A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		D7139A45148D33BB00C0508A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		D7139A47148D33C300C0508A /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
-		D7139A4E148D395F00C0508A /* ControladorMotorIMapa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControladorMotorIMapa.h; sourceTree = "<group>"; };
-		D7139A4F148D395F00C0508A /* ControladorMotorIMapa.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ControladorMotorIMapa.mm; sourceTree = "<group>"; };
+		D7139A51148D461A00C0508A /* ControlMaestro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlMaestro.h; sourceTree = "<group>"; };
+		D7139A52148D461A00C0508A /* ControlMaestro.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ControlMaestro.mm; sourceTree = "<group>"; };
+		D7139A5C148D48C300C0508A /* GestorCpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestorCpp.h; sourceTree = "<group>"; };
+		D7139A5E148D4A6100C0508A /* MotorIMapaAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotorIMapaAPI.h; sourceTree = "<group>"; };
+		D7139A5F148D4B7600C0508A /* GestorCpp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GestorCpp.mm; sourceTree = "<group>"; };
+		D7139A62148D4C8C00C0508A /* iGestorObjectiveC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iGestorObjectiveC.h; sourceTree = "<group>"; };
 		D71E44961485467400A9E422 /* ControladorListaBarras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControladorListaBarras.h; sourceTree = "<group>"; };
 		D71E44971485467400A9E422 /* ControladorListaBarras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControladorListaBarras.m; sourceTree = "<group>"; };
 		D71E44981485467400A9E422 /* ControladorListaBarras.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ControladorListaBarras.xib; sourceTree = "<group>"; };
@@ -358,6 +363,7 @@
 		D71399C8148D338900C0508A /* MotorIMapa */ = {
 			isa = PBXGroup;
 			children = (
+				D7139A5E148D4A6100C0508A /* MotorIMapaAPI.h */,
 				D71399C9148D338900C0508A /* .gitignore */,
 				D71399CA148D338900C0508A /* API */,
 				D71399D0148D338900C0508A /* bin */,
@@ -515,10 +521,21 @@
 		D7139A4D148D371C00C0508A /* ControladorNegocio */ = {
 			isa = PBXGroup;
 			children = (
-				D7139A4E148D395F00C0508A /* ControladorMotorIMapa.h */,
-				D7139A4F148D395F00C0508A /* ControladorMotorIMapa.mm */,
+				D7139A61148D4C5800C0508A /* Protocolos */,
+				D7139A51148D461A00C0508A /* ControlMaestro.h */,
+				D7139A52148D461A00C0508A /* ControlMaestro.mm */,
+				D7139A5C148D48C300C0508A /* GestorCpp.h */,
+				D7139A5F148D4B7600C0508A /* GestorCpp.mm */,
 			);
 			name = ControladorNegocio;
+			sourceTree = "<group>";
+		};
+		D7139A61148D4C5800C0508A /* Protocolos */ = {
+			isa = PBXGroup;
+			children = (
+				D7139A62148D4C8C00C0508A /* iGestorObjectiveC.h */,
+			);
+			name = Protocolos;
 			sourceTree = "<group>";
 		};
 		D71E449C14855CD300A9E422 /* componentes */ = {
@@ -1037,7 +1054,8 @@
 				D7139A2F148D338900C0508A /* Grafica.cpp in Sources */,
 				D7139A30148D338900C0508A /* GraficaPie.cpp in Sources */,
 				D7139A32148D338900C0508A /* MotorIMapa.cpp in Sources */,
-				D7139A50148D395F00C0508A /* ControladorMotorIMapa.mm in Sources */,
+				D7139A53148D461A00C0508A /* ControlMaestro.mm in Sources */,
+				D7139A60148D4B7600C0508A /* GestorCpp.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
