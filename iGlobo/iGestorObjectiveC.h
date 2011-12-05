@@ -10,4 +10,10 @@
 
 @protocol iGestorObjectiveC <NSObject>
 
+- (void) procesaSeccion: (NSDictionary *) seccion;
+- (void) seccionInvalida: (NSDictionary *) seccion;
+- (void) finalizadaActualizacionSecciones;
+- (NSArray *) obtenNombreSeccionesGestionadas;
+- (NSArray *) obtenNombreSeccionesNoGestionadas;
+
 @end

@@ -29,7 +29,10 @@ public:
     
 private:
     id<iGestorObjectiveC> gestor;
+    MotorIMapaAPI::IMotorIMapa * motor;
+    
     NSDictionary * generaModelo(MotorIMapaAPI::modelo::Seccion *);
+    NSDictionary * generaConceptos(MotorIMapaAPI::modelo::Concepto *);
     NSString * obtenString(std::string string);
 };
 
