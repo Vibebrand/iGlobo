@@ -18,7 +18,6 @@
 @synthesize genero = _genero;
 @synthesize imagen = _imagen;
 
-
 -(void)dealloc
 {
     [_tablaDatos release];

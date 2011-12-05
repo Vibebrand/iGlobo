@@ -20,7 +20,6 @@
 @synthesize etiquetaNombrePais = _etiquetaNombrePais;
 @synthesize etiquetaNombreRegion = _etiquetaNombreRegion;
 
-
 @synthesize glView;
 @synthesize sceneRenderer;
 @synthesize fpsLabel,drawLabel;
@@ -39,6 +38,8 @@
 @synthesize controladorCapaDeInteraccion;
 
 @synthesize loftlayer;
+
+@synthesize controlMaestro = _controlMaestro;
 
 - (void)clear
 {
@@ -83,6 +84,7 @@
     self.loftlayer = nil;
     
     [controladorMapa release];
+    [_controlMaestro release];
     // self.interactLayer = nil;
     // self.capatInteraccion = nil;
     // self.loftLayer = nil;
@@ -239,15 +241,19 @@
 {
     return NO;
 }
-
+//TODO agregar refactoring para que solo actualize el pais una vez :)
 #pragma iDelegadoPanelRepresentacionGlobo
 -(void) establecerNombrePais:(NSString *) nombrePais
 {
     [[self etiquetaNombrePais] setText:nombrePais];
+    [[self controlMaestro] estableceVariable:@"Pais" valor:nombrePais];
+    [[self controlMaestro] actualizaSecciones];
 }
 -(void) establecerNombreRegion:(NSString *)nombreRegion
 {
     [[self etiquetaNombreRegion] setText:nombreRegion];
+     [[self controlMaestro] estableceVariable:@"Entidad federativa" valor:nombreRegion];
+    [[self controlMaestro] actualizaSecciones];
 }
 
 - (void)lightingSetup:(SceneRendererES1 *)sceneRenderer
@@ -287,6 +293,24 @@
     return [self view];
 }
 
+#pragma iGestorObjectiveC
 
+- (void) procesaSeccion: (NSDictionary *) seccion{}
+- (void) seccionInvalida: (NSDictionary *) seccion{}
+- (void) finalizadaActualizacionSecciones{}
+- (NSArray *) obtenNombreSeccionesGestionadas
+   {
+    return [NSArray arrayWithObject: @""];
+   }
+
+- (NSArray *) obtenNombreSeccionesNoGestionadas
+   {
+    return [NSArray arrayWithObject: @""];
+   }
+
+- (void) registraControlMaestro: (id<iControlMaestro>) controlMaestro
+  {
+      [self setControlMaestro:controlMaestro];
+  }
 
 @end

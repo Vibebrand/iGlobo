@@ -7,6 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D7139A1B148D338900C0508A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D71399C9148D338900C0508A /* .gitignore */; };
+		D7139A1C148D338900C0508A /* iconv.dll in Resources */ = {isa = PBXBuildFile; fileRef = D71399D2148D338900C0508A /* iconv.dll */; };
+		D7139A1D148D338900C0508A /* iconv.exe in Resources */ = {isa = PBXBuildFile; fileRef = D71399D3148D338900C0508A /* iconv.exe */; };
+		D7139A1E148D338900C0508A /* libxml2.dll in Resources */ = {isa = PBXBuildFile; fileRef = D71399D4148D338900C0508A /* libxml2.dll */; };
+		D7139A1F148D338900C0508A /* minigzip.exe in Resources */ = {isa = PBXBuildFile; fileRef = D71399D5148D338900C0508A /* minigzip.exe */; };
+		D7139A20148D338900C0508A /* MotorIMapa.exe in Resources */ = {isa = PBXBuildFile; fileRef = D71399D6148D338900C0508A /* MotorIMapa.exe */; };
+		D7139A21148D338900C0508A /* xmlcatalog.exe in Resources */ = {isa = PBXBuildFile; fileRef = D71399D7148D338900C0508A /* xmlcatalog.exe */; };
+		D7139A22148D338900C0508A /* xmllint.exe in Resources */ = {isa = PBXBuildFile; fileRef = D71399D8148D338900C0508A /* xmllint.exe */; };
+		D7139A23148D338900C0508A /* zlib1.dll in Resources */ = {isa = PBXBuildFile; fileRef = D71399D9148D338900C0508A /* zlib1.dll */; };
+		D7139A24148D338900C0508A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399DA148D338900C0508A /* main.cpp */; };
+		D7139A25148D338900C0508A /* Concepto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399DC148D338900C0508A /* Concepto.cpp */; };
+		D7139A26148D338900C0508A /* Seccion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399DD148D338900C0508A /* Seccion.cpp */; };
+		D7139A27148D338900C0508A /* Valor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399DE148D338900C0508A /* Valor.cpp */; };
+		D7139A28148D338900C0508A /* ControladorSecciones.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399E5148D338900C0508A /* ControladorSecciones.cpp */; };
+		D7139A29148D338900C0508A /* MotorExtraccion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399E7148D338900C0508A /* MotorExtraccion.cpp */; };
+		D7139A2A148D338900C0508A /* LectorXML.c in Sources */ = {isa = PBXBuildFile; fileRef = D71399EA148D338900C0508A /* LectorXML.c */; };
+		D7139A2B148D338900C0508A /* ServicioParseo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399EE148D338900C0508A /* ServicioParseo.cpp */; };
+		D7139A2C148D338900C0508A /* MotorSencha.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399F5148D338900C0508A /* MotorSencha.cpp */; };
+		D7139A2D148D338900C0508A /* ServicioGeneradorInformacion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399F8148D338900C0508A /* ServicioGeneradorInformacion.cpp */; };
+		D7139A2E148D338900C0508A /* ServicioSerializadorInformacion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399F9148D338900C0508A /* ServicioSerializadorInformacion.cpp */; };
+		D7139A2F148D338900C0508A /* Grafica.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399FB148D338900C0508A /* Grafica.cpp */; };
+		D7139A30148D338900C0508A /* GraficaPie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399FD148D338900C0508A /* GraficaPie.cpp */; };
+		D7139A31148D338900C0508A /* MotorIMapa.cbp in Resources */ = {isa = PBXBuildFile; fileRef = D71399FF148D338900C0508A /* MotorIMapa.cbp */; };
+		D7139A32148D338900C0508A /* MotorIMapa.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7139A00148D338900C0508A /* MotorIMapa.cpp */; };
+		D7139A33148D338900C0508A /* MotorIMapa.depend in Resources */ = {isa = PBXBuildFile; fileRef = D7139A01148D338900C0508A /* MotorIMapa.depend */; };
+		D7139A34148D338900C0508A /* MotorIMapa.layout in Resources */ = {isa = PBXBuildFile; fileRef = D7139A03148D338900C0508A /* MotorIMapa.layout */; };
+		D7139A44148D33B400C0508A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D7139A43148D33B400C0508A /* libxml2.dylib */; };
+		D7139A46148D33BB00C0508A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D7139A45148D33BB00C0508A /* libz.dylib */; };
+		D7139A48148D33C300C0508A /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D7139A47148D33C300C0508A /* libiconv.dylib */; };
+		D7139A53148D461A00C0508A /* ControlMaestro.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7139A52148D461A00C0508A /* ControlMaestro.mm */; };
+		D7139A60148D4B7600C0508A /* GestorCpp.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7139A5F148D4B7600C0508A /* GestorCpp.mm */; };
 		D71E44991485467400A9E422 /* ControladorListaBarras.m in Sources */ = {isa = PBXBuildFile; fileRef = D71E44971485467400A9E422 /* ControladorListaBarras.m */; };
 		D71E449A1485467400A9E422 /* ControladorListaBarras.xib in Resources */ = {isa = PBXBuildFile; fileRef = D71E44981485467400A9E422 /* ControladorListaBarras.xib */; };
 		D71E449F14855D2900A9E422 /* CeldaGraficaDeBarras.mm in Sources */ = {isa = PBXBuildFile; fileRef = D71E449E14855D2900A9E422 /* CeldaGraficaDeBarras.mm */; };
@@ -117,6 +148,62 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D71399C9148D338900C0508A /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		D71399CB148D338900C0508A /* Concepto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Concepto.h; sourceTree = "<group>"; };
+		D71399CC148D338900C0508A /* IGestorSecciones.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGestorSecciones.h; sourceTree = "<group>"; };
+		D71399CD148D338900C0508A /* IMotorIMapa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMotorIMapa.h; sourceTree = "<group>"; };
+		D71399CE148D338900C0508A /* Seccion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Seccion.h; sourceTree = "<group>"; };
+		D71399CF148D338900C0508A /* Valor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Valor.h; sourceTree = "<group>"; };
+		D71399D2148D338900C0508A /* iconv.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconv.dll; sourceTree = "<group>"; };
+		D71399D3148D338900C0508A /* iconv.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconv.exe; sourceTree = "<group>"; };
+		D71399D4148D338900C0508A /* libxml2.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = libxml2.dll; sourceTree = "<group>"; };
+		D71399D5148D338900C0508A /* minigzip.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = minigzip.exe; sourceTree = "<group>"; };
+		D71399D6148D338900C0508A /* MotorIMapa.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = MotorIMapa.exe; sourceTree = "<group>"; };
+		D71399D7148D338900C0508A /* xmlcatalog.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = xmlcatalog.exe; sourceTree = "<group>"; };
+		D71399D8148D338900C0508A /* xmllint.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = xmllint.exe; sourceTree = "<group>"; };
+		D71399D9148D338900C0508A /* zlib1.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = zlib1.dll; sourceTree = "<group>"; };
+		D71399DA148D338900C0508A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		D71399DC148D338900C0508A /* Concepto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Concepto.cpp; sourceTree = "<group>"; };
+		D71399DD148D338900C0508A /* Seccion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Seccion.cpp; sourceTree = "<group>"; };
+		D71399DE148D338900C0508A /* Valor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Valor.cpp; sourceTree = "<group>"; };
+		D71399E1148D338900C0508A /* IControladorSecciones.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IControladorSecciones.h; sourceTree = "<group>"; };
+		D71399E2148D338900C0508A /* IControladorSeccionesDelegado.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IControladorSeccionesDelegado.h; sourceTree = "<group>"; };
+		D71399E3148D338900C0508A /* IMotorExtraccion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMotorExtraccion.h; sourceTree = "<group>"; };
+		D71399E5148D338900C0508A /* ControladorSecciones.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ControladorSecciones.cpp; sourceTree = "<group>"; };
+		D71399E6148D338900C0508A /* ControladorSecciones.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControladorSecciones.h; sourceTree = "<group>"; };
+		D71399E7148D338900C0508A /* MotorExtraccion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MotorExtraccion.cpp; sourceTree = "<group>"; };
+		D71399E8148D338900C0508A /* MotorExtraccion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotorExtraccion.h; sourceTree = "<group>"; };
+		D71399EA148D338900C0508A /* LectorXML.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = LectorXML.c; sourceTree = "<group>"; };
+		D71399EB148D338900C0508A /* LectorXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LectorXML.h; sourceTree = "<group>"; };
+		D71399ED148D338900C0508A /* IServicioParseoDelegado.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IServicioParseoDelegado.h; sourceTree = "<group>"; };
+		D71399EE148D338900C0508A /* ServicioParseo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ServicioParseo.cpp; sourceTree = "<group>"; };
+		D71399EF148D338900C0508A /* ServicioParseo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServicioParseo.h; sourceTree = "<group>"; };
+		D71399F2148D338900C0508A /* IRepresentableSecha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IRepresentableSecha.h; sourceTree = "<group>"; };
+		D71399F3148D338900C0508A /* ServicioGeneradorInformacion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServicioGeneradorInformacion.h; sourceTree = "<group>"; };
+		D71399F4148D338900C0508A /* ServicioSerializadorInformacion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServicioSerializadorInformacion.h; sourceTree = "<group>"; };
+		D71399F5148D338900C0508A /* MotorSencha.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MotorSencha.cpp; sourceTree = "<group>"; };
+		D71399F6148D338900C0508A /* MotorSencha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotorSencha.h; sourceTree = "<group>"; };
+		D71399F8148D338900C0508A /* ServicioGeneradorInformacion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ServicioGeneradorInformacion.cpp; sourceTree = "<group>"; };
+		D71399F9148D338900C0508A /* ServicioSerializadorInformacion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ServicioSerializadorInformacion.cpp; sourceTree = "<group>"; };
+		D71399FB148D338900C0508A /* Grafica.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Grafica.cpp; sourceTree = "<group>"; };
+		D71399FC148D338900C0508A /* Grafica.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grafica.h; sourceTree = "<group>"; };
+		D71399FD148D338900C0508A /* GraficaPie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GraficaPie.cpp; sourceTree = "<group>"; };
+		D71399FE148D338900C0508A /* GraficaPie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraficaPie.h; sourceTree = "<group>"; };
+		D71399FF148D338900C0508A /* MotorIMapa.cbp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = MotorIMapa.cbp; sourceTree = "<group>"; };
+		D7139A00148D338900C0508A /* MotorIMapa.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MotorIMapa.cpp; sourceTree = "<group>"; };
+		D7139A01148D338900C0508A /* MotorIMapa.depend */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MotorIMapa.depend; sourceTree = "<group>"; };
+		D7139A02148D338900C0508A /* MotorIMapa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotorIMapa.h; sourceTree = "<group>"; };
+		D7139A03148D338900C0508A /* MotorIMapa.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = MotorIMapa.layout; sourceTree = "<group>"; };
+		D7139A43148D33B400C0508A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		D7139A45148D33BB00C0508A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		D7139A47148D33C300C0508A /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		D7139A51148D461A00C0508A /* ControlMaestro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlMaestro.h; sourceTree = "<group>"; };
+		D7139A52148D461A00C0508A /* ControlMaestro.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ControlMaestro.mm; sourceTree = "<group>"; };
+		D7139A5C148D48C300C0508A /* GestorCpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestorCpp.h; sourceTree = "<group>"; };
+		D7139A5E148D4A6100C0508A /* MotorIMapaAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotorIMapaAPI.h; sourceTree = "<group>"; };
+		D7139A5F148D4B7600C0508A /* GestorCpp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GestorCpp.mm; sourceTree = "<group>"; };
+		D7139A62148D4C8C00C0508A /* iGestorObjectiveC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iGestorObjectiveC.h; sourceTree = "<group>"; };
+		D7139A63148D714300C0508A /* iControlMaestro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iControlMaestro.h; sourceTree = "<group>"; };
 		D71E44961485467400A9E422 /* ControladorListaBarras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControladorListaBarras.h; sourceTree = "<group>"; };
 		D71E44971485467400A9E422 /* ControladorListaBarras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControladorListaBarras.m; sourceTree = "<group>"; };
 		D71E44981485467400A9E422 /* ControladorListaBarras.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ControladorListaBarras.xib; sourceTree = "<group>"; };
@@ -258,6 +345,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7139A48148D33C300C0508A /* libiconv.dylib in Frameworks */,
+				D7139A46148D33BB00C0508A /* libz.dylib in Frameworks */,
+				D7139A44148D33B400C0508A /* libxml2.dylib in Frameworks */,
 				D7AFB73C1474167000D66A37 /* libsqlite3.dylib in Frameworks */,
 				D7AFB73A1474165500D66A37 /* WhirlyGlobe.framework in Frameworks */,
 				D7AFB7381474164700D66A37 /* QuartzCore.framework in Frameworks */,
@@ -271,6 +361,185 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D71399C8148D338900C0508A /* MotorIMapa */ = {
+			isa = PBXGroup;
+			children = (
+				D7139A5E148D4A6100C0508A /* MotorIMapaAPI.h */,
+				D71399C9148D338900C0508A /* .gitignore */,
+				D71399CA148D338900C0508A /* API */,
+				D71399D0148D338900C0508A /* bin */,
+				D71399DA148D338900C0508A /* main.cpp */,
+				D71399DB148D338900C0508A /* Modelo */,
+				D71399DF148D338900C0508A /* MotorExtraccion */,
+				D71399F0148D338900C0508A /* MotorGraficasSencha */,
+				D71399FF148D338900C0508A /* MotorIMapa.cbp */,
+				D7139A00148D338900C0508A /* MotorIMapa.cpp */,
+				D7139A01148D338900C0508A /* MotorIMapa.depend */,
+				D7139A02148D338900C0508A /* MotorIMapa.h */,
+				D7139A03148D338900C0508A /* MotorIMapa.layout */,
+			);
+			path = MotorIMapa;
+			sourceTree = SOURCE_ROOT;
+		};
+		D71399CA148D338900C0508A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				D71399CB148D338900C0508A /* Concepto.h */,
+				D71399CC148D338900C0508A /* IGestorSecciones.h */,
+				D71399CD148D338900C0508A /* IMotorIMapa.h */,
+				D71399CE148D338900C0508A /* Seccion.h */,
+				D71399CF148D338900C0508A /* Valor.h */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		D71399D0148D338900C0508A /* bin */ = {
+			isa = PBXGroup;
+			children = (
+				D71399D1148D338900C0508A /* Debug */,
+			);
+			path = bin;
+			sourceTree = "<group>";
+		};
+		D71399D1148D338900C0508A /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				D71399D2148D338900C0508A /* iconv.dll */,
+				D71399D3148D338900C0508A /* iconv.exe */,
+				D71399D4148D338900C0508A /* libxml2.dll */,
+				D71399D5148D338900C0508A /* minigzip.exe */,
+				D71399D6148D338900C0508A /* MotorIMapa.exe */,
+				D71399D7148D338900C0508A /* xmlcatalog.exe */,
+				D71399D8148D338900C0508A /* xmllint.exe */,
+				D71399D9148D338900C0508A /* zlib1.dll */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		D71399DB148D338900C0508A /* Modelo */ = {
+			isa = PBXGroup;
+			children = (
+				D71399DC148D338900C0508A /* Concepto.cpp */,
+				D71399DD148D338900C0508A /* Seccion.cpp */,
+				D71399DE148D338900C0508A /* Valor.cpp */,
+			);
+			path = Modelo;
+			sourceTree = "<group>";
+		};
+		D71399DF148D338900C0508A /* MotorExtraccion */ = {
+			isa = PBXGroup;
+			children = (
+				D71399E0148D338900C0508A /* API */,
+				D71399E4148D338900C0508A /* Controladores */,
+				D71399E7148D338900C0508A /* MotorExtraccion.cpp */,
+				D71399E8148D338900C0508A /* MotorExtraccion.h */,
+				D71399E9148D338900C0508A /* Servicios */,
+			);
+			path = MotorExtraccion;
+			sourceTree = "<group>";
+		};
+		D71399E0148D338900C0508A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				D71399E1148D338900C0508A /* IControladorSecciones.h */,
+				D71399E2148D338900C0508A /* IControladorSeccionesDelegado.h */,
+				D71399E3148D338900C0508A /* IMotorExtraccion.h */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		D71399E4148D338900C0508A /* Controladores */ = {
+			isa = PBXGroup;
+			children = (
+				D71399E5148D338900C0508A /* ControladorSecciones.cpp */,
+				D71399E6148D338900C0508A /* ControladorSecciones.h */,
+			);
+			path = Controladores;
+			sourceTree = "<group>";
+		};
+		D71399E9148D338900C0508A /* Servicios */ = {
+			isa = PBXGroup;
+			children = (
+				D71399EA148D338900C0508A /* LectorXML.c */,
+				D71399EB148D338900C0508A /* LectorXML.h */,
+				D71399EC148D338900C0508A /* Protocolos */,
+				D71399EE148D338900C0508A /* ServicioParseo.cpp */,
+				D71399EF148D338900C0508A /* ServicioParseo.h */,
+			);
+			path = Servicios;
+			sourceTree = "<group>";
+		};
+		D71399EC148D338900C0508A /* Protocolos */ = {
+			isa = PBXGroup;
+			children = (
+				D71399ED148D338900C0508A /* IServicioParseoDelegado.h */,
+			);
+			path = Protocolos;
+			sourceTree = "<group>";
+		};
+		D71399F0148D338900C0508A /* MotorGraficasSencha */ = {
+			isa = PBXGroup;
+			children = (
+				D71399F1148D338900C0508A /* API */,
+				D71399F5148D338900C0508A /* MotorSencha.cpp */,
+				D71399F6148D338900C0508A /* MotorSencha.h */,
+				D71399F7148D338900C0508A /* Servicios */,
+				D71399FA148D338900C0508A /* vista */,
+			);
+			path = MotorGraficasSencha;
+			sourceTree = "<group>";
+		};
+		D71399F1148D338900C0508A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				D71399F2148D338900C0508A /* IRepresentableSecha.h */,
+				D71399F3148D338900C0508A /* ServicioGeneradorInformacion.h */,
+				D71399F4148D338900C0508A /* ServicioSerializadorInformacion.h */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		D71399F7148D338900C0508A /* Servicios */ = {
+			isa = PBXGroup;
+			children = (
+				D71399F8148D338900C0508A /* ServicioGeneradorInformacion.cpp */,
+				D71399F9148D338900C0508A /* ServicioSerializadorInformacion.cpp */,
+			);
+			path = Servicios;
+			sourceTree = "<group>";
+		};
+		D71399FA148D338900C0508A /* vista */ = {
+			isa = PBXGroup;
+			children = (
+				D71399FB148D338900C0508A /* Grafica.cpp */,
+				D71399FC148D338900C0508A /* Grafica.h */,
+				D71399FD148D338900C0508A /* GraficaPie.cpp */,
+				D71399FE148D338900C0508A /* GraficaPie.h */,
+			);
+			path = vista;
+			sourceTree = "<group>";
+		};
+		D7139A4D148D371C00C0508A /* ControladorNegocio */ = {
+			isa = PBXGroup;
+			children = (
+				D7139A61148D4C5800C0508A /* Protocolos */,
+				D7139A51148D461A00C0508A /* ControlMaestro.h */,
+				D7139A52148D461A00C0508A /* ControlMaestro.mm */,
+				D7139A5C148D48C300C0508A /* GestorCpp.h */,
+				D7139A5F148D4B7600C0508A /* GestorCpp.mm */,
+			);
+			name = ControladorNegocio;
+			sourceTree = "<group>";
+		};
+		D7139A61148D4C5800C0508A /* Protocolos */ = {
+			isa = PBXGroup;
+			children = (
+				D7139A62148D4C8C00C0508A /* iGestorObjectiveC.h */,
+				D7139A63148D714300C0508A /* iControlMaestro.h */,
+			);
+			name = Protocolos;
+			sourceTree = "<group>";
+		};
 		D71E449C14855CD300A9E422 /* componentes */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +607,9 @@
 		D7AFB70D1474136200D66A37 = {
 			isa = PBXGroup;
 			children = (
+				D7139A47148D33C300C0508A /* libiconv.dylib */,
+				D7139A45148D33BB00C0508A /* libz.dylib */,
+				D7139A43148D33B400C0508A /* libxml2.dylib */,
 				D7AFB73E1474324800D66A37 /* resources */,
 				D7AFB73B1474167000D66A37 /* libsqlite3.dylib */,
 				D7AFB7391474165500D66A37 /* WhirlyGlobe.framework */,
@@ -370,6 +642,8 @@
 		D7AFB7221474136200D66A37 /* iGlobo */ = {
 			isa = PBXGroup;
 			children = (
+				D7139A4D148D371C00C0508A /* ControladorNegocio */,
+				D71399C8148D338900C0508A /* MotorIMapa */,
 				D7934C8714770A80005B13C2 /* Servicio */,
 				D7934C831477071C005B13C2 /* Capas */,
 				D7AFB7E014743D9B00D66A37 /* Utilidades */,
@@ -727,6 +1001,18 @@
 				D794F08F148686C3000855BB /* Hombres.png in Resources */,
 				D794F090148686C3000855BB /* Mujeres.png in Resources */,
 				D794F09214868B2A000855BB /* hombre gde.png in Resources */,
+				D7139A1B148D338900C0508A /* .gitignore in Resources */,
+				D7139A1C148D338900C0508A /* iconv.dll in Resources */,
+				D7139A1D148D338900C0508A /* iconv.exe in Resources */,
+				D7139A1E148D338900C0508A /* libxml2.dll in Resources */,
+				D7139A1F148D338900C0508A /* minigzip.exe in Resources */,
+				D7139A20148D338900C0508A /* MotorIMapa.exe in Resources */,
+				D7139A21148D338900C0508A /* xmlcatalog.exe in Resources */,
+				D7139A22148D338900C0508A /* xmllint.exe in Resources */,
+				D7139A23148D338900C0508A /* zlib1.dll in Resources */,
+				D7139A31148D338900C0508A /* MotorIMapa.cbp in Resources */,
+				D7139A33148D338900C0508A /* MotorIMapa.depend in Resources */,
+				D7139A34148D338900C0508A /* MotorIMapa.layout in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -756,6 +1042,22 @@
 				D71E449F14855D2900A9E422 /* CeldaGraficaDeBarras.mm in Sources */,
 				D71E44A414855F9000A9E422 /* drawing.m in Sources */,
 				D71E44A514855F9000A9E422 /* PDColoredProgressView.m in Sources */,
+				D7139A24148D338900C0508A /* main.cpp in Sources */,
+				D7139A25148D338900C0508A /* Concepto.cpp in Sources */,
+				D7139A26148D338900C0508A /* Seccion.cpp in Sources */,
+				D7139A27148D338900C0508A /* Valor.cpp in Sources */,
+				D7139A28148D338900C0508A /* ControladorSecciones.cpp in Sources */,
+				D7139A29148D338900C0508A /* MotorExtraccion.cpp in Sources */,
+				D7139A2A148D338900C0508A /* LectorXML.c in Sources */,
+				D7139A2B148D338900C0508A /* ServicioParseo.cpp in Sources */,
+				D7139A2C148D338900C0508A /* MotorSencha.cpp in Sources */,
+				D7139A2D148D338900C0508A /* ServicioGeneradorInformacion.cpp in Sources */,
+				D7139A2E148D338900C0508A /* ServicioSerializadorInformacion.cpp in Sources */,
+				D7139A2F148D338900C0508A /* Grafica.cpp in Sources */,
+				D7139A30148D338900C0508A /* GraficaPie.cpp in Sources */,
+				D7139A32148D338900C0508A /* MotorIMapa.cpp in Sources */,
+				D7139A53148D461A00C0508A /* ControlMaestro.mm in Sources */,
+				D7139A60148D4B7600C0508A /* GestorCpp.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -838,6 +1140,7 @@
 				GCC_PREFIX_HEADER = "iGlobo/iGlobo-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/include/libxml2",
 					libs/boost_1_45_0,
 					"libs/eigen-eigen-3.0.1/",
 				);
@@ -859,6 +1162,7 @@
 				GCC_PREFIX_HEADER = "iGlobo/iGlobo-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/include/libxml2",
 					libs/boost_1_45_0,
 					"libs/eigen-eigen-3.0.1/",
 				);
