@@ -27,8 +27,9 @@
 
 }
 
-@property(nonatomic, retain)IBOutlet UIView* representacionGlobo;
-@property(nonatomic, retain)IBOutlet UIView* representacionGraficaBarrasIzquierdo;
-@property(nonatomic, retain)IBOutlet UIView* representacionGraficaBarrasDerecha;
+@property(nonatomic, retain) IBOutlet UIView* representacionGlobo;
+@property(nonatomic, retain) IBOutlet UIView* representacionGraficaBarrasIzquierdo;
+@property(nonatomic, retain) IBOutlet UIView* representacionGraficaBarrasDerecha;
+@property(nonatomic, retain) id<iControladorVista> controladorVista;
 
 @end

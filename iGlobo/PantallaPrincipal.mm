@@ -11,11 +11,9 @@
 @implementation PantallaPrincipal
 
 @synthesize representacionGlobo = _representacionGlobo;
-
-
 @synthesize representacionGraficaBarrasIzquierdo = _representacionGraficaBarrasIzquierdo;
-
-@synthesize  representacionGraficaBarrasDerecha = _representacionGraficaBarrasDerecha;
+@synthesize representacionGraficaBarrasDerecha = _representacionGraficaBarrasDerecha;
+@synthesize controladorVista = _controladorRepresentacionGlobo;
 
 -(void)dealloc
 {
@@ -53,13 +51,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _controladorRepresentacionGlobo = [[ControladorRepresentacionGlobo alloc]  initWithNibName:@"ControladorRepresentacionGlobo" bundle:nil ];
+
     self.representacionGlobo.layer.cornerRadius = 5;
     
     _controladorRepresentacionListaGraficaBarrasIzquierda = [[ ControladorListaBarras alloc] initWithNibName:@"ControladorListaBarras" bundle:nil ];
-    
-    
-    
     
      _controladorRepresentacionListaGraficaBarrasDerecha = [[ ControladorListaBarras alloc] initWithNibName:@"ControladorListaBarras" bundle:nil ];
     

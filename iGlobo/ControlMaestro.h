@@ -12,6 +12,7 @@
 #import "iGestorObjectiveC.h"
 
 #include "GestorCpp.h"
+
 #include <set>
 
 struct MotorIMapa;
@@ -19,10 +20,12 @@ struct MotorIMapa;
 @interface ControlMaestro : NSObject<iControlMaestro>
 {
     MotorIMapa * motor;
+    
     std::set<GestorCpp *> gestores;
 }
 
 - (void) registraGestor: (id<iGestorObjectiveC>) gestor;
 - (void) estableceVariable:(NSString *) nombre valor: (NSString *) valor;
+- (void) cargaArchivos;
 
 @end

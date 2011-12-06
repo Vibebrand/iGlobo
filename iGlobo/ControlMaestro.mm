@@ -46,4 +46,14 @@
     motor->actualizaSecciones();
 }
 
+- (void) cargaArchivos {
+    NSString * pathInteres = [[NSBundle mainBundle] bundlePath];
+    NSArray * elementos = [NSBundle pathsForResourcesOfType: @"xml" inDirectory: pathInteres];
+    NSEnumerator * it_elementos = [elementos objectEnumerator];
+    id elemento = nil;
+    while(elemento = [it_elementos nextObject]) {
+        motor->procesaArchivo([elemento fileSystemRepresentation]);
+    }
+}
+
 @end

@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "ControladorRepresentacionGlobo.h"
 #import "PantallaPrincipal.h"
+#import "ControlMaestro.h"
+
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -18,6 +20,7 @@
    
     //[_controladorRepresentacionGlobo release];
     [_pantallaPrincipal release];
+    [_controlMaestro release];
     [_window release];
     [super dealloc];
 }
@@ -28,18 +31,26 @@
     //[[_pantallaPrincipal representacionGlobo] addSubview:_controladorRepresentacionGlobo.view];
     [self.window addSubview:_pantallaPrincipal.view];
     [self.window makeKeyAndVisible];
+    [_controlMaestro actualizaSecciones];
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     self.window.backgroundColor = [UIColor whiteColor];
     
+    ControladorRepresentacionGlobo * controladorRepresentacionGlobo = [[ControladorRepresentacionGlobo alloc]  initWithNibName:@"ControladorRepresentacionGlobo" bundle:nil ];
+    
     _pantallaPrincipal = [[ PantallaPrincipal alloc ] initWithNibName:@"PantallaPrincipal" bundle:[NSBundle mainBundle]];
+    [_pantallaPrincipal setControladorVista: controladorRepresentacionGlobo];
+    _controlMaestro = [ControlMaestro new];
     
+    id gestorInteres = controladorRepresentacionGlobo;
+    if([gestorInteres conformsToProtocol: @protocol(iGestorObjectiveC)]) {
+        [_controlMaestro registraGestor: gestorInteres];
+    }
     
-   // _controladorRepresentacionGlobo = [[ControladorRepresentacionGlobo alloc ] initWithView:_pantallaPrincipal.view];
-    //_controladorRepresentacionGlobo = [[ControladorRepresentacionGlobo alloc]  initWithNibName:@"ControladorRepresentacionGlobo" bundle:nil ];
-    //[_pantallaPrincipal setRepresentacionGlobo:_controladorRepresentacionGlobo.view] ;
+    [_controlMaestro cargaArchivos];
+    [controladorRepresentacionGlobo release];
     
     [self performSelectorOnMainThread:@selector(postLaunch:) withObject:nil waitUntilDone:NO];
     return YES;

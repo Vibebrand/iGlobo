@@ -295,13 +295,24 @@
 
 #pragma iGestorObjectiveC
 
-- (void) procesaSeccion: (NSDictionary *) seccion{}
-- (void) seccionInvalida: (NSDictionary *) seccion{}
-- (void) finalizadaActualizacionSecciones{}
+- (void) procesaSeccion: (NSDictionary *) seccion
+{
+    NSLog(@"ProcesaSeccion: %@", seccion);
+}
+
+- (void) seccionInvalida: (NSDictionary *) seccion
+{
+    NSLog(@"seccionInvalida: %@", seccion);
+}
+- (void) finalizadaActualizacionSecciones
+{
+    NSLog(@"finalizadaActualizacionSecciones");
+}
+
 - (NSArray *) obtenNombreSeccionesGestionadas
-   {
-    return [NSArray arrayWithObject: @""];
-   }
+{
+    return [NSArray arrayWithObject: @"tabla"];
+}
 
 - (NSArray *) obtenNombreSeccionesNoGestionadas
    {
