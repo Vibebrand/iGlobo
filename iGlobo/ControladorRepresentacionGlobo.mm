@@ -322,6 +322,8 @@
 - (void) registraControlMaestro: (id<iControlMaestro>) controlMaestro
   {
       [self setControlMaestro:controlMaestro];
+      [controlMaestro estableceVariable:@"Pais" valor:@""];
+      [controlMaestro estableceVariable:@"Entidad federativa" valor:@""];
   }
 
 @end
