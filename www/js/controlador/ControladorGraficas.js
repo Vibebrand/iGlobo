@@ -65,6 +65,27 @@ Ext.regController('ControladorGrafica', {
 	    
 	} , 0);
     },
+    registraGrafica: function(opciones) {
+	var me = this;
+	var definicionGrafica = opciones.definicionGrafica;
+	if(definicionGrafica !== undefined) {
+	    var contenedorPrincipal = Ext.getCmp("contenedorPrincipal");
+	    contenedorPrincipal.add(definicionGrafica);
+	    contenedorPrincipal.doLayout()
+	}
+    },
+    actualizaGrafica: function(opciones) {
+	var me = this;
+	var identificadorGrafica = opciones.identificadorGrafica;
+	var definicionGrafica = opciones.definicionGrafica;
+	if(identificadorGrafica !== undefined && definicionGrafica !== undefined) {
+	    var graficaInteres = Ext.getCmp(identificadorGrafica);
+	    if(graficaInteres !== undefined) {
+		graficaInteres.store.loadData(definicionGrafica);
+	    }
+	}
+
+    },
     inicializaGrafica: function(opciones) {
 	var graficaInteres = opciones.views.grafica;
 	if(this.graficasRegistradas === undefined) {

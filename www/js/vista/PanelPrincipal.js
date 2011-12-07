@@ -1,9 +1,9 @@
 Grafo.PanelPrincipal = Ext.extend(Ext.Panel,{
     layout : 'fit',
+    id: 'contenedorPrincipal',
     initComponent : function() {
 	var me = this;
 	me.injectCodeToSeries();
-	me.items = me.buildItems();
 	Grafo.PanelPrincipal.superclass.initComponent.call(this);
     },
     injectCodeToSeries: function(){
@@ -55,20 +55,5 @@ Grafo.PanelPrincipal = Ext.extend(Ext.Panel,{
 	    action: 'cambioEnLeyenda',
 	    json:  { nombre : _nombre , valor : _valor, oculto: _oculto }
 	}); 
-    },
-    buildItems: function() {
-	return[
-	    {
-		xtype:'carrusel',
-		id: "xxx",
-		items: [
-		    {
-			xtype: "panel"
-		    }, {
-			xtype: "panel"
-		    }
-		]
-	    }
-	];
     }
 });
