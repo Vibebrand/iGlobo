@@ -151,41 +151,19 @@
 		F1C8B239148EFECF00A85AB6 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C8B238148EFECF00A85AB6 /* libxml2.dylib */; };
 		F1C8B23B148EFED900A85AB6 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C8B23A148EFED900A85AB6 /* libiconv.dylib */; };
 		F1C8B23D148EFEDE00A85AB6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C8B23C148EFEDE00A85AB6 /* libz.dylib */; };
-		F1C8B23E148EFF1E00A85AB6 /* MotorSenchaAPI.h in Sources */ = {isa = PBXBuildFile; fileRef = F11D3A84148DA3EF00C8D088 /* MotorSenchaAPI.h */; };
-		F1C8B23F148EFF1E00A85AB6 /* MotorIMapaAPI.h in Sources */ = {isa = PBXBuildFile; fileRef = D7139A5E148D4A6100C0508A /* MotorIMapaAPI.h */; };
-		F1C8B240148EFF1E00A85AB6 /* Concepto.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399CB148D338900C0508A /* Concepto.h */; };
-		F1C8B241148EFF1E00A85AB6 /* IGestorSecciones.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399CC148D338900C0508A /* IGestorSecciones.h */; };
-		F1C8B242148EFF1E00A85AB6 /* IMotorIMapa.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399CD148D338900C0508A /* IMotorIMapa.h */; };
-		F1C8B243148EFF1E00A85AB6 /* Seccion.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399CE148D338900C0508A /* Seccion.h */; };
-		F1C8B244148EFF1E00A85AB6 /* Valor.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399CF148D338900C0508A /* Valor.h */; };
 		F1C8B245148EFF1E00A85AB6 /* Concepto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399DC148D338900C0508A /* Concepto.cpp */; };
 		F1C8B246148EFF1E00A85AB6 /* Seccion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399DD148D338900C0508A /* Seccion.cpp */; };
 		F1C8B247148EFF1E00A85AB6 /* Valor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399DE148D338900C0508A /* Valor.cpp */; };
-		F1C8B248148EFF1E00A85AB6 /* IControladorSecciones.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399E1148D338900C0508A /* IControladorSecciones.h */; };
-		F1C8B249148EFF1E00A85AB6 /* IControladorSeccionesDelegado.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399E2148D338900C0508A /* IControladorSeccionesDelegado.h */; };
-		F1C8B24A148EFF1E00A85AB6 /* IMotorExtraccion.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399E3148D338900C0508A /* IMotorExtraccion.h */; };
 		F1C8B24B148EFF1E00A85AB6 /* ControladorSecciones.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399E5148D338900C0508A /* ControladorSecciones.cpp */; };
-		F1C8B24C148EFF1E00A85AB6 /* ControladorSecciones.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399E6148D338900C0508A /* ControladorSecciones.h */; };
 		F1C8B24D148EFF1E00A85AB6 /* MotorExtraccion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399E7148D338900C0508A /* MotorExtraccion.cpp */; };
-		F1C8B24E148EFF1E00A85AB6 /* MotorExtraccion.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399E8148D338900C0508A /* MotorExtraccion.h */; };
 		F1C8B24F148EFF1E00A85AB6 /* LectorXML.c in Sources */ = {isa = PBXBuildFile; fileRef = D71399EA148D338900C0508A /* LectorXML.c */; };
-		F1C8B250148EFF1E00A85AB6 /* LectorXML.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399EB148D338900C0508A /* LectorXML.h */; };
-		F1C8B251148EFF1E00A85AB6 /* IServicioParseoDelegado.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399ED148D338900C0508A /* IServicioParseoDelegado.h */; };
 		F1C8B252148EFF1E00A85AB6 /* ServicioParseo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399EE148D338900C0508A /* ServicioParseo.cpp */; };
-		F1C8B253148EFF1E00A85AB6 /* ServicioParseo.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399EF148D338900C0508A /* ServicioParseo.h */; };
-		F1C8B254148EFF1E00A85AB6 /* IRepresentableSecha.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399F2148D338900C0508A /* IRepresentableSecha.h */; };
-		F1C8B255148EFF1E00A85AB6 /* ServicioGeneradorInformacion.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399F3148D338900C0508A /* ServicioGeneradorInformacion.h */; };
-		F1C8B256148EFF1E00A85AB6 /* ServicioSerializadorInformacion.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399F4148D338900C0508A /* ServicioSerializadorInformacion.h */; };
 		F1C8B257148EFF1E00A85AB6 /* MotorSencha.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399F5148D338900C0508A /* MotorSencha.cpp */; };
-		F1C8B258148EFF1E00A85AB6 /* MotorSencha.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399F6148D338900C0508A /* MotorSencha.h */; };
 		F1C8B259148EFF1E00A85AB6 /* ServicioGeneradorInformacion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399F8148D338900C0508A /* ServicioGeneradorInformacion.cpp */; };
 		F1C8B25A148EFF1E00A85AB6 /* ServicioSerializadorInformacion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399F9148D338900C0508A /* ServicioSerializadorInformacion.cpp */; };
 		F1C8B25B148EFF1E00A85AB6 /* Grafica.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399FB148D338900C0508A /* Grafica.cpp */; };
-		F1C8B25C148EFF1E00A85AB6 /* Grafica.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399FC148D338900C0508A /* Grafica.h */; };
 		F1C8B25D148EFF1E00A85AB6 /* GraficaPie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399FD148D338900C0508A /* GraficaPie.cpp */; };
-		F1C8B25E148EFF1E00A85AB6 /* GraficaPie.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399FE148D338900C0508A /* GraficaPie.h */; };
 		F1C8B25F148EFF1E00A85AB6 /* MotorIMapa.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7139A00148D338900C0508A /* MotorIMapa.cpp */; };
-		F1C8B260148EFF1E00A85AB6 /* MotorIMapa.h in Sources */ = {isa = PBXBuildFile; fileRef = D7139A02148D338900C0508A /* MotorIMapa.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -1172,42 +1150,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1C8B23E148EFF1E00A85AB6 /* MotorSenchaAPI.h in Sources */,
-				F1C8B23F148EFF1E00A85AB6 /* MotorIMapaAPI.h in Sources */,
-				F1C8B240148EFF1E00A85AB6 /* Concepto.h in Sources */,
-				F1C8B241148EFF1E00A85AB6 /* IGestorSecciones.h in Sources */,
-				F1C8B242148EFF1E00A85AB6 /* IMotorIMapa.h in Sources */,
-				F1C8B243148EFF1E00A85AB6 /* Seccion.h in Sources */,
-				F1C8B244148EFF1E00A85AB6 /* Valor.h in Sources */,
 				F1C8B231148EFE4A00A85AB6 /* main.cpp in Sources */,
 				F1C8B245148EFF1E00A85AB6 /* Concepto.cpp in Sources */,
 				F1C8B246148EFF1E00A85AB6 /* Seccion.cpp in Sources */,
 				F1C8B247148EFF1E00A85AB6 /* Valor.cpp in Sources */,
-				F1C8B248148EFF1E00A85AB6 /* IControladorSecciones.h in Sources */,
-				F1C8B249148EFF1E00A85AB6 /* IControladorSeccionesDelegado.h in Sources */,
-				F1C8B24A148EFF1E00A85AB6 /* IMotorExtraccion.h in Sources */,
 				F1C8B24B148EFF1E00A85AB6 /* ControladorSecciones.cpp in Sources */,
-				F1C8B24C148EFF1E00A85AB6 /* ControladorSecciones.h in Sources */,
 				F1C8B24D148EFF1E00A85AB6 /* MotorExtraccion.cpp in Sources */,
-				F1C8B24E148EFF1E00A85AB6 /* MotorExtraccion.h in Sources */,
 				F1C8B24F148EFF1E00A85AB6 /* LectorXML.c in Sources */,
-				F1C8B250148EFF1E00A85AB6 /* LectorXML.h in Sources */,
-				F1C8B251148EFF1E00A85AB6 /* IServicioParseoDelegado.h in Sources */,
 				F1C8B252148EFF1E00A85AB6 /* ServicioParseo.cpp in Sources */,
-				F1C8B253148EFF1E00A85AB6 /* ServicioParseo.h in Sources */,
-				F1C8B254148EFF1E00A85AB6 /* IRepresentableSecha.h in Sources */,
-				F1C8B255148EFF1E00A85AB6 /* ServicioGeneradorInformacion.h in Sources */,
-				F1C8B256148EFF1E00A85AB6 /* ServicioSerializadorInformacion.h in Sources */,
 				F1C8B257148EFF1E00A85AB6 /* MotorSencha.cpp in Sources */,
-				F1C8B258148EFF1E00A85AB6 /* MotorSencha.h in Sources */,
 				F1C8B259148EFF1E00A85AB6 /* ServicioGeneradorInformacion.cpp in Sources */,
 				F1C8B25A148EFF1E00A85AB6 /* ServicioSerializadorInformacion.cpp in Sources */,
 				F1C8B25B148EFF1E00A85AB6 /* Grafica.cpp in Sources */,
-				F1C8B25C148EFF1E00A85AB6 /* Grafica.h in Sources */,
 				F1C8B25D148EFF1E00A85AB6 /* GraficaPie.cpp in Sources */,
-				F1C8B25E148EFF1E00A85AB6 /* GraficaPie.h in Sources */,
 				F1C8B25F148EFF1E00A85AB6 /* MotorIMapa.cpp in Sources */,
-				F1C8B260148EFF1E00A85AB6 /* MotorIMapa.h in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1382,6 +1338,7 @@
 				F1C8B235148EFE4A00A85AB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
