@@ -23,6 +23,9 @@
     PanelRedondo * _panelRedondo;
     UILabel * _etiquetaNombrePais;
     UILabel * _etiquetaNombreRegion;
+    UILabel * _etiquetaTotalPoblacion;
+    UILabel * _etiquetaDescripcionPoligono;
+    UIButton *_botonOcultarMensajes;
     
     EAGLView *glView;
 	SceneRendererES1 *sceneRenderer;
@@ -52,6 +55,7 @@
     ControladorCapaDeInteraccion * controladorCapaDeInteraccion;
     
     ControladorMapa * controladorMapa;
+    ControlMaestro * _controlMaestro;
     
     
     
@@ -66,6 +70,7 @@
 #pragma iDelegadoPanelRepresentacionGlobo
 -(void) establecerNombrePais:(NSString *) nombrePais;
 -(void) establecerNombreRegion:(NSString *)nombreRegion;
+
 
 #pragma iControladorVista
 
@@ -83,8 +88,16 @@
 - (void) registraControlMaestro: (id<iControlMaestro>) controlMaestro;
 
 //Vista
+
+-(IBAction)cmdOcultarEtiqueta:(id)sender;
+
 @property (nonatomic,retain) IBOutlet UILabel * etiquetaNombrePais;
 @property (nonatomic,retain) IBOutlet UILabel * etiquetaNombreRegion;
+@property (nonatomic,retain) IBOutlet UILabel * etiquetaTotalPoblacion;
+@property (nonatomic,retain) IBOutlet UILabel * etiquetaDescripcionPoligono;
+@property (nonatomic, retain) IBOutlet UIButton * botonOcultarMensajes;
+
+
 
 @property (nonatomic,retain) EAGLView *glView;
 @property (nonatomic,retain) SceneRendererES1 *sceneRenderer;
@@ -103,6 +116,9 @@
 @property (nonatomic,retain) ControladorCapaDeInteraccion * controladorCapaDeInteraccion;
 
 @property (nonatomic,retain)  LoftLayer * loftlayer;
+
+@property(nonatomic, assign) ControlMaestro * controlMaestro;
+
 
 
 

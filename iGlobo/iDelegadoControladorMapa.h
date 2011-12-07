@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <WhirlyGlobe/WhirlyGlobe.h>
+#import "ControlMaestro.h"
 
 @protocol iDelegadoControladorMapa <NSObject>
 
@@ -20,4 +21,7 @@
 -(void)establecerlayerThread:(WhirlyGlobeLayerThread *) layerThread;
 
 -(void)establecerScene:(WhirlyGlobe::GlobeScene *)scene;
+
+-(void)estableceControlMaestro:(ControlMaestro *) controlMaestro;
+
 @end

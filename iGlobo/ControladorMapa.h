@@ -14,6 +14,7 @@
 #import "iDelegadoPanelRepresentacionGlobo.h"
 #import <list>
 
+
 typedef std::set<WhirlyGlobe::SimpleIdentity> SimpleIDSet;
 typedef enum {PoligonoPais ,PoligonoOceano} TipoPoligono;
 
@@ -58,6 +59,8 @@ typedef std::list<RepresentacionPoligono*> RepresentacionesDePoligono;
     id<iServicioDeIluminacionPorRegion> _servicioIluminacion;
     id<iDelegadoPanelRepresentacionGlobo> _delegadoPanelRepresentacionGlobo;
     
+    ControlMaestro *_controlMaestro;
+    
 //Desacoplar a un servicio de Datos    
 }
 
@@ -91,6 +94,8 @@ typedef std::list<RepresentacionPoligono*> RepresentacionesDePoligono;
 
 -(void)establecerScene:(WhirlyGlobe::GlobeScene *)scene;
 
+-(void)estableceControlMaestro:(ControlMaestro *) controlMaestro;
+
 #pragma Argumentos
 
 @property(nonatomic,retain) WhirlyGlobeLayerThread *layerThread;
@@ -102,5 +107,6 @@ typedef std::list<RepresentacionPoligono*> RepresentacionesDePoligono;
 @property(nonatomic, retain) ServicioBDGeograficas *servicioBDGeograficas;
 @property(nonatomic, retain) id<iServicioDeIluminacionPorRegion> servicioIluminacion;
 @property(nonatomic, assign) id<iDelegadoPanelRepresentacionGlobo> delegadoPanelRepresentacionGlobo;
+@property(nonatomic, assign) ControlMaestro * controlMaestro;
 
 @end
