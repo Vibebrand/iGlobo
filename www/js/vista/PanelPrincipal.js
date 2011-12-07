@@ -56,160 +56,19 @@ Grafo.PanelPrincipal = Ext.extend(Ext.Panel,{
 	    json:  { nombre : _nombre , valor : _valor, oculto: _oculto }
 	}); 
     },
-    buildItems: function(){
+    buildItems: function() {
 	return[
-	    { 	xtype:'carrusel',
-		activeItem : 1,
-		items :[ this.buildPieChart(), this.buildRadarChart(),this.buildPieChartDegrees()]}
+	    {
+		xtype:'carrusel',
+		id: "xxx",
+		items: [
+		    {
+			xtype: "panel"
+		    }, {
+			xtype: "panel"
+		    }
+		]
+	    }
 	];
-    },
-    buildRadarChart:function(){
-	return graficaRadar;
-    },
-    buildPieChart: function(){
-	return graficaPieCiencia;
-    },
-    buildPieChartDegrees: function(){
-	return graficaArea;
     }
 });
-
-var graficaRadar = {
-    id : '_graficaRadar',
-    xtype: 'grafica',
-    titulo: 'Niveles SNI',
-    toolbar:{position: 'right'},
-    insetPadding : 50,
-    animate:true,
-    interactions: [
-	{
-	    type: 'rotate',
-	    gesture:'pinch'
-	}
-    ],
-    legend : {
-	dock : true
-    },
-    store : Ext.StoreMgr.get('TitulosBajoNivelesStore'),
-    axes : [{
-	type : 'Radial',
-	position : 'radial',
-	steps : 3,
-	label : {
-	    field: 'nombreTitulo'
-	}
-    }],
-    series : [
-        {
-            type : 'radar',
-            xField : 'nombreTitulo',
-            yField : 'C',
-            showInLegend : true,
-            style : {opacity : 0.3},
-            title: 'Nivel C'
-        },
-	{
-	    type : 'radar',
-	    xField : 'nombreTitulo',
-	    yField : 'I',
-	    showInLegend : true,
-	    style : {opacity : 0.3},
-	    title: 'Nivel I'
-	},
-	{
-	    type : 'radar',
-	    xField : 'nombreTitulo',
-	    yField : 'II',
-	    showInLegend : true,
-	    style : {opacity : 0.3},
-	    title: 'Nivel II'
-	},
-	{
-	    type : 'radar',
-	    xField : 'nombreTitulo',
-	    yField : 'III',
-	    showInLegend : true,
-	    style : {opacity : 0.3},
-	    title: 'Nivel III'
-	}
-    ]
-};
-
-var graficaPieCiencia = {
-    id : '_graficaPieCiencia',
-    titulo: 'Areas SNI',
-    xtype : 'grafica',
-    toolbar:{position: 'right'},
-    animate : true,
-    insetPadding : 30,
-    store : Ext.StoreMgr.get('AreasSNIStore'),
-    legend : {
-	dock : true
-    },
-    interactions: [
-	{
-	    type: 'iteminfo',
-	    panel:{
-		dockedItems : [{dock : 'top', xtype: 'toolbar', title: 'Detalles'}]
-	    },
-	    listeners: {
-		show: function(interaction, item, panel) {
-		    panel.update(['<ul><li><b>' + item.storeItem.get('nombreCiencia') + '</b></li>', '<li><b>Cantidad: </b> ' + item.storeItem.get('cantidad') + '</li></ul>'].join(''));
-		}
-	    }
-	}
-    ],
-    series : [{
-	type: 'pie',
-        angleField: 'cantidad',
-        showInLegend: true,
-        label: {
-            field: 'nombreCiencia',
-            display: 'none',
-            contrast: true,
-            font: '18px Arial'
-        }
-    }]
-}
-
-var graficaArea = {
-    id : '_graficaAreaTitulos',
-    titulo: 'Titulos',
-    xtype: 'grafica',
-    store : Ext.StoreMgr.get('NivelesSNIBajoTiTulosStore'),
-    animate: true,
-    insetPadding : 30,
-    legend : {
-	dock : true
-    },
-    axes: [{
-        type: 'Numeric',
-        position: 'left',
-        grid: true,
-        fields: ['Diplomado', 'Doctorado', 'Especialidad', 'Licenciatura', 'Maestria', 'Posdoctorado'],
-        minimum: 0,
-        adjustMinimumByMajorUnit: 0,
-        grid: {
-            odd: {
-                opacity: 1,
-                fill: '#ddd',
-                stroke: '#bbb',
-                'stroke-width': 1
-            }
-       	}
-    },{
-        type: 'Category',
-        grid: true,
-        position: 'bottom',
-        fields: ['nombreNivel'],
-        title: 'Niveles SNI'
-    }],
-    series: [{
-        type: 'area',
-        highlight: false,
-        axis: 'left',
-        xField: 'nombreNivel',
-        yField: ['Diplomado', 'Doctorado', 'Especialidad', 'Licenciatura', 'Maestria', 'Posdoctorado']
-    }]
-}
-
