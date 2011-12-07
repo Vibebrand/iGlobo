@@ -146,7 +146,60 @@
 		D7AFB7F1147444A800D66A37 /* LoftLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7AFB7F0147444A800D66A37 /* LoftLayer.mm */; };
 		D7F46FAB147D512600EBC270 /* ServicioMosaicoGeografico.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7F46FAA147D512600EBC270 /* ServicioMosaicoGeografico.mm */; };
 		F11D3A82148DA04C00C8D088 /* Nayarit_2010.xml in Resources */ = {isa = PBXBuildFile; fileRef = F11D3A81148DA04C00C8D088 /* Nayarit_2010.xml */; };
+		F1C8B231148EFE4A00A85AB6 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1C8B230148EFE4A00A85AB6 /* main.cpp */; };
+		F1C8B233148EFE4A00A85AB6 /* MotorIMapa.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = F1C8B232148EFE4A00A85AB6 /* MotorIMapa.1 */; };
+		F1C8B239148EFECF00A85AB6 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C8B238148EFECF00A85AB6 /* libxml2.dylib */; };
+		F1C8B23B148EFED900A85AB6 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C8B23A148EFED900A85AB6 /* libiconv.dylib */; };
+		F1C8B23D148EFEDE00A85AB6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C8B23C148EFEDE00A85AB6 /* libz.dylib */; };
+		F1C8B23E148EFF1E00A85AB6 /* MotorSenchaAPI.h in Sources */ = {isa = PBXBuildFile; fileRef = F11D3A84148DA3EF00C8D088 /* MotorSenchaAPI.h */; };
+		F1C8B23F148EFF1E00A85AB6 /* MotorIMapaAPI.h in Sources */ = {isa = PBXBuildFile; fileRef = D7139A5E148D4A6100C0508A /* MotorIMapaAPI.h */; };
+		F1C8B240148EFF1E00A85AB6 /* Concepto.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399CB148D338900C0508A /* Concepto.h */; };
+		F1C8B241148EFF1E00A85AB6 /* IGestorSecciones.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399CC148D338900C0508A /* IGestorSecciones.h */; };
+		F1C8B242148EFF1E00A85AB6 /* IMotorIMapa.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399CD148D338900C0508A /* IMotorIMapa.h */; };
+		F1C8B243148EFF1E00A85AB6 /* Seccion.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399CE148D338900C0508A /* Seccion.h */; };
+		F1C8B244148EFF1E00A85AB6 /* Valor.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399CF148D338900C0508A /* Valor.h */; };
+		F1C8B245148EFF1E00A85AB6 /* Concepto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399DC148D338900C0508A /* Concepto.cpp */; };
+		F1C8B246148EFF1E00A85AB6 /* Seccion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399DD148D338900C0508A /* Seccion.cpp */; };
+		F1C8B247148EFF1E00A85AB6 /* Valor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399DE148D338900C0508A /* Valor.cpp */; };
+		F1C8B248148EFF1E00A85AB6 /* IControladorSecciones.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399E1148D338900C0508A /* IControladorSecciones.h */; };
+		F1C8B249148EFF1E00A85AB6 /* IControladorSeccionesDelegado.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399E2148D338900C0508A /* IControladorSeccionesDelegado.h */; };
+		F1C8B24A148EFF1E00A85AB6 /* IMotorExtraccion.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399E3148D338900C0508A /* IMotorExtraccion.h */; };
+		F1C8B24B148EFF1E00A85AB6 /* ControladorSecciones.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399E5148D338900C0508A /* ControladorSecciones.cpp */; };
+		F1C8B24C148EFF1E00A85AB6 /* ControladorSecciones.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399E6148D338900C0508A /* ControladorSecciones.h */; };
+		F1C8B24D148EFF1E00A85AB6 /* MotorExtraccion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399E7148D338900C0508A /* MotorExtraccion.cpp */; };
+		F1C8B24E148EFF1E00A85AB6 /* MotorExtraccion.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399E8148D338900C0508A /* MotorExtraccion.h */; };
+		F1C8B24F148EFF1E00A85AB6 /* LectorXML.c in Sources */ = {isa = PBXBuildFile; fileRef = D71399EA148D338900C0508A /* LectorXML.c */; };
+		F1C8B250148EFF1E00A85AB6 /* LectorXML.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399EB148D338900C0508A /* LectorXML.h */; };
+		F1C8B251148EFF1E00A85AB6 /* IServicioParseoDelegado.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399ED148D338900C0508A /* IServicioParseoDelegado.h */; };
+		F1C8B252148EFF1E00A85AB6 /* ServicioParseo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399EE148D338900C0508A /* ServicioParseo.cpp */; };
+		F1C8B253148EFF1E00A85AB6 /* ServicioParseo.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399EF148D338900C0508A /* ServicioParseo.h */; };
+		F1C8B254148EFF1E00A85AB6 /* IRepresentableSecha.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399F2148D338900C0508A /* IRepresentableSecha.h */; };
+		F1C8B255148EFF1E00A85AB6 /* ServicioGeneradorInformacion.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399F3148D338900C0508A /* ServicioGeneradorInformacion.h */; };
+		F1C8B256148EFF1E00A85AB6 /* ServicioSerializadorInformacion.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399F4148D338900C0508A /* ServicioSerializadorInformacion.h */; };
+		F1C8B257148EFF1E00A85AB6 /* MotorSencha.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399F5148D338900C0508A /* MotorSencha.cpp */; };
+		F1C8B258148EFF1E00A85AB6 /* MotorSencha.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399F6148D338900C0508A /* MotorSencha.h */; };
+		F1C8B259148EFF1E00A85AB6 /* ServicioGeneradorInformacion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399F8148D338900C0508A /* ServicioGeneradorInformacion.cpp */; };
+		F1C8B25A148EFF1E00A85AB6 /* ServicioSerializadorInformacion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399F9148D338900C0508A /* ServicioSerializadorInformacion.cpp */; };
+		F1C8B25B148EFF1E00A85AB6 /* Grafica.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399FB148D338900C0508A /* Grafica.cpp */; };
+		F1C8B25C148EFF1E00A85AB6 /* Grafica.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399FC148D338900C0508A /* Grafica.h */; };
+		F1C8B25D148EFF1E00A85AB6 /* GraficaPie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399FD148D338900C0508A /* GraficaPie.cpp */; };
+		F1C8B25E148EFF1E00A85AB6 /* GraficaPie.h in Sources */ = {isa = PBXBuildFile; fileRef = D71399FE148D338900C0508A /* GraficaPie.h */; };
+		F1C8B25F148EFF1E00A85AB6 /* MotorIMapa.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7139A00148D338900C0508A /* MotorIMapa.cpp */; };
+		F1C8B260148EFF1E00A85AB6 /* MotorIMapa.h in Sources */ = {isa = PBXBuildFile; fileRef = D7139A02148D338900C0508A /* MotorIMapa.h */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F1C8B22B148EFE4A00A85AB6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				F1C8B233148EFE4A00A85AB6 /* MotorIMapa.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D71399C9148D338900C0508A /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -341,6 +394,12 @@
 		D7F46FAC147D56D100EBC270 /* iServicioMosaicoGeografico.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iServicioMosaicoGeografico.h; sourceTree = "<group>"; };
 		F11D3A81148DA04C00C8D088 /* Nayarit_2010.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Nayarit_2010.xml; path = iGlobo/Nayarit_2010.xml; sourceTree = "<group>"; };
 		F11D3A84148DA3EF00C8D088 /* MotorSenchaAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotorSenchaAPI.h; sourceTree = "<group>"; };
+		F1C8B22D148EFE4A00A85AB6 /* MotorIMapa */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MotorIMapa; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1C8B230148EFE4A00A85AB6 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		F1C8B232148EFE4A00A85AB6 /* MotorIMapa.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = MotorIMapa.1; sourceTree = "<group>"; };
+		F1C8B238148EFECF00A85AB6 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = SDKs/MacOSX10.7.sdk/usr/lib/libxml2.dylib; sourceTree = DEVELOPER_DIR; };
+		F1C8B23A148EFED900A85AB6 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = SDKs/MacOSX10.7.sdk/usr/lib/libiconv.dylib; sourceTree = DEVELOPER_DIR; };
+		F1C8B23C148EFEDE00A85AB6 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = SDKs/MacOSX10.7.sdk/usr/lib/libz.dylib; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -358,6 +417,16 @@
 				D7AFB71D1474136200D66A37 /* UIKit.framework in Frameworks */,
 				D7AFB71F1474136200D66A37 /* Foundation.framework in Frameworks */,
 				D7AFB7211474136200D66A37 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1C8B22A148EFE4A00A85AB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1C8B23D148EFEDE00A85AB6 /* libz.dylib in Frameworks */,
+				F1C8B23B148EFED900A85AB6 /* libiconv.dylib in Frameworks */,
+				F1C8B239148EFECF00A85AB6 /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,6 +680,9 @@
 		D7AFB70D1474136200D66A37 = {
 			isa = PBXGroup;
 			children = (
+				F1C8B23C148EFEDE00A85AB6 /* libz.dylib */,
+				F1C8B23A148EFED900A85AB6 /* libiconv.dylib */,
+				F1C8B238148EFECF00A85AB6 /* libxml2.dylib */,
 				D7139A47148D33C300C0508A /* libiconv.dylib */,
 				D7139A45148D33BB00C0508A /* libz.dylib */,
 				F11D3A81148DA04C00C8D088 /* Nayarit_2010.xml */,
@@ -621,6 +693,7 @@
 				D7AFB7371474164700D66A37 /* QuartzCore.framework */,
 				D7AFB7351474163C00D66A37 /* OpenGLES.framework */,
 				D7AFB7221474136200D66A37 /* iGlobo */,
+				F1C8B22F148EFE4A00A85AB6 /* MotorIMapa */,
 				D7AFB71B1474136200D66A37 /* Frameworks */,
 				D7AFB7191474136200D66A37 /* Products */,
 			);
@@ -630,6 +703,7 @@
 			isa = PBXGroup;
 			children = (
 				D7AFB7181474136200D66A37 /* iGlobo.app */,
+				F1C8B22D148EFE4A00A85AB6 /* MotorIMapa */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -874,6 +948,15 @@
 			name = protocolo;
 			sourceTree = "<group>";
 		};
+		F1C8B22F148EFE4A00A85AB6 /* MotorIMapa */ = {
+			isa = PBXGroup;
+			children = (
+				F1C8B230148EFE4A00A85AB6 /* main.cpp */,
+				F1C8B232148EFE4A00A85AB6 /* MotorIMapa.1 */,
+			);
+			path = MotorIMapa;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -893,6 +976,23 @@
 			productName = iGlobo;
 			productReference = D7AFB7181474136200D66A37 /* iGlobo.app */;
 			productType = "com.apple.product-type.application";
+		};
+		F1C8B22C148EFE4A00A85AB6 /* MotorIMapa */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1C8B236148EFE4A00A85AB6 /* Build configuration list for PBXNativeTarget "MotorIMapa" */;
+			buildPhases = (
+				F1C8B229148EFE4A00A85AB6 /* Sources */,
+				F1C8B22A148EFE4A00A85AB6 /* Frameworks */,
+				F1C8B22B148EFE4A00A85AB6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MotorIMapa;
+			productName = MotorIMapa;
+			productReference = F1C8B22D148EFE4A00A85AB6 /* MotorIMapa */;
+			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
@@ -916,6 +1016,7 @@
 			projectRoot = "";
 			targets = (
 				D7AFB7171474136200D66A37 /* iGlobo */,
+				F1C8B22C148EFE4A00A85AB6 /* MotorIMapa */,
 			);
 		};
 /* End PBXProject section */
@@ -1067,6 +1168,49 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F1C8B229148EFE4A00A85AB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1C8B23E148EFF1E00A85AB6 /* MotorSenchaAPI.h in Sources */,
+				F1C8B23F148EFF1E00A85AB6 /* MotorIMapaAPI.h in Sources */,
+				F1C8B240148EFF1E00A85AB6 /* Concepto.h in Sources */,
+				F1C8B241148EFF1E00A85AB6 /* IGestorSecciones.h in Sources */,
+				F1C8B242148EFF1E00A85AB6 /* IMotorIMapa.h in Sources */,
+				F1C8B243148EFF1E00A85AB6 /* Seccion.h in Sources */,
+				F1C8B244148EFF1E00A85AB6 /* Valor.h in Sources */,
+				F1C8B231148EFE4A00A85AB6 /* main.cpp in Sources */,
+				F1C8B245148EFF1E00A85AB6 /* Concepto.cpp in Sources */,
+				F1C8B246148EFF1E00A85AB6 /* Seccion.cpp in Sources */,
+				F1C8B247148EFF1E00A85AB6 /* Valor.cpp in Sources */,
+				F1C8B248148EFF1E00A85AB6 /* IControladorSecciones.h in Sources */,
+				F1C8B249148EFF1E00A85AB6 /* IControladorSeccionesDelegado.h in Sources */,
+				F1C8B24A148EFF1E00A85AB6 /* IMotorExtraccion.h in Sources */,
+				F1C8B24B148EFF1E00A85AB6 /* ControladorSecciones.cpp in Sources */,
+				F1C8B24C148EFF1E00A85AB6 /* ControladorSecciones.h in Sources */,
+				F1C8B24D148EFF1E00A85AB6 /* MotorExtraccion.cpp in Sources */,
+				F1C8B24E148EFF1E00A85AB6 /* MotorExtraccion.h in Sources */,
+				F1C8B24F148EFF1E00A85AB6 /* LectorXML.c in Sources */,
+				F1C8B250148EFF1E00A85AB6 /* LectorXML.h in Sources */,
+				F1C8B251148EFF1E00A85AB6 /* IServicioParseoDelegado.h in Sources */,
+				F1C8B252148EFF1E00A85AB6 /* ServicioParseo.cpp in Sources */,
+				F1C8B253148EFF1E00A85AB6 /* ServicioParseo.h in Sources */,
+				F1C8B254148EFF1E00A85AB6 /* IRepresentableSecha.h in Sources */,
+				F1C8B255148EFF1E00A85AB6 /* ServicioGeneradorInformacion.h in Sources */,
+				F1C8B256148EFF1E00A85AB6 /* ServicioSerializadorInformacion.h in Sources */,
+				F1C8B257148EFF1E00A85AB6 /* MotorSencha.cpp in Sources */,
+				F1C8B258148EFF1E00A85AB6 /* MotorSencha.h in Sources */,
+				F1C8B259148EFF1E00A85AB6 /* ServicioGeneradorInformacion.cpp in Sources */,
+				F1C8B25A148EFF1E00A85AB6 /* ServicioSerializadorInformacion.cpp in Sources */,
+				F1C8B25B148EFF1E00A85AB6 /* Grafica.cpp in Sources */,
+				F1C8B25C148EFF1E00A85AB6 /* Grafica.h in Sources */,
+				F1C8B25D148EFF1E00A85AB6 /* GraficaPie.cpp in Sources */,
+				F1C8B25E148EFF1E00A85AB6 /* GraficaPie.h in Sources */,
+				F1C8B25F148EFF1E00A85AB6 /* MotorIMapa.cpp in Sources */,
+				F1C8B260148EFF1E00A85AB6 /* MotorIMapa.h in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -1178,6 +1322,38 @@
 			};
 			name = Release;
 		};
+		F1C8B234148EFE4A00A85AB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = MOTORIMAPA_BIN;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F1C8B235148EFE4A00A85AB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = MOTORIMAPA_BIN;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1198,6 +1374,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		F1C8B236148EFE4A00A85AB6 /* Build configuration list for PBXNativeTarget "MotorIMapa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1C8B234148EFE4A00A85AB6 /* Debug */,
+				F1C8B235148EFE4A00A85AB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
