@@ -22,9 +22,8 @@
 
 @synthesize glView;
 @synthesize sceneRenderer;
-@synthesize fpsLabel,drawLabel;
+@synthesize fpsLabel;
 @synthesize pinchDelegate;
-@synthesize swipeDelegate;
 @synthesize rotateDelegate;
 @synthesize panDelegate;
 @synthesize tapDelegate;
@@ -39,8 +38,6 @@
 
 @synthesize loftlayer;
 
-@synthesize controlMaestro = _controlMaestro;
-
 - (void)clear
 {
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -52,42 +49,36 @@
             [NSThread sleepForTimeInterval:0.001];
     }
     
-    [_panelRedondo release];
-    
     [_etiquetaNombreRegion release];
     [_etiquetaNombrePais release];
     
-    self.glView = nil;
-    self.sceneRenderer = nil;
     
-    self.drawLabel = nil;
     self.pinchDelegate = nil;
-    self.swipeDelegate = nil;
     self.rotateDelegate = nil;
     self.panDelegate = nil;
     self.tapDelegate = nil;
     self.pressDelegate = nil;
+    
+    
+    self.controladorCapaDeInteraccion = nil;
+    [controladorMapa release]; controladorMapa =0;
+    self.loftlayer = nil;
+    self.labelLayer = nil;
+    self.vectorLayer = nil;
+    self.earthLayer = nil;
+    self.layerThread = nil;
+    self.theView = nil;
     
     if (theScene)
     {
         delete theScene;
         theScene = NULL;
     }
-    self.theView = nil;
+    
     self.texGroup = nil;
-    
-    self.layerThread = nil;
-    self.earthLayer = nil;
-    self.vectorLayer = nil;
-    self.labelLayer = nil;
-    self.controladorCapaDeInteraccion = nil;
-    self.loftlayer = nil;
-    
-    [controladorMapa release];
-    [_controlMaestro release];
-    // self.interactLayer = nil;
-    // self.capatInteraccion = nil;
-    // self.loftLayer = nil;
+    self.sceneRenderer = nil;
+    self.glView = nil;
+    [_panelRedondo release]; _panelRedondo = 0;
 }
 
 
@@ -102,6 +93,7 @@
     self = [super init];
     if(self)
     {
+        theScene = 0;
         [self setView:view];
     }
     return self;
@@ -176,15 +168,7 @@
     
     controladorMapa = [[ControladorMapa alloc] init];
     [controladorMapa setServicioBDGeograficas:[[ServicioBDGeograficas new] autorelease] ];
-    
-    
-   // ServicioMosaicoGeografico *servicio = [[ServicioMosaicoGeografico alloc] initWithLoftLayer:[self loftlayer]];
-    
-   // [controladorMapa setServicioMosaicoGeografico:servicio];
-    
-    //[servicio release];
-    
-    
+
     ServicioDeIluminacionPorRegion *servicio = [[ServicioDeIluminacionPorRegion alloc] initWithLoftLayer:[self loftlayer]];
     [controladorMapa setServicioIluminacion:servicio];
     [servicio release];
@@ -219,7 +203,7 @@
 
 - (void)viewDidUnload
 {
-     [self clear];
+    [self clear];
     [super viewDidUnload];
 }
 
@@ -246,14 +230,10 @@
 -(void) establecerNombrePais:(NSString *) nombrePais
 {
     [[self etiquetaNombrePais] setText:nombrePais];
-    [[self controlMaestro] estableceVariable:@"Pais" valor:nombrePais];
-    [[self controlMaestro] actualizaSecciones];
 }
 -(void) establecerNombreRegion:(NSString *)nombreRegion
 {
     [[self etiquetaNombreRegion] setText:nombreRegion];
-     [[self controlMaestro] estableceVariable:@"Entidad federativa" valor:nombreRegion];
-    [[self controlMaestro] actualizaSecciones];
 }
 
 - (void)lightingSetup:(SceneRendererES1 *)sceneRenderer
@@ -321,7 +301,6 @@
 
 - (void) registraControlMaestro: (id<iControlMaestro>) controlMaestro
   {
-      [self setControlMaestro:controlMaestro];
       [controlMaestro estableceVariable:@"Pais" valor:@""];
       [controlMaestro estableceVariable:@"Entidad federativa" valor:@""];
   }

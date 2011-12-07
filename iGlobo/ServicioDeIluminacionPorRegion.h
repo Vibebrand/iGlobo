@@ -22,6 +22,6 @@
 -( id<WhirlyGlobeLayer> ) obtenerCapaDeDibujado;
 -(void) eliminarRegionIliminada;
 
-@property(nonatomic, retain) LoftLayer * capaDeDibujado;
+@property(nonatomic, assign) LoftLayer * capaDeDibujado;
 
 @end

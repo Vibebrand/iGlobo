@@ -28,6 +28,6 @@
 - (void)startWithThread:(WhirlyGlobeLayerThread *)inThread scene:(WhirlyGlobe::GlobeScene *)scene;
 
 
-@property(nonatomic, retain)id<iDelegadoControladorMapa>delegadoControladorMapa;
+@property(nonatomic, assign)id<iDelegadoControladorMapa>delegadoControladorMapa;
 
 @end

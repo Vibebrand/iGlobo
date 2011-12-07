@@ -27,7 +27,7 @@
 -(void) dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [_delegadoControladorMapa release];
+    //[_delegadoControladorMapa release];
     [super dealloc];
 }
 

@@ -10,7 +10,6 @@
 #import <WhirlyGlobe/WhirlyGlobe.h>
 #import "iDelegadoControladorMapa.h"
 #import "ServicioBDGeograficas.h"
-#import "iServicioMosaicoGeografico.h"
 #import "iServicioDeIluminacionPorRegion.h"
 #import "iDelegadoPanelRepresentacionGlobo.h"
 #import <list>
@@ -44,8 +43,6 @@ typedef std::list<RepresentacionPoligono*> RepresentacionesDePoligono;
 @interface ControladorMapa : NSObject<iDelegadoControladorMapa>
 {
     RepresentacionesDePoligono _poligonosDibujados;
-    PoligonosBajoLeyenda * _poligonosBajoLeyenda;
-    NSMutableDictionary * coloresBajoLeyenda;
     
 #pragma Layers
     
@@ -58,7 +55,6 @@ typedef std::list<RepresentacionPoligono*> RepresentacionesDePoligono;
     
 #pragma Servicios
     ServicioBDGeograficas *_servicioBDGeograficas;
-    id<iServicioMosaicoGeografico> _servicioMosaicoGeografico;
     id<iServicioDeIluminacionPorRegion> _servicioIluminacion;
     id<iDelegadoPanelRepresentacionGlobo> _delegadoPanelRepresentacionGlobo;
     
@@ -104,8 +100,7 @@ typedef std::list<RepresentacionPoligono*> RepresentacionesDePoligono;
 @property(nonatomic, assign) float maxEdgelen;
 
 @property(nonatomic, retain) ServicioBDGeograficas *servicioBDGeograficas;
-@property(nonatomic, retain) id<iServicioMosaicoGeografico> servicioMosaicoGeografico;
 @property(nonatomic, retain) id<iServicioDeIluminacionPorRegion> servicioIluminacion;
-@property(nonatomic, retain) id<iDelegadoPanelRepresentacionGlobo> delegadoPanelRepresentacionGlobo;
+@property(nonatomic, assign) id<iDelegadoPanelRepresentacionGlobo> delegadoPanelRepresentacionGlobo;
 
 @end

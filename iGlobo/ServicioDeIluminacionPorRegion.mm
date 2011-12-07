@@ -14,7 +14,7 @@
 
 -(void) dealloc
 {
-    [_capaDeDibujado release];
+    //[_capaDeDibujado release];
     [super dealloc];
 }
 

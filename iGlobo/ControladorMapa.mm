@@ -25,7 +25,6 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
 @synthesize maxEdgelen = _maxEdgelen;
 
 @synthesize servicioBDGeograficas = _servicioBDGeograficas;
-@synthesize servicioMosaicoGeografico = _servicioMosaicoGeografico;
 @synthesize servicioIluminacion = _servicioIluminacion;
 
 @synthesize delegadoPanelRepresentacionGlobo = _delegadoPanelRepresentacionGlobo;
@@ -43,33 +42,10 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
     for(RepresentacionesDePoligono::iterator it = _poligonosDibujados.begin(); it != _poligonosDibujados.end(); ++it)
         delete (*it);
     
-    for(PoligonosBajoLeyenda::iterator it= _poligonosBajoLeyenda->begin(); 
-      it != _poligonosBajoLeyenda->end();++it)
-    {
-      _poligonosBajoLeyenda->erase(it);
-    }
-    
-    delete _poligonosBajoLeyenda;
-    [coloresBajoLeyenda release];
     [_servicioBDGeograficas release];
-    [_servicioMosaicoGeografico release];
     [_servicioIluminacion release];
-    [_delegadoPanelRepresentacionGlobo release];
     [super dealloc];
 }
-
--(id)init
-{
-    if ((self = [super init]))
-    {
-        //_scene = nil;
-        _poligonosBajoLeyenda = new PoligonosBajoLeyenda;
-        coloresBajoLeyenda = [[NSMutableDictionary alloc] init];
-        [coloresBajoLeyenda setValue:[UIColor redColor] forKey:@"rojo"];
-    }
-    return self;
-}
-
 
 -(SingleLabel*) createLabelInfunction:(WhirlyGlobe::ShapeSet) shapes withMinWidth:(float)minWidth andName:(NSString*)name minVis:(float)minVis maxVis:(float)maxVis withConfig:(NSMutableDictionary *) labelDescription
 {
@@ -367,15 +343,6 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
     NSLog(@"poniendo Etiquetas a los estados");
     if ([etiquetas  count] > 0)
         poligono->subEtiquetas = [[self labelLayer] addLabels:etiquetas desc:regionLabelDescription];
-    
-    //_poligonosBajoLeyenda->clear();
-    //_poligonosBajoLeyenda->insert(Registro("rojo", figuras));
-    
-    //[_servicioMosaicoGeografico establecerColoresBajoLeyenda:coloresBajoLeyenda];
-    //[_servicioMosaicoGeografico establecerPoligonosBajoLeyenda:_poligonosBajoLeyenda];
-    
-    //[_servicioMosaicoGeografico agregarPoligonosAlMapa];
-    
 }
 
 -(void)eliminarRepresentacionPoligono:(RepresentacionPoligono *) poligono
@@ -392,9 +359,6 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
         [[self delegadoPanelRepresentacionGlobo] establecerNombrePais:@""];
         [[self delegadoPanelRepresentacionGlobo] establecerNombreRegion:@""];
         [[self servicioIluminacion] eliminarRegionIliminada];
-        
-        //eliminar
-        //[_servicioMosaicoGeografico eliminarPoligonosDelMapa];
         
         _poligonosDibujados.erase(it);
         delete poligono;

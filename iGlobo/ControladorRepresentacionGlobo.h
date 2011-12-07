@@ -29,7 +29,6 @@
     
     // Various interaction delegates when this view controller is up
 	WhirlyGlobePinchDelegate *pinchDelegate;
-	WhirlyGlobeSwipeDelegate *swipeDelegate;
 	PanDelegateFixed *panDelegate;
 	WhirlyGlobeTapDelegate *tapDelegate;
     WhirlyGlobeLongPressDelegate *pressDelegate;
@@ -53,8 +52,6 @@
     ControladorCapaDeInteraccion * controladorCapaDeInteraccion;
     
     ControladorMapa * controladorMapa;
-    
-    id<iControlMaestro> _controlMaestro;
     
     
     
@@ -91,9 +88,8 @@
 
 @property (nonatomic,retain) EAGLView *glView;
 @property (nonatomic,retain) SceneRendererES1 *sceneRenderer;
-@property (nonatomic,retain) UILabel *fpsLabel,*drawLabel;
+@property (nonatomic,retain) UILabel *fpsLabel;
 @property (nonatomic,retain) WhirlyGlobePinchDelegate *pinchDelegate;
-@property (nonatomic,retain) WhirlyGlobeSwipeDelegate *swipeDelegate;
 @property (nonatomic,retain) WhirlyGlobeRotateDelegate *rotateDelegate;
 @property (nonatomic,retain) PanDelegateFixed *panDelegate;
 @property (nonatomic,retain) WhirlyGlobeTapDelegate *tapDelegate;
@@ -107,7 +103,6 @@
 @property (nonatomic,retain) ControladorCapaDeInteraccion * controladorCapaDeInteraccion;
 
 @property (nonatomic,retain)  LoftLayer * loftlayer;
-@property (nonatomic, retain) id<iControlMaestro> controlMaestro;
 
 
 
