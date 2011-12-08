@@ -10,6 +10,7 @@
 #import "ControladorRepresentacionGlobo.h"
 #import "PantallaPrincipal.h"
 #import "ControlMaestro.h"
+#import "ControladorPiramidePoblacional.h"
 
 @implementation AppDelegate
 
@@ -40,8 +41,11 @@
     
     ControladorRepresentacionGlobo * controladorRepresentacionGlobo = [[ControladorRepresentacionGlobo alloc]  initWithNibName:@"ControladorRepresentacionGlobo" bundle:nil ];
     
+    ControladorPiramidePoblacional * controladorPiramidePoblacional = [[ControladorPiramidePoblacional alloc] init];
+    
     _pantallaPrincipal = [[ PantallaPrincipal alloc ] initWithNibName:@"PantallaPrincipal" bundle:[NSBundle mainBundle]];
     [_pantallaPrincipal setControladorVista: controladorRepresentacionGlobo];
+    [_pantallaPrincipal setControladorPiramidePoblacional:controladorPiramidePoblacional];
     _controlMaestro = [ControlMaestro new];
     
     id gestorInteres = controladorRepresentacionGlobo;
@@ -49,8 +53,14 @@
         [_controlMaestro registraGestor: gestorInteres];
     }
     
+    gestorInteres = controladorPiramidePoblacional;
+    if([gestorInteres conformsToProtocol: @protocol(iGestorObjectiveC)]) {
+        [_controlMaestro registraGestor: gestorInteres];
+    }
+    
     [_controlMaestro cargaArchivos];
     [controladorRepresentacionGlobo release];
+    [controladorPiramidePoblacional release];
     
     [self performSelectorOnMainThread:@selector(postLaunch:) withObject:nil waitUntilDone:NO];
     return YES;

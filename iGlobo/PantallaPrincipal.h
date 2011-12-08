@@ -10,6 +10,7 @@
 #import "ControladorRepresentacionGlobo.h"
 #import "ControladorListaBarras.h"
 #import "iControladorVista.h"
+#import "ControladorPiramidePoblacional.h"
 
 @interface PantallaPrincipal : UIViewController
 {
@@ -22,6 +23,8 @@
     ControladorListaBarras *_controladorRepresentacionListaGraficaBarrasIzquierda;
     ControladorListaBarras *_controladorRepresentacionListaGraficaBarrasDerecha;
     
+    ControladorPiramidePoblacional * _controladorPiramidePoblacional;
+    
     //id<iControladorVista> _controladorRepresentacionListaGraficaBarrasIzquierda;
     //id<iControladorVista> _controladorRepresentacionListaGraficaBarrasDerecha;
 
@@ -31,5 +34,7 @@
 @property(nonatomic, retain) IBOutlet UIView* representacionGraficaBarrasIzquierdo;
 @property(nonatomic, retain) IBOutlet UIView* representacionGraficaBarrasDerecha;
 @property(nonatomic, retain) id<iControladorVista> controladorVista;
+@property(nonatomic, retain) ControladorPiramidePoblacional *controladorPiramidePoblacional;
+
 
 @end

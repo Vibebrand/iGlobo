@@ -369,6 +369,10 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
         [[self labelLayer] removeLabel:poligono->subEtiquetas];
         [[self delegadoPanelRepresentacionGlobo] establecerNombrePais:@""];
         [[self delegadoPanelRepresentacionGlobo] establecerNombreRegion:@""];
+        
+        [[self controlMaestro] estableceVariable:@"Entidad federativa" valor: @""];
+        [[self controlMaestro] actualizaSecciones];
+        
         [[self servicioIluminacion] eliminarRegionIliminada];
         
         _poligonosDibujados.erase(it);

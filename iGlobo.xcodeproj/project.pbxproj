@@ -54,6 +54,8 @@
 		D798595E1475B0C600F98991 /* ControladorMapa.mm in Sources */ = {isa = PBXBuildFile; fileRef = D798595D1475B0C600F98991 /* ControladorMapa.mm */; };
 		D79E269D147EAAE400985242 /* PantallaPrincipal.mm in Sources */ = {isa = PBXBuildFile; fileRef = D79E269B147EAAE400985242 /* PantallaPrincipal.mm */; };
 		D79E269E147EAAE400985242 /* PantallaPrincipal.xib in Resources */ = {isa = PBXBuildFile; fileRef = D79E269C147EAAE400985242 /* PantallaPrincipal.xib */; };
+		D7A3418114911ADC00B0FCD3 /* indicadorGraficaBarra.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A3418014911ADC00B0FCD3 /* indicadorGraficaBarra.m */; };
+		D7A341891491249200B0FCD3 /* ControladorPiramidePoblacional.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A341881491249200B0FCD3 /* ControladorPiramidePoblacional.m */; };
 		D7A75B1614857EB500B4D5E5 /* CeldagraficaBarras.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A75B1414857EB500B4D5E5 /* CeldagraficaBarras.xib */; };
 		D7AFB71D1474136200D66A37 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AFB71C1474136200D66A37 /* UIKit.framework */; };
 		D7AFB71F1474136200D66A37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AFB71E1474136200D66A37 /* Foundation.framework */; };
@@ -263,6 +265,10 @@
 		D79E269A147EAAE400985242 /* PantallaPrincipal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PantallaPrincipal.h; sourceTree = "<group>"; };
 		D79E269B147EAAE400985242 /* PantallaPrincipal.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PantallaPrincipal.mm; sourceTree = "<group>"; };
 		D79E269C147EAAE400985242 /* PantallaPrincipal.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PantallaPrincipal.xib; sourceTree = "<group>"; };
+		D7A3417F14911ADC00B0FCD3 /* indicadorGraficaBarra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = indicadorGraficaBarra.h; sourceTree = "<group>"; };
+		D7A3418014911ADC00B0FCD3 /* indicadorGraficaBarra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = indicadorGraficaBarra.m; sourceTree = "<group>"; };
+		D7A341871491249200B0FCD3 /* ControladorPiramidePoblacional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControladorPiramidePoblacional.h; sourceTree = "<group>"; };
+		D7A341881491249200B0FCD3 /* ControladorPiramidePoblacional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControladorPiramidePoblacional.m; sourceTree = "<group>"; };
 		D7A75B1414857EB500B4D5E5 /* CeldagraficaBarras.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CeldagraficaBarras.xib; sourceTree = "<group>"; };
 		D7AFB7181474136200D66A37 /* iGlobo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGlobo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7AFB71C1474136200D66A37 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -574,6 +580,8 @@
 				D7139A52148D461A00C0508A /* ControlMaestro.mm */,
 				D7139A5C148D48C300C0508A /* GestorCpp.h */,
 				D7139A5F148D4B7600C0508A /* GestorCpp.mm */,
+				D7A341871491249200B0FCD3 /* ControladorPiramidePoblacional.h */,
+				D7A341881491249200B0FCD3 /* ControladorPiramidePoblacional.m */,
 			);
 			name = ControladorNegocio;
 			sourceTree = "<group>";
@@ -649,6 +657,15 @@
 				D73EAE0714840020006DE184 /* iControladorVista.h */,
 			);
 			name = protocolos;
+			sourceTree = "<group>";
+		};
+		D7A3417D14911A9900B0FCD3 /* modelo-vista */ = {
+			isa = PBXGroup;
+			children = (
+				D7A3417F14911ADC00B0FCD3 /* indicadorGraficaBarra.h */,
+				D7A3418014911ADC00B0FCD3 /* indicadorGraficaBarra.m */,
+			);
+			name = "modelo-vista";
 			sourceTree = "<group>";
 		};
 		D7AFB70D1474136200D66A37 = {
@@ -851,6 +868,7 @@
 		D7AFB7D71474325100D66A37 /* Vista */ = {
 			isa = PBXGroup;
 			children = (
+				D7A3417D14911A9900B0FCD3 /* modelo-vista */,
 				D71E44A014855F3500A9E422 /* utilidades */,
 				D71E449C14855CD300A9E422 /* componentes */,
 				D7AFB7DB147432DC00D66A37 /* ControladorRepresentacionGlobo.xib */,
@@ -1129,6 +1147,8 @@
 				D7139A32148D338900C0508A /* MotorIMapa.cpp in Sources */,
 				D7139A53148D461A00C0508A /* ControlMaestro.mm in Sources */,
 				D7139A60148D4B7600C0508A /* GestorCpp.mm in Sources */,
+				D7A3418114911ADC00B0FCD3 /* indicadorGraficaBarra.m in Sources */,
+				D7A341891491249200B0FCD3 /* ControladorPiramidePoblacional.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

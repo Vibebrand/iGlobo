@@ -7,7 +7,7 @@
 //
 
 #import "ControladorListaBarras.h"
-
+#import "indicadorGraficaBarra.h"
 @implementation ControladorListaBarras
 
 @synthesize tablaDatos = _tablaDatos;
@@ -17,12 +17,12 @@
 @synthesize etiquetaNumeroTotalPorGenero = _etiquetaNumeroTotalPorGenero;
 @synthesize genero = _genero;
 @synthesize imagen = _imagen;
+@synthesize rangosDeEdad = _rangosDeEdad;
 
 -(void)dealloc
 {
     [_tablaDatos release];
-    //[_rangosDeEdad release];
-       [_celdaBarras release];
+    [_celdaBarras release];
     [_cellNib release];
     
     [_genero release];
@@ -51,6 +51,12 @@
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
+}
+
+-(void) actualizarGrafica:(NSArray *) indicadoresGrafica
+{
+    [self setRangosDeEdad:indicadoresGrafica];
+    [[self tablaDatos] reloadData];
 }
 
 #pragma mark - View lifecycle
@@ -84,7 +90,9 @@
 
 -(NSInteger) tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section
 {
-    return 17;
+    if(_rangosDeEdad)
+        return [_rangosDeEdad count];
+    return  0;
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -99,8 +107,13 @@
         [celda agregarBarraAlaCelda];
         self.celdaBarras = nil;
     }
-    [celda establecerNombreCelda:@"35-89" conValor: 0.70f ];
     
+    if(_rangosDeEdad)
+    {
+        indicadorGraficaBarra *indicador = [_rangosDeEdad objectAtIndex: [indexPath row]  ];
+        [celda establecerNombreCelda: [indicador nombreEtiqueta] conValor: [indicador porcentajeARepresentar]];
+    }
+   
     return celda;
 }
 
@@ -148,5 +161,4 @@
     [[self porcentajeResultante] setText:porcentajePoblacion];
     [[self etiquetaNumeroTotalPorGenero] setText: [NSString stringWithFormat:@"%@ %@", sumatorialTotal, [self genero]]];
 }
-
 @end

@@ -15,6 +15,8 @@
 @synthesize representacionGraficaBarrasDerecha = _representacionGraficaBarrasDerecha;
 @synthesize controladorVista = _controladorRepresentacionGlobo;
 
+@synthesize controladorPiramidePoblacional = _controladorPiramidePoblacional;
+
 -(void)dealloc
 {
     [_representacionGlobo release];
@@ -26,6 +28,8 @@
     [_controladorRepresentacionListaGraficaBarrasDerecha release];
     
     [_controladorRepresentacionGlobo release];
+    [_controladorPiramidePoblacional release];
+    
     [super dealloc];
 }
 
@@ -53,10 +57,14 @@
     [super viewDidLoad];
 
     self.representacionGlobo.layer.cornerRadius = 5;
-    
+
     _controladorRepresentacionListaGraficaBarrasIzquierda = [[ ControladorListaBarras alloc] initWithNibName:@"ControladorListaBarras" bundle:nil ];
     
      _controladorRepresentacionListaGraficaBarrasDerecha = [[ ControladorListaBarras alloc] initWithNibName:@"ControladorListaBarras" bundle:nil ];
+    
+    [_controladorPiramidePoblacional setControladorBarrasHombres:_controladorRepresentacionListaGraficaBarrasDerecha];
+    [_controladorPiramidePoblacional setControladorBarrasMujeres:_controladorRepresentacionListaGraficaBarrasIzquierda];
+    
     
     [[self representacionGlobo] addSubview: _controladorRepresentacionGlobo.obtenerRepresentacion ];
 
@@ -65,11 +73,8 @@
     [[self representacionGraficaBarrasDerecha] addSubview: _controladorRepresentacionListaGraficaBarrasDerecha.obtenerRepresentacion];
     
     
-    [_controladorRepresentacionListaGraficaBarrasIzquierda establcerGenero:@"Hombres"];
-    [_controladorRepresentacionListaGraficaBarrasIzquierda establecerPorcentajeDeLaPoblacion:@"40%" enBaseAlaSumatoriaTotal:@"234,500"];
-    
-    [_controladorRepresentacionListaGraficaBarrasDerecha establcerGenero:@"Mujeres"];
-    [_controladorRepresentacionListaGraficaBarrasDerecha establecerPorcentajeDeLaPoblacion:@"60%" enBaseAlaSumatoriaTotal:@"888,5400"];
+    [_controladorRepresentacionListaGraficaBarrasDerecha establcerGenero:@"Hombres"];
+    [_controladorRepresentacionListaGraficaBarrasIzquierda establcerGenero:@"Mujeres"];
     
     // Do any additional setup after loading the view from its nib.
 }
