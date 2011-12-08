@@ -57,7 +57,7 @@
     ControladorMapa * controladorMapa;
     ControlMaestro * _controlMaestro;
     
-    
+    bool flagBotonOcultarMensajes;
     
 	//InteractionLayer *interactLayer;
     //CapaInteraccion * capaInteraccion;

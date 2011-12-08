@@ -208,6 +208,8 @@
 	
     [controladorMapa estableceControlMaestro:[self controlMaestro]];
     
+    flagBotonOcultarMensajes = true;
+    
     // This will start loading things
 	[self.layerThread start];
 }
@@ -305,18 +307,24 @@
     [[self etiquetaDescripcionPoligono]setHidden:NO];
     [[self botonOcultarMensajes] setHidden:NO];
     
+    flagBotonOcultarMensajes = NO;
+    
     NSLog(@"ProcesaSeccion: %@", seccion);
 }
 
 - (void) seccionInvalida: (NSDictionary *) seccion
 {
-    
-    [[self etiquetaDescripcionPoligono] setHidden:YES];
-    [[self botonOcultarMensajes] setHidden:YES];
     NSLog(@"seccionInvalida: %@", seccion);
 }
+
 - (void) finalizadaActualizacionSecciones
 {
+    if(flagBotonOcultarMensajes) {
+        [[self botonOcultarMensajes] setHidden:YES];
+        [[self etiquetaDescripcionPoligono] setHidden:YES];
+    }
+    
+    flagBotonOcultarMensajes = YES;
     
     NSLog(@"finalizadaActualizacionSecciones");
 }
