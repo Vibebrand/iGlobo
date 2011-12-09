@@ -14,6 +14,7 @@
 @synthesize representacionGraficaBarrasIzquierdo = _representacionGraficaBarrasIzquierdo;
 @synthesize representacionGraficaBarrasDerecha = _representacionGraficaBarrasDerecha;
 @synthesize controladorVista = _controladorRepresentacionGlobo;
+@synthesize controladorSencha;
 @synthesize webView;
 
 @synthesize controladorPiramidePoblacional = _controladorPiramidePoblacional;
@@ -29,8 +30,9 @@
     [_controladorRepresentacionListaGraficaBarrasDerecha release];
     
     [_controladorRepresentacionGlobo release];
-    [_controladorSencha release];
     [_controladorPiramidePoblacional release];
+
+    [self setControladorSencha: nil];
     
     [super dealloc];
 }
@@ -78,10 +80,9 @@
     [_controladorRepresentacionListaGraficaBarrasDerecha establcerGenero:@"Hombres"];
     [_controladorRepresentacionListaGraficaBarrasIzquierda establcerGenero:@"Mujeres"];
     
+    [[self controladorSencha] setWebView: [self webView]];
+    [[self controladorSencha] viewDidLoad];
     
-    _controladorSencha = [ControladorSencha new];
-    [_controladorSencha setWebView: [self webView]];
-    [_controladorSencha viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
 

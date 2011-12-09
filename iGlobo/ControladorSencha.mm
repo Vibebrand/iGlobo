@@ -76,7 +76,8 @@
 }
 
 - (void) ejecutaInstruccion: (NSString *) instruccion {
-    [[self webView ] stringByEvaluatingJavaScriptFromString: instruccion];
+    NSLog(@"Instruccion a ejecutar: %@", instruccion);
+    [[self webView] performSelectorOnMainThread:@selector(stringByEvaluatingJavaScriptFromString:) withObject: instruccion waitUntilDone: NO];
 }
 
 @end
