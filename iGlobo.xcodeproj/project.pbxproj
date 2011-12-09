@@ -62,6 +62,8 @@
 		D7961FFB14925C5800252EB9 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = D7961FEF14925C5800252EB9 /* SBJsonUTF8Stream.m */; };
 		D7961FFC14925C5800252EB9 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D7961FF114925C5800252EB9 /* SBJsonWriter.m */; };
 		D7961FFF14925C6F00252EB9 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = D7961FFE14925C6F00252EB9 /* NSObject+SBJson.m */; };
+		D796200C14925F6900252EB9 /* ControladorSencha.m in Sources */ = {isa = PBXBuildFile; fileRef = D796200B14925F6900252EB9 /* ControladorSencha.m */; };
+		D796200E14926EDA00252EB9 /* www in Resources */ = {isa = PBXBuildFile; fileRef = D796200D14926EDA00252EB9 /* www */; };
 		D797521E147FEF5F003F331A /* PanelRedondo.mm in Sources */ = {isa = PBXBuildFile; fileRef = D797521D147FEF5F003F331A /* PanelRedondo.mm */; };
 		D797526214804147003F331A /* ServicioDeIluminacionPorRegion.mm in Sources */ = {isa = PBXBuildFile; fileRef = D797526114804147003F331A /* ServicioDeIluminacionPorRegion.mm */; };
 		D798595E1475B0C600F98991 /* ControladorMapa.mm in Sources */ = {isa = PBXBuildFile; fileRef = D798595D1475B0C600F98991 /* ControladorMapa.mm */; };
@@ -293,6 +295,9 @@
 		D7961FF114925C5800252EB9 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		D7961FFD14925C6F00252EB9 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
 		D7961FFE14925C6F00252EB9 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
+		D796200A14925F6900252EB9 /* ControladorSencha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControladorSencha.h; sourceTree = "<group>"; };
+		D796200B14925F6900252EB9 /* ControladorSencha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControladorSencha.m; sourceTree = "<group>"; };
+		D796200D14926EDA00252EB9 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 		D797521C147FEF5F003F331A /* PanelRedondo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelRedondo.h; sourceTree = "<group>"; };
 		D797521D147FEF5F003F331A /* PanelRedondo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PanelRedondo.mm; sourceTree = "<group>"; };
 		D7975220147FF030003F331A /* iDelegadoPanelRepresentacionGlobo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iDelegadoPanelRepresentacionGlobo.h; sourceTree = "<group>"; };
@@ -661,8 +666,7 @@
 		D7934C8714770A80005B13C2 /* Servicio */ = {
 			isa = PBXGroup;
 			children = (
-				D7961FCC14925B5000252EB9 /* NativeBridge.h */,
-				D7961FCD14925B5000252EB9 /* NativeBridge.m */,
+				D796200414925DB100252EB9 /* NativeBrige */,
 				D7F46FA6147D48EA00EBC270 /* protocolo */,
 				D7934C8814770AA5005B13C2 /* ServicioBDGeograficas.h */,
 				D7934C8914770AA5005B13C2 /* ServicioBDGeograficas.mm */,
@@ -716,6 +720,17 @@
 			name = SBJSON;
 			sourceTree = "<group>";
 		};
+		D796200414925DB100252EB9 /* NativeBrige */ = {
+			isa = PBXGroup;
+			children = (
+				D7961FD214925BC200252EB9 /* INativeBridge.h */,
+				D7961FD314925BC200252EB9 /* NativeBridgeDelegate.h */,
+				D7961FCC14925B5000252EB9 /* NativeBridge.h */,
+				D7961FCD14925B5000252EB9 /* NativeBridge.m */,
+			);
+			name = NativeBrige;
+			sourceTree = "<group>";
+		};
 		D79859341475AB8400F98991 /* protocolos */ = {
 			isa = PBXGroup;
 			children = (
@@ -730,6 +745,7 @@
 		D7AFB70D1474136200D66A37 = {
 			isa = PBXGroup;
 			children = (
+				D796200D14926EDA00252EB9 /* www */,
 				F1C8B23C148EFEDE00A85AB6 /* libz.dylib */,
 				F1C8B23A148EFED900A85AB6 /* libiconv.dylib */,
 				F1C8B238148EFECF00A85AB6 /* libxml2.dylib */,
@@ -935,6 +951,8 @@
 				D79E269B147EAAE400985242 /* PantallaPrincipal.mm */,
 				D79E269C147EAAE400985242 /* PantallaPrincipal.xib */,
 				D71E44981485467400A9E422 /* ControladorListaBarras.xib */,
+				D796200A14925F6900252EB9 /* ControladorSencha.h */,
+				D796200B14925F6900252EB9 /* ControladorSencha.m */,
 			);
 			name = Vista;
 			sourceTree = "<group>";
@@ -991,8 +1009,6 @@
 		D7F46FA6147D48EA00EBC270 /* protocolo */ = {
 			isa = PBXGroup;
 			children = (
-				D7961FD214925BC200252EB9 /* INativeBridge.h */,
-				D7961FD314925BC200252EB9 /* NativeBridgeDelegate.h */,
 				D7F46FA8147D491A00EBC270 /* iServicioBDGeograficas.h */,
 				D7F46FAC147D56D100EBC270 /* iServicioMosaicoGeografico.h */,
 				D797525F1480400E003F331A /* iServicioDeIluminacionPorRegion.h */,
@@ -1163,6 +1179,7 @@
 				D7139A33148D338900C0508A /* MotorIMapa.depend in Resources */,
 				D7139A34148D338900C0508A /* MotorIMapa.layout in Resources */,
 				F11D3A82148DA04C00C8D088 /* Nayarit_2010.xml in Resources */,
+				D796200E14926EDA00252EB9 /* www in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1221,6 +1238,7 @@
 				D7961FFB14925C5800252EB9 /* SBJsonUTF8Stream.m in Sources */,
 				D7961FFC14925C5800252EB9 /* SBJsonWriter.m in Sources */,
 				D7961FFF14925C6F00252EB9 /* NSObject+SBJson.m in Sources */,
+				D796200C14925F6900252EB9 /* ControladorSencha.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
