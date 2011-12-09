@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<conjunto nombre="Definicion Mosaicos"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.inegi.org.mx/imapa/info" xsi:schemaLocation="http://www.inegi.org.mx/imapa/info info-imapa.xsd ">
+	<variables>
+		<concepto nombre="Fecha">2010</concepto>
+		<concepto nombre="Entidad federativa">Nayarit</concepto>
+	</variables>
+	
+	<conjunto nombre="Distribucion territorial">
+		<seccion nombre="tabla">
+			<concepto nombre="Superficie (km2)" nota="Representa el 1.4% del territorio nacional"> 27857</concepto>
+			<concepto nombre="Densidad de poblacion (hab./km2)"> 38.9 </concepto>
+			<concepto nombre="Total de municipios"> 20
+				<concepto nombre="Tepic">380 249</concepto>
+				<concepto nombre="Bahia de Banderas">124 205</concepto>
+				<concepto nombre="Santiago Ixcuintla">93 074</concepto>
+			</concepto>
+		</seccion>
+	</conjunto>
+	
+	<conjunto nombre="Distribucion territorial">
+		<variables>
+			<concepto nombre="Entidad federativa">Jalisco</concepto>
+		</variables>
+		<seccion nombre="tabla">
+			<concepto nombre="Superficie (km2)" nota="Representa el 1.4% del territorio nacional"> 78 588</concepto>
+			<concepto nombre="Densidad de poblacion (hab./km2)"> 93.5 </concepto>
+			<concepto nombre="Total de municipios"> 125
+				<concepto nombre="Guadalajara">1 495 159</concepto>
+				<concepto nombre="Zapopan">1 243 756</concepto>
+				<concepto nombre="Tlaquepaque">608 114</concepto>
+			</concepto>
+		</seccion>
+		<seccion nombre="Distribucion de la poblacion de 12 agnos y mas no economicamente activa segun tipo de actividad" tipo-valor="%">
+			<concepto nombre="Estudiantes">40</concepto>
+			<concepto nombre="Personas dedicadas a los quehaceres del hogar">30</concepto>
+			<concepto nombre="Jubilados y pensionados">10</concepto>
+			<concepto nombre="Personas con alguna limitacion fisica o mental permanente que les impida trabajar">20</concepto>
+			<concepto nombre="Personas en otras actividades no economicas">10</concepto>
+		</seccion>
+	</conjunto>
+
+	<conjunto nombre="Distribucion territorial">
+		<variables>
+			<concepto nombre="Entidad federativa">Aguascalientes</concepto>
+		</variables>
+		<seccion nombre="tabla">
+			<concepto nombre="Superficie (km2)" nota="Representa el 1.4% del territorio nacional"> 5 616</concepto>
+			<concepto nombre="Densidad de poblacion (hab./km2)"> 211.0 </concepto>
+			<concepto nombre="Total de municipios"> 11
+				<concepto nombre="Aguascalientes">797 010</concepto>
+				<concepto nombre="Jesus Maria">99 590</concepto>
+				<concepto nombre="Calvillo">54 136</concepto>
+			</concepto>
+		</seccion>
+		<seccion nombre="Distribucion de la poblacion de 12 agnos y mas no economicamente activa segun tipo de actividad" tipo-valor="%">
+			<concepto nombre="Estudiantes">20</concepto>
+			<concepto nombre="Personas dedicadas a los quehaceres del hogar">10</concepto>
+			<concepto nombre="Jubilados y pensionados">30</concepto>
+			<concepto nombre="Personas con alguna limitacion fisica o mental permanente que les impida trabajar">40</concepto>
+			<concepto nombre="Personas en otras actividades no economicas">5</concepto>
+		</seccion>
+	</conjunto>
+	
+	<conjunto nombre="Caracteristicas economicas">
+		<seccion nombre="Poblacion de 12 agnos y mas" tipo-valor="%">
+			<concepto nombre="Economicamente activa" nota="De cada 100 personas de 12 agnos...">
+				<valor nombre="Total">52.9</valor>
+				<valor nombre="Hombres">72.8</valor>
+				<valor nombre="Mujeres">33.4</valor>
+				<concepto nombre="Ocupada">
+					<valor nombre="Total">96.4</valor>
+					<valor nombre="Hombres">95.6</valor>
+					<valor nombre="Mujeres">98.1</valor>
+				</concepto>
+				<concepto nombre="No ocupada">
+					<valor nombre="Total">3.6</valor>
+					<valor nombre="Hombres">4.4</valor>
+					<valor nombre="Mujeres">1.9</valor>
+				</concepto>
+			</concepto>
+			<concepto nombre="No economicamente activa" nota="De cada 100 personas de 12 agnos...">
+				<valor nombre="Total">46.5</valor>
+				<valor nombre="Hombres">26.3</valor>
+				<valor nombre="Mujeres">66.3</valor>
+			</concepto>
+			<concepto nombre="Condicion de actividad no especificada">
+				<valor nombre="Total">0.6</valor>
+				<valor nombre="Hombres">0.9</valor>
+				<valor nombre="Mujeres">0.3</valor>
+			</concepto>
+		</seccion>
+		<seccion nombre="Distribucion de la poblacion de 12 agnos y mas no economicamente activa segun tipo de actividad" tipo-valor="%">
+			<concepto nombre="Estudiantes">35.3</concepto>
+			<concepto nombre="Personas dedicadas a los quehaceres del hogar">50.4</concepto>
+			<concepto nombre="Jubilados y pensionados">6.1</concepto>
+			<concepto nombre="Personas con alguna limitacion fisica o mental permanente que les impida trabajar">2.9</concepto>
+			<concepto nombre="Personas en otras actividades no economicas">5.3</concepto>
+		</seccion>
+	</conjunto>
+	
+	<conjunto nombre="Composicion por edad y sexo">
+		<seccion nombre="Piramide poblacional" tipo-concepto="Agnos" tipo-valor="Miles">
+			<concepto nombre="0-4">
+				<valor nombre="Hombres">50</valor>
+				<valor nombre="Mujeres">51</valor>
+			</concepto>
+			<concepto nombre="5-9">
+				<valor nombre="Hombres">48</valor>
+				<valor nombre="Mujeres">51</valor>
+			</concepto>
+			<concepto nombre="10-14">
+				<valor nombre="Hombres">47</valor>
+				<valor nombre="Mujeres">50</valor>
+			</concepto>
+		</seccion>
+	</conjunto>
+</conjunto>
