@@ -72,11 +72,10 @@
 }
 
 - (void) estableceVistaRequerida: (bool) requerida {
-    
+    [[self webView] setHidden: !requerida];
 }
 
 - (void) ejecutaInstruccion: (NSString *) instruccion {
-    NSLog(@"Instruccion a ejecutar: %@", instruccion);
     [[self webView] performSelectorOnMainThread:@selector(stringByEvaluatingJavaScriptFromString:) withObject: instruccion waitUntilDone: NO];
 }
 
