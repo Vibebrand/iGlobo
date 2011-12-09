@@ -13,6 +13,14 @@
 @synthesize webView;
 @synthesize nativeBridge;
 
+- (id)init {
+    self = [super init];
+    if (self) {
+        inicializado = false;
+    }
+    return self;
+}
+
 - (void)dealloc {
     [self setWebView: nil];
     [super dealloc];
@@ -52,6 +60,22 @@
 
 - (void)handleCall:(NSString*)functionName callbackId:(int)callbackId args:(NSArray*)args webView: (UIWebView *)webView andNativeBridge: (id<INativeBridge>) nativeBridge {
     
+}
+
+- (bool) requiereInicializacion {
+    // TODO Dar mas inteligencia a la inicializacion
+    bool salida = inicializado;
+    if(!inicializado)
+        inicializado = true;
+    return !salida;
+}
+
+- (void) estableceVistaRequerida: (bool) requerida {
+    
+}
+
+- (void) ejecutaInstruccion: (NSString *) instruccion {
+    [[self webView ] stringByEvaluatingJavaScriptFromString: instruccion];
 }
 
 @end

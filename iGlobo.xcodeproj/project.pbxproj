@@ -44,6 +44,7 @@
 		D71E44A414855F9000A9E422 /* drawing.m in Sources */ = {isa = PBXBuildFile; fileRef = D71E44A114855F9000A9E422 /* drawing.m */; };
 		D71E44A514855F9000A9E422 /* PDColoredProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = D71E44A314855F9000A9E422 /* PDColoredProgressView.m */; };
 		D761C994148FB7A200E81541 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399DA148D338900C0508A /* main.cpp */; };
+		D79325A61492AEAA00B79D40 /* RepresentableSencha.mm in Sources */ = {isa = PBXBuildFile; fileRef = D79325A51492AEAA00B79D40 /* RepresentableSencha.mm */; };
 		D7934C8614770750005B13C2 /* ControladorCapaDeInteraccion.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7934C8514770750005B13C2 /* ControladorCapaDeInteraccion.mm */; };
 		D7934C8A14770AA5005B13C2 /* ServicioBDGeograficas.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7934C8914770AA5005B13C2 /* ServicioBDGeograficas.mm */; };
 		D794F08F148686C3000855BB /* Hombres.png in Resources */ = {isa = PBXBuildFile; fileRef = D794F08D148686C3000855BB /* Hombres.png */; };
@@ -62,7 +63,7 @@
 		D7961FFB14925C5800252EB9 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = D7961FEF14925C5800252EB9 /* SBJsonUTF8Stream.m */; };
 		D7961FFC14925C5800252EB9 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D7961FF114925C5800252EB9 /* SBJsonWriter.m */; };
 		D7961FFF14925C6F00252EB9 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = D7961FFE14925C6F00252EB9 /* NSObject+SBJson.m */; };
-		D796200C14925F6900252EB9 /* ControladorSencha.m in Sources */ = {isa = PBXBuildFile; fileRef = D796200B14925F6900252EB9 /* ControladorSencha.m */; };
+		D796200C14925F6900252EB9 /* ControladorSencha.mm in Sources */ = {isa = PBXBuildFile; fileRef = D796200B14925F6900252EB9 /* ControladorSencha.mm */; };
 		D796200E14926EDA00252EB9 /* www in Resources */ = {isa = PBXBuildFile; fileRef = D796200D14926EDA00252EB9 /* www */; };
 		D797521E147FEF5F003F331A /* PanelRedondo.mm in Sources */ = {isa = PBXBuildFile; fileRef = D797521D147FEF5F003F331A /* PanelRedondo.mm */; };
 		D797526214804147003F331A /* ServicioDeIluminacionPorRegion.mm in Sources */ = {isa = PBXBuildFile; fileRef = D797526114804147003F331A /* ServicioDeIluminacionPorRegion.mm */; };
@@ -258,6 +259,9 @@
 		D71E44A214855F9000A9E422 /* PDColoredProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDColoredProgressView.h; sourceTree = "<group>"; };
 		D71E44A314855F9000A9E422 /* PDColoredProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDColoredProgressView.m; sourceTree = "<group>"; };
 		D73EAE0714840020006DE184 /* iControladorVista.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iControladorVista.h; sourceTree = "<group>"; };
+		D79325A41492AE5C00B79D40 /* RepresentableSencha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepresentableSencha.h; sourceTree = "<group>"; };
+		D79325A51492AEAA00B79D40 /* RepresentableSencha.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RepresentableSencha.mm; sourceTree = "<group>"; };
+		D79325A71492AFCE00B79D40 /* IRepresentableSenchaDelegado.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IRepresentableSenchaDelegado.h; sourceTree = "<group>"; };
 		D7934C8114770412005B13C2 /* iDelegadoControladorMapa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iDelegadoControladorMapa.h; sourceTree = "<group>"; };
 		D7934C8414770750005B13C2 /* ControladorCapaDeInteraccion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControladorCapaDeInteraccion.h; sourceTree = "<group>"; };
 		D7934C8514770750005B13C2 /* ControladorCapaDeInteraccion.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ControladorCapaDeInteraccion.mm; sourceTree = "<group>"; };
@@ -296,7 +300,7 @@
 		D7961FFD14925C6F00252EB9 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
 		D7961FFE14925C6F00252EB9 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
 		D796200A14925F6900252EB9 /* ControladorSencha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControladorSencha.h; sourceTree = "<group>"; };
-		D796200B14925F6900252EB9 /* ControladorSencha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControladorSencha.m; sourceTree = "<group>"; };
+		D796200B14925F6900252EB9 /* ControladorSencha.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ControladorSencha.mm; sourceTree = "<group>"; };
 		D796200D14926EDA00252EB9 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 		D797521C147FEF5F003F331A /* PanelRedondo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelRedondo.h; sourceTree = "<group>"; };
 		D797521D147FEF5F003F331A /* PanelRedondo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PanelRedondo.mm; sourceTree = "<group>"; };
@@ -621,6 +625,8 @@
 				D7139A52148D461A00C0508A /* ControlMaestro.mm */,
 				D7139A5C148D48C300C0508A /* GestorCpp.h */,
 				D7139A5F148D4B7600C0508A /* GestorCpp.mm */,
+				D79325A41492AE5C00B79D40 /* RepresentableSencha.h */,
+				D79325A51492AEAA00B79D40 /* RepresentableSencha.mm */,
 			);
 			name = ControladorNegocio;
 			sourceTree = "<group>";
@@ -630,6 +636,7 @@
 			children = (
 				D7139A62148D4C8C00C0508A /* iGestorObjectiveC.h */,
 				D7139A63148D714300C0508A /* iControlMaestro.h */,
+				D79325A71492AFCE00B79D40 /* IRepresentableSenchaDelegado.h */,
 			);
 			name = Protocolos;
 			sourceTree = "<group>";
@@ -952,7 +959,7 @@
 				D79E269C147EAAE400985242 /* PantallaPrincipal.xib */,
 				D71E44981485467400A9E422 /* ControladorListaBarras.xib */,
 				D796200A14925F6900252EB9 /* ControladorSencha.h */,
-				D796200B14925F6900252EB9 /* ControladorSencha.m */,
+				D796200B14925F6900252EB9 /* ControladorSencha.mm */,
 			);
 			name = Vista;
 			sourceTree = "<group>";
@@ -1238,7 +1245,8 @@
 				D7961FFB14925C5800252EB9 /* SBJsonUTF8Stream.m in Sources */,
 				D7961FFC14925C5800252EB9 /* SBJsonWriter.m in Sources */,
 				D7961FFF14925C6F00252EB9 /* NSObject+SBJson.m in Sources */,
-				D796200C14925F6900252EB9 /* ControladorSencha.m in Sources */,
+				D796200C14925F6900252EB9 /* ControladorSencha.mm in Sources */,
+				D79325A61492AEAA00B79D40 /* RepresentableSencha.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
