@@ -10,6 +10,8 @@
 #import "ControladorRepresentacionGlobo.h"
 #import "PantallaPrincipal.h"
 #import "ControlMaestro.h"
+#import "MotorSenchaAPI.h"
+#import "RepresentableSencha.h"
 
 @implementation AppDelegate
 
@@ -38,6 +40,14 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     self.window.backgroundColor = [UIColor whiteColor];
     
+    ControladorSencha * controladorSencha = [[ControladorSencha new] autorelease];
+    // TODO Asignar webview
+    MotorGraficasSencha::IRepresentableSencha * representable = new RepresentableSencha(controladorSencha); 
+    
+    MotorGraficasSencha::MotorGraficasSencha * motorGraficasSencha = new MotorGraficasSencha::MotorGraficasSencha;
+    motorGraficasSencha->registraRepresentable(representable, "tabla", MotorGraficasSencha::MotorGraficasSencha::Pie);
+    
+    
     ControladorRepresentacionGlobo * controladorRepresentacionGlobo = [[ControladorRepresentacionGlobo alloc]  initWithNibName:@"ControladorRepresentacionGlobo" bundle:nil ];
     
     _pantallaPrincipal = [[ PantallaPrincipal alloc ] initWithNibName:@"PantallaPrincipal" bundle:[NSBundle mainBundle]];
@@ -48,6 +58,8 @@
     if([gestorInteres conformsToProtocol: @protocol(iGestorObjectiveC)]) {
         [_controlMaestro registraGestor: gestorInteres];
     }
+    
+    [_controlMaestro registraGestorCpp: motorGraficasSencha];
     
     [_controlMaestro cargaArchivos];
     [controladorRepresentacionGlobo release];

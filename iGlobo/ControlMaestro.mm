@@ -29,6 +29,12 @@
     }
     gestores.clear();
     
+    for(std::set<MotorIMapaAPI::IGestorSecciones *>::iterator it_gestores = gestoresCpp.begin(); 
+        it_gestores != gestoresCpp.end(); ++it_gestores) {
+        delete *it_gestores;
+    }
+    gestoresCpp.clear();
+    
     [super dealloc];
 }
 
@@ -36,6 +42,11 @@
     GestorCpp * gestorCppInteres = new GestorCpp(gestor, self);
     gestores.insert(gestorCppInteres);
     motor->registraGestorSecciones(gestorCppInteres);
+}
+
+- (void) registraGestorCpp: (MotorIMapaAPI::IGestorSecciones *) gestorSecciones {
+    gestoresCpp.insert(gestorSecciones);
+    motor->registraGestorSecciones(gestorSecciones);
 }
 
 - (void) estableceVariable:(NSString *) nombre valor: (NSString *) valor {

@@ -28,6 +28,6 @@
 - (void) ejecutaInstruccion: (NSString *) instruccion;
 
 @property(nonatomic, assign) NativeBridge * nativeBridge;
-@property(nonatomic, retain) UIWebView * webView;
+@property(nonatomic, assign) UIWebView * webView;
 
 @end

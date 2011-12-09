@@ -22,6 +22,7 @@
 }
 
 - (void)dealloc {
+    [[self webView] setDelegate: nil];
     [self setWebView: nil];
     [super dealloc];
 }

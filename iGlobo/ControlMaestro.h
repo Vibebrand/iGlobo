@@ -22,9 +22,12 @@ struct MotorIMapa;
     MotorIMapa * motor;
     
     std::set<GestorCpp *> gestores;
+    std::set<MotorIMapaAPI::IGestorSecciones *> gestoresCpp;
 }
 
 - (void) registraGestor: (id<iGestorObjectiveC>) gestor;
+- (void) registraGestorCpp: (MotorIMapaAPI::IGestorSecciones *) gestorSecciones;
+
 - (void) estableceVariable:(NSString *) nombre valor: (NSString *) valor;
 - (void) cargaArchivos;
 

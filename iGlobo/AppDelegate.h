@@ -16,6 +16,7 @@
    // ControladorRepresentacionGlobo *_controladorRepresentacionGlobo;
     PantallaPrincipal *_pantallaPrincipal;
     ControlMaestro * _controlMaestro;
+    void * _motorGraficasSencha;
 }
 
 @property (strong, nonatomic) UIWindow *window;
