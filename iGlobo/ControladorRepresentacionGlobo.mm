@@ -19,6 +19,11 @@
 //Vista
 @synthesize etiquetaNombrePais = _etiquetaNombrePais;
 @synthesize etiquetaNombreRegion = _etiquetaNombreRegion;
+@synthesize etiquetaTotalPoblacion = _etiquetaTotalPoblacion;
+
+@synthesize botonOcultarMensajes = _botonOcultarMensajes;
+
+@synthesize etiquetaDescripcionPoligono = _etiquetaDescripcionPoligono;
 
 @synthesize glView;
 @synthesize sceneRenderer;
@@ -37,6 +42,8 @@
 @synthesize controladorCapaDeInteraccion;
 
 @synthesize loftlayer;
+@synthesize controlMaestro = _controlMaestro;
+
 
 - (void)clear
 {
@@ -51,6 +58,9 @@
     
     [_etiquetaNombreRegion release];
     [_etiquetaNombrePais release];
+    [_etiquetaTotalPoblacion release];
+    [_etiquetaDescripcionPoligono release];
+    [_botonOcultarMensajes release];
     
     
     self.pinchDelegate = nil;
@@ -196,6 +206,9 @@
     self.pressDelegate = [WhirlyGlobeLongPressDelegate longPressDelegateForView:glView globeView:theView];
     self.rotateDelegate = [WhirlyGlobeRotateDelegate rotateDelegateForView:glView globeView:theView];
 	
+    [controladorMapa estableceControlMaestro:[self controlMaestro]];
+    
+    flagBotonOcultarMensajes = true;
     
     // This will start loading things
 	[self.layerThread start];
@@ -277,6 +290,25 @@
 
 - (void) procesaSeccion: (NSDictionary *) seccion
 {
+    NSArray *datosTerritoriales =  [seccion objectForKey:@"conceptos"];
+    NSEnumerator *dato = [datosTerritoriales objectEnumerator];
+    id datoDiccionario;
+    NSMutableString *valorEtiqueta = [[NSMutableString alloc] init];
+    while(datoDiccionario = [dato nextObject] )
+    {
+        id listaValor = [datoDiccionario objectForKey:@"valores"] ;
+        id diccionarioValor = [listaValor objectAtIndex:0];
+        [valorEtiqueta appendString:  [NSString stringWithFormat:@"%@ : %@ \n",[datoDiccionario objectForKey:@"nombre"],
+                                       [diccionarioValor objectForKey:@"valor"]]];
+    }
+
+    [[self etiquetaDescripcionPoligono] setText: valorEtiqueta];
+    [valorEtiqueta release];
+    [[self etiquetaDescripcionPoligono]setHidden:NO];
+    [[self botonOcultarMensajes] setHidden:NO];
+    
+    flagBotonOcultarMensajes = NO;
+    
     NSLog(@"ProcesaSeccion: %@", seccion);
 }
 
@@ -284,14 +316,24 @@
 {
     NSLog(@"seccionInvalida: %@", seccion);
 }
+
 - (void) finalizadaActualizacionSecciones
 {
+    if(flagBotonOcultarMensajes) {
+        [[self botonOcultarMensajes] setHidden:YES];
+        [[self etiquetaDescripcionPoligono] setHidden:YES];
+    }
+    
+    flagBotonOcultarMensajes = YES;
+    
     NSLog(@"finalizadaActualizacionSecciones");
 }
 
 - (NSArray *) obtenNombreSeccionesGestionadas
 {
     return [NSArray arrayWithObject: @"tabla"];
+    
+    
 }
 
 - (NSArray *) obtenNombreSeccionesNoGestionadas
@@ -303,6 +345,13 @@
   {
       [controlMaestro estableceVariable:@"Pais" valor:@""];
       [controlMaestro estableceVariable:@"Entidad federativa" valor:@""];
+      [self setControlMaestro:controlMaestro];
   }
+
+-(IBAction)cmdOcultarEtiqueta:(id)sender
+{
+    [[self etiquetaDescripcionPoligono] setHidden:YES];
+    [[self botonOcultarMensajes] setHidden:YES];
+}
 
 @end

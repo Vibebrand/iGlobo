@@ -28,7 +28,7 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
 @synthesize servicioIluminacion = _servicioIluminacion;
 
 @synthesize delegadoPanelRepresentacionGlobo = _delegadoPanelRepresentacionGlobo;
-
+@synthesize controlMaestro = _controlMaestro;
 
 -(void) dealloc
 {
@@ -94,6 +94,11 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
     _scene = scene;
 }
 
+-(void)estableceControlMaestro:(ControlMaestro *) controlMaestro
+{
+    [self setControlMaestro:controlMaestro];
+}
+
 -(void)cmdGeoReferenciaSeleccionada:(NSNotification *)notificacion
 {
     TapMessage *msg = notificacion.object;
@@ -134,6 +139,8 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
                     [[self delegadoPanelRepresentacionGlobo] establecerNombrePais: nombrePais];
                     [[self delegadoPanelRepresentacionGlobo] establecerNombreRegion: nombreRegion];
                     
+                    
+                    
                     WhirlyGlobe::ShapeSet regionShapes;
                     self.servicioBDGeograficas.obtenerBDRegiones->getMatchingVectors([NSString stringWithFormat:@"ISO like '%@'",nombreISO],regionShapes);
                     
@@ -152,7 +159,11 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
                             delete canShapes;
                         }
                     }
-                } NSLog(@"Pais");
+                    [[self controlMaestro] estableceVariable:@"Pais" valor: nombrePais];
+                    [[self controlMaestro] estableceVariable:@"Entidad federativa" valor: nombreRegion];
+                    [[self controlMaestro] actualizaSecciones];
+                }
+                NSLog(@"Pais");
                 break;
             case PoligonoOceano:
                 NSLog(@"Oceano");
@@ -358,6 +369,10 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
         [[self labelLayer] removeLabel:poligono->subEtiquetas];
         [[self delegadoPanelRepresentacionGlobo] establecerNombrePais:@""];
         [[self delegadoPanelRepresentacionGlobo] establecerNombreRegion:@""];
+        
+        [[self controlMaestro] estableceVariable:@"Entidad federativa" valor: @""];
+        [[self controlMaestro] actualizaSecciones];
+        
         [[self servicioIluminacion] eliminarRegionIliminada];
         
         _poligonosDibujados.erase(it);

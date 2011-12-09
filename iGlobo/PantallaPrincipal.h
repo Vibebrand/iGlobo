@@ -11,6 +11,7 @@
 #import "ControladorListaBarras.h"
 #import "ControladorSencha.h"
 #import "iControladorVista.h"
+#import "ControladorPiramidePoblacional.h"
 
 @interface PantallaPrincipal : UIViewController
 {
@@ -24,6 +25,8 @@
     ControladorListaBarras *_controladorRepresentacionListaGraficaBarrasDerecha;
     ControladorSencha * _controladorSencha;
     
+    ControladorPiramidePoblacional * _controladorPiramidePoblacional;
+    
     //id<iControladorVista> _controladorRepresentacionListaGraficaBarrasIzquierda;
     //id<iControladorVista> _controladorRepresentacionListaGraficaBarrasDerecha;
 
@@ -34,5 +37,6 @@
 @property(nonatomic, retain) IBOutlet UIView* representacionGraficaBarrasDerecha;
 @property(nonatomic, retain) id<iControladorVista> controladorVista;
 @property(nonatomic, assign) IBOutlet UIWebView * webView;
+@property(nonatomic, retain) ControladorPiramidePoblacional *controladorPiramidePoblacional;
 
 @end
