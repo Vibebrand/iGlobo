@@ -12,6 +12,8 @@
 using namespace WhirlyGlobe;
 using namespace clipper;
 
+bool ClipLoopToMbr(const WhirlyGlobe::VectorRing &ring,const Mbr &mbr,std::vector<VectorRing> &rets);
+
 float PolyScale = 1e14;
 
 // Clip the given loop to the given MBR
