@@ -10,15 +10,15 @@
 #import "NativeBridge.h"
 #import "NativeBridgeDelegate.h"
 
-@interface ControladorSencha : UIViewController <NativeBridgeDelegate>
-{
-}
+@interface ControladorSencha : NSObject <NativeBridgeDelegate>
+
+- (void)viewDidLoad;
 
 - (void)handleCall:(NSString*)functionName callbackId:(int)callbackId args:(NSArray*)args webView: (UIWebView *)webView andNativeBridge: (id<INativeBridge>) nativeBridge;
 
 - (NSString*) pathForResource:(NSString*)resourcepath;
 
 @property(nonatomic, assign) NativeBridge * nativeBridge;
-@property(nonatomic, retain) IBOutlet UIWebView * webView;
+@property(nonatomic, retain) UIWebView * webView;
 
 @end

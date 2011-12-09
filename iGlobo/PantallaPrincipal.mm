@@ -14,6 +14,7 @@
 @synthesize representacionGraficaBarrasIzquierdo = _representacionGraficaBarrasIzquierdo;
 @synthesize representacionGraficaBarrasDerecha = _representacionGraficaBarrasDerecha;
 @synthesize controladorVista = _controladorRepresentacionGlobo;
+@synthesize webView;
 
 -(void)dealloc
 {
@@ -26,6 +27,7 @@
     [_controladorRepresentacionListaGraficaBarrasDerecha release];
     
     [_controladorRepresentacionGlobo release];
+    [_controladorSencha release];
     [super dealloc];
 }
 
@@ -71,6 +73,10 @@
     [_controladorRepresentacionListaGraficaBarrasDerecha establcerGenero:@"Mujeres"];
     [_controladorRepresentacionListaGraficaBarrasDerecha establecerPorcentajeDeLaPoblacion:@"60%" enBaseAlaSumatoriaTotal:@"888,5400"];
     
+    
+    _controladorSencha = [ControladorSencha new];
+    [_controladorSencha setWebView: [self webView]];
+    [_controladorSencha viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
 

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ControladorRepresentacionGlobo.h"
 #import "ControladorListaBarras.h"
+#import "ControladorSencha.h"
 #import "iControladorVista.h"
 
 @interface PantallaPrincipal : UIViewController
@@ -21,6 +22,7 @@
     
     ControladorListaBarras *_controladorRepresentacionListaGraficaBarrasIzquierda;
     ControladorListaBarras *_controladorRepresentacionListaGraficaBarrasDerecha;
+    ControladorSencha * _controladorSencha;
     
     //id<iControladorVista> _controladorRepresentacionListaGraficaBarrasIzquierda;
     //id<iControladorVista> _controladorRepresentacionListaGraficaBarrasDerecha;
@@ -31,5 +33,6 @@
 @property(nonatomic, retain) IBOutlet UIView* representacionGraficaBarrasIzquierdo;
 @property(nonatomic, retain) IBOutlet UIView* representacionGraficaBarrasDerecha;
 @property(nonatomic, retain) id<iControladorVista> controladorVista;
+@property(nonatomic, assign) IBOutlet UIWebView * webView;
 
 @end
