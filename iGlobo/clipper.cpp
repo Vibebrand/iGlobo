@@ -51,6 +51,50 @@ namespace clipper {
 static double const horizontal = -3.4E+38;
 static double const pi = 3.14159265359;
 enum Direction { dRightToLeft, dLeftToRight };
+    
+struct DoublePoint;
+    
+// Prototype definition
+bool IsClockwise(OutRec *outRec, bool UseFullInt64Range);
+int PointCount(OutPt *pts);
+bool PointIsVertex(const IntPoint &pt, OutPt *pp);
+bool PointInPolygon(const IntPoint &pt, OutPt *pp, bool UseFullInt64Range);
+bool SlopesEqual(TEdge &e1, TEdge &e2, bool UseFullInt64Range);
+bool SlopesEqual(const IntPoint pt1, const IntPoint pt2, const IntPoint pt3, bool UseFullInt64Range);
+bool SlopesEqual(const IntPoint pt1, const IntPoint pt2, const IntPoint pt3, const IntPoint pt4, bool UseFullInt64Range);
+double GetDx(const IntPoint pt1, const IntPoint pt2);
+void SetDx(TEdge &e);
+void SwapSides(TEdge &edge1, TEdge &edge2);
+void SwapPolyIndexes(TEdge &edge1, TEdge &edge2);
+long64 TopX(TEdge &edge, const long64 currentY);
+long64 TopX(const IntPoint pt1, const IntPoint pt2, const long64 currentY);
+bool IntersectPoint(TEdge &edge1, TEdge &edge2, IntPoint &ip, bool UseFullInt64Range);
+void ReversePolyPtLinks(OutPt &pp);
+void DisposeOutPts(OutPt*& pp);
+OutRec* CreateOutRec();
+void InitEdge(TEdge *e, TEdge *eNext, TEdge *ePrev, const IntPoint &pt, PolyType polyType);
+void SwapPoints(IntPoint &pt1, IntPoint &pt2);
+bool GetOverlapSegment(IntPoint pt1a, IntPoint pt1b, IntPoint pt2a, IntPoint pt2b, IntPoint &pt1, IntPoint &pt2);
+OutPt* PolygonBottom(OutPt* pp);
+bool FindSegment(OutPt* &pp, IntPoint &pt1, IntPoint &pt2);
+bool Pt3IsBetweenPt1AndPt2(const IntPoint pt1, const IntPoint pt2, const IntPoint pt3);
+OutPt* InsertPolyPtBetween(OutPt* p1, OutPt* p2, const IntPoint pt);
+bool PolySort(OutRec *or1, OutRec *or2);
+OutRec* FindAppendLinkEnd(OutRec *outRec);
+bool GetNextNonDupOutPt(OutPt* pp, OutPt*& next);
+bool GetPrevNonDupOutPt(OutPt* pp, OutPt*& prev);
+bool IsMinima(TEdge *e);
+bool IsMaxima(TEdge *e, const long64 Y);
+bool IsIntermediate(TEdge *e, const long64 Y);
+TEdge *GetMaximaPair(TEdge *e);
+TEdge* GetNextInAEL(TEdge *e, Direction dir);
+bool Process1Before2(IntersectNode &node1, IntersectNode &node2);
+void SwapIntersectNodes(IntersectNode &int1, IntersectNode &int2);
+bool E2InsertsBeforeE1(TEdge &e1, TEdge &e2);
+Polygon BuildArc(const IntPoint &pt, const double a1, const double a2, const double r);
+DoublePoint GetUnitNormal( const IntPoint &pt1, const IntPoint &pt2);
+    
+
 
 //------------------------------------------------------------------------------
 // Int128 class (enables safe math on signed 64bit integers)
