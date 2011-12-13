@@ -100,6 +100,15 @@
 	</conjunto>
 	
 	<conjunto nombre="Composicion por edad y sexo">
+        
+        <seccion nombre="Poblacion Total"> 
+            <concepto nombre="Poblacion Total">1 084 979</concepto>
+            <concepto nombre="Porcentaje de poblacion nacional">1</concepto>
+            <concepto nombre="Relacion hombres-mujeres">99.5</concepto>
+            <concepto nombre="Edad mediana">26</concepto>
+            <concepto nombre="Razon de dependencia por edad">57.3</concepto>
+        </seccion>
+        
 		<seccion nombre="Piramide poblacional" tipo-concepto="Agnos" tipo-valor="Miles">
 			<concepto nombre="0-4">
 				<valor nombre="Hombres">50</valor>
