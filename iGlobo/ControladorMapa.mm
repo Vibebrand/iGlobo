@@ -101,15 +101,19 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
 
 -(void)cmdGeoReferenciaSeleccionada:(NSNotification *)notificacion
 {
+    
     TapMessage *msg = notificacion.object;
+    
+
     if(RotateToCountry)
     {
         [[self globeView] cancelAnimation];
         Eigen::Quaternionf newRotQuat = [[self globeView] makeRotationToGeoCoord:msg.whereGeo keepNorthUp:YES];
-        self.globeView.delegate= [[[AnimateViewRotation alloc] initWithView:[self globeView] rot:newRotQuat howLong:1.0] autorelease ];
+        self.globeView.delegate= [[[AnimateViewRotation alloc] initWithView:[self globeView] rot:newRotQuat howLong:0.7] autorelease ];
     }
     
     [self performSelector:@selector(cmdAccionSobreAreaGeografica:) onThread:[self layerThread] withObject:msg waitUntilDone:NO];
+    
 }
 
 - (void)cmdAccionSobreAreaGeografica:(TapMessage *)msg
