@@ -25,6 +25,20 @@
 
 @synthesize etiquetaDescripcionPoligono = _etiquetaDescripcionPoligono;
 
+@synthesize etiquetaPorcentajePoblacion = _etiquetaPorcentajePoblacion;
+
+
+@synthesize etiquetaEdadMediana = _etiquetaEdadMediana;
+@synthesize  etiquetaRazonDependencia = _etiquetaRazonDependencia;
+@synthesize etiquetaRelacionHombresMujeres = _etiquetaRelacionHombresMujeres;
+
+@synthesize pageControl = _pageControl;
+@synthesize scrollView = _scrollView;
+
+@synthesize panelPrincipal = _panelPrincipal;
+@synthesize panelDetallesPoblacion = _panelDetallesPoblacion;
+
+
 @synthesize glView;
 @synthesize sceneRenderer;
 @synthesize fpsLabel;
@@ -59,9 +73,20 @@
     [_etiquetaNombreRegion release];
     [_etiquetaNombrePais release];
     [_etiquetaTotalPoblacion release];
+    [_etiquetaPorcentajePoblacion release];
     [_etiquetaDescripcionPoligono release];
     [_botonOcultarMensajes release];
     
+    
+    [_etiquetaRelacionHombresMujeres release];
+    [_etiquetaRazonDependencia release];
+    [_etiquetaEdadMediana release];
+    
+    [_scrollView release];
+    [_pageControl release];
+    
+    [_panelDetallesPoblacion release];
+    [_panelPrincipal release];
     
     self.pinchDelegate = nil;
     self.rotateDelegate = nil;
@@ -210,8 +235,36 @@
     
     flagBotonOcultarMensajes = true;
     
+    [self agregarPanelesCarrusel];
+    
     // This will start loading things
 	[self.layerThread start];
+    
+    
+    
+    
+}
+
+-(void)agregarPanelesCarrusel
+{
+    pageControlBeingUsed= NO;
+    NSArray *paneles = [[NSArray alloc] initWithObjects:_panelPrincipal,_panelDetallesPoblacion, nil];
+    for(int i=0; i<paneles.count; i++)
+    {
+        CGRect frame;
+		frame.origin.x = self.scrollView.frame.size.width * i;
+		frame.origin.y = 0;
+		frame.size = self.scrollView.frame.size;
+        
+        UIView *vista = [paneles objectAtIndex:i];
+        [vista setFrame:frame];
+        [[self scrollView] addSubview:vista];
+    }
+    
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * paneles.count, self.scrollView.frame.size.height);
+    self.pageControl.currentPage=0;
+    self.pageControl.numberOfPages = paneles.count;
+    [paneles release];
 }
 
 - (void)viewDidUnload
@@ -286,9 +339,41 @@
     return [self view];
 }
 
-#pragma iGestorObjectiveC
+-(void) procesaSeccionPoblacionTotal:(NSDictionary *) seccion
+{
 
-- (void) procesaSeccion: (NSDictionary *) seccion
+    NSArray *datosTerritoriales =  [seccion objectForKey:@"conceptos"];
+    NSEnumerator *dato = [datosTerritoriales objectEnumerator];
+    id datoDiccionario;
+    for (int i = 0; i< datosTerritoriales.count; i++)
+    {
+     
+        datoDiccionario = [dato nextObject];
+        id listaValor = [datoDiccionario objectForKey:@"valores"] ;
+        id diccionarioValor = [listaValor objectAtIndex:0];
+        NSString *etiqueta = [NSString stringWithFormat:@" %@ : %@ ",[datoDiccionario objectForKey:@"nombre"],[diccionarioValor objectForKey:@"valor"]];
+
+        switch (i) {
+            case 0:
+                [[self etiquetaTotalPoblacion] setText:etiqueta];
+                break;
+            case 1:
+                [[self etiquetaPorcentajePoblacion] setText:etiqueta];
+                break;
+            case 2:
+                [[self etiquetaRelacionHombresMujeres] setText:etiqueta];
+                break;
+            case 3:
+                [[self etiquetaEdadMediana] setText:etiqueta];
+                break;
+            case 4:
+                [[self etiquetaRazonDependencia ] setText:etiqueta];
+                break;
+        }
+    }
+}
+
+-(void) procesaSeccionTabla:(NSDictionary *) seccion
 {
     NSArray *datosTerritoriales =  [seccion objectForKey:@"conceptos"];
     NSEnumerator *dato = [datosTerritoriales objectEnumerator];
@@ -301,15 +386,26 @@
         [valorEtiqueta appendString:  [NSString stringWithFormat:@"%@ : %@ \n",[datoDiccionario objectForKey:@"nombre"],
                                        [diccionarioValor objectForKey:@"valor"]]];
     }
-
+    
     [[self etiquetaDescripcionPoligono] setText: valorEtiqueta];
     [valorEtiqueta release];
     [[self etiquetaDescripcionPoligono]setHidden:NO];
     [[self botonOcultarMensajes] setHidden:NO];
+}
+
+
+#pragma iGestorObjectiveC
+
+- (void) procesaSeccion: (NSDictionary *) seccion
+{
+    NSString *_nombre = [seccion objectForKey:@"nombre"];
+    if( [_nombre isEqualToString:@"tabla"]  )
+        [self procesaSeccionTabla:seccion];
     
-    flagBotonOcultarMensajes = NO;
+    if( [_nombre isEqualToString:@"Poblacion Total"]  )
+        [self procesaSeccionPoblacionTotal:seccion];
     
-    NSLog(@"ProcesaSeccion: %@", seccion);
+    flagBotonOcultarMensajes = NO;    
 }
 
 - (void) seccionInvalida: (NSDictionary *) seccion
@@ -322,7 +418,13 @@
     if(flagBotonOcultarMensajes) {
         [[self botonOcultarMensajes] setHidden:YES];
         [[self etiquetaDescripcionPoligono] setHidden:YES];
-    }
+        
+        [[self etiquetaTotalPoblacion] setText:@""];
+        [[self etiquetaPorcentajePoblacion] setText:@""];
+        [[self etiquetaRelacionHombresMujeres] setText:@""];
+        [[self etiquetaEdadMediana] setText:@""];
+        [[self etiquetaRazonDependencia ] setText:@""];
+    }      
     
     flagBotonOcultarMensajes = YES;
     
@@ -331,9 +433,7 @@
 
 - (NSArray *) obtenNombreSeccionesGestionadas
 {
-    return [NSArray arrayWithObject: @"tabla"];
-    
-    
+    return [NSArray arrayWithObjects:@"tabla", @"Poblacion Total", nil];
 }
 
 - (NSArray *) obtenNombreSeccionesNoGestionadas
@@ -353,5 +453,39 @@
     [[self etiquetaDescripcionPoligono] setHidden:YES];
     [[self botonOcultarMensajes] setHidden:YES];
 }
+
+#pragma UIScrollView
+
+
+-(void) scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if(!pageControlBeingUsed)
+    {
+        CGFloat pageWidth = self.scrollView.frame.size.width;
+        int page = floor(  (self.scrollView.contentOffset.x -pageWidth/2) /pageWidth) +1;
+        self.pageControl.currentPage = page;
+    }
+}
+
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    pageControlBeingUsed = NO;
+}
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    pageControlBeingUsed = NO;
+}
+
+-(IBAction)changePage:(id)sender
+{
+    CGRect frame;
+    frame.origin.x = self.scrollView.frame.size.width * self.pageControl.currentPage;
+    frame.origin.y = 0;
+    frame.size = self.scrollView.frame.size;
+    [self.scrollView scrollRectToVisible:frame animated:YES];
+    pageControlBeingUsed=YES;
+}
+
 
 @end

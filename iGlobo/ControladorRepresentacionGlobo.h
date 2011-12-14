@@ -17,15 +17,30 @@
 #import "iControladorVista.h"
 #import "iGestorObjectiveC.h"
 
-@interface ControladorRepresentacionGlobo : UIViewController<iDelegadoPanelRepresentacionGlobo, iControladorVista, iGestorObjectiveC >
+@interface ControladorRepresentacionGlobo : UIViewController<iDelegadoPanelRepresentacionGlobo, iControladorVista, iGestorObjectiveC, UIScrollViewDelegate>
 {
     //Vista
     PanelRedondo * _panelRedondo;
     UILabel * _etiquetaNombrePais;
     UILabel * _etiquetaNombreRegion;
     UILabel * _etiquetaTotalPoblacion;
+    UILabel * _etiquetaPorcentajePoblacion;
     UILabel * _etiquetaDescripcionPoligono;
+    UILabel * _etiquetaRelacionHombresMujeres;
+    UILabel * _etiquetaEdadMediana;
+    UILabel * _etiquetaRazonDependencia;
+    
+    
+    
     UIButton *_botonOcultarMensajes;
+    
+    UIScrollView *_scrollView;
+    UIPageControl *_pageControl;
+    BOOL pageControlBeingUsed;
+    
+    
+    UIView * _panelPrincipal;
+    UIView * _panelDetallesPoblacion;
     
     EAGLView *glView;
 	SceneRendererES1 *sceneRenderer;
@@ -67,6 +82,14 @@
 - (void)lightingSetup:(SceneRendererES1 *)sceneRenderer;
 - (void)clear;
 
+-(void)agregarPanelesCarrusel;
+
+-(IBAction)changePage:(id)sender;
+
+-(void) procesaSeccionTabla:(NSDictionary *) seccion;
+
+-(void) procesaSeccionPoblacionTotal:(NSDictionary *) seccion;
+
 #pragma iDelegadoPanelRepresentacionGlobo
 -(void) establecerNombrePais:(NSString *) nombrePais;
 -(void) establecerNombreRegion:(NSString *)nombreRegion;
@@ -96,8 +119,18 @@
 @property (nonatomic,retain) IBOutlet UILabel * etiquetaTotalPoblacion;
 @property (nonatomic,retain) IBOutlet UILabel * etiquetaDescripcionPoligono;
 @property (nonatomic, retain) IBOutlet UIButton * botonOcultarMensajes;
+@property (nonatomic,retain) IBOutlet UILabel *etiquetaPorcentajePoblacion;
 
+@property (nonatomic,retain) IBOutlet UILabel * etiquetaRelacionHombresMujeres;
+@property (nonatomic,retain) IBOutlet UILabel * etiquetaEdadMediana;
+@property (nonatomic,retain) IBOutlet UILabel * etiquetaRazonDependencia;
 
+@property (nonatomic,retain) IBOutlet UIScrollView *scrollView;
+@property (nonatomic,retain) IBOutlet UIPageControl *pageControl;
+
+@property (nonatomic,retain) IBOutlet UIView *panelPrincipal;
+
+@property (nonatomic,retain) IBOutlet UIView *panelDetallesPoblacion;
 
 @property (nonatomic,retain) EAGLView *glView;
 @property (nonatomic,retain) SceneRendererES1 *sceneRenderer;
