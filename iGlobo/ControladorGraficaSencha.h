@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ControladorSencha.h"
+#import "iControladorVista.h"
+@interface ControladorGraficaSencha : UIViewController<iControladorVista>
 
-@interface ControladorGraficaSencha : UIViewController
+
+-(UIView *) obtenerRepresentacionBajoMarco:(CGRect) tamanioVentana;
+-(UIView *) obtenerRepresentacion;
+
+@property(nonatomic , assign)IBOutlet UILabel *etiquetaNombregrafica;
+@property(nonatomic , assign)IBOutlet UIWebView *navegadorWeb;
+@property(nonatomic, retain) ControladorSencha * controladorSencha;
+
 
 @end

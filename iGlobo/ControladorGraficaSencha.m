@@ -10,13 +10,23 @@
 
 @implementation ControladorGraficaSencha
 
+@synthesize  etiquetaNombregrafica;
+@synthesize navegadorWeb;
+@synthesize controladorSencha;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        [self setControladorSencha:[[ControladorSencha new] autorelease]];
     }
     return self;
+}
+
+-(void)dealloc
+{
+    [self setControladorSencha:nil];
+    [super dealloc];
 }
 
 - (void)didReceiveMemoryWarning
@@ -32,6 +42,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[self navegadorWeb] setOpaque:NO];
+    [[self navegadorWeb] setBackgroundColor:[UIColor clearColor]];
+    
+    [[self controladorSencha] setWebView: [self navegadorWeb]];
+    [[self controladorSencha] viewDidLoad];
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -48,4 +64,13 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+-(UIView *) obtenerRepresentacionBajoMarco:(CGRect) tamanioVentana
+{
+    return [self view];
+
+}
+-(UIView *) obtenerRepresentacion
+{
+    return [self view];
+}
 @end

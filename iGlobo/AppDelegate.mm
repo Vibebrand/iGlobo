@@ -13,6 +13,7 @@
 #import "MotorSenchaAPI.h"
 #import "RepresentableSencha.h"
 #import "ControladorPiramidePoblacional.h"
+#import "ControladorGraficaSencha.h"
 
 @implementation AppDelegate
 
@@ -41,11 +42,14 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    ControladorSencha * controladorSencha = [[ControladorSencha new] autorelease];
-    MotorGraficasSencha::IRepresentableSencha * representable = new RepresentableSencha(controladorSencha);
     
-    ControladorSencha * controladorSencha2 = [[ControladorSencha new] autorelease];
-    MotorGraficasSencha::IRepresentableSencha * representable2 = new RepresentableSencha(controladorSencha2);
+    ControladorGraficaSencha* controladorGraficaSenchaPie = [[[ControladorGraficaSencha alloc] initWithNibName:@"ControladorGraficaSencha" bundle:[NSBundle mainBundle]] autorelease];  
+    
+     ControladorGraficaSencha* controladorGraficaSenchaArea = [[[ControladorGraficaSencha alloc] initWithNibName:@"ControladorGraficaSencha" bundle:[NSBundle mainBundle]] autorelease] ; 
+    
+    MotorGraficasSencha::IRepresentableSencha * representable = new RepresentableSencha([controladorGraficaSenchaPie controladorSencha]);
+    
+    MotorGraficasSencha::IRepresentableSencha * representable2 = new RepresentableSencha([controladorGraficaSenchaArea controladorSencha]);
     
     MotorGraficasSencha::MotorGraficasSencha * motorGraficasSencha = new MotorGraficasSencha::MotorGraficasSencha;
     
@@ -59,8 +63,9 @@
     _pantallaPrincipal = [[ PantallaPrincipal alloc ] initWithNibName:@"PantallaPrincipal" bundle:[NSBundle mainBundle]];
     [_pantallaPrincipal setControladorVista: controladorRepresentacionGlobo];
     [_pantallaPrincipal setControladorPiramidePoblacional:controladorPiramidePoblacional];
-    [_pantallaPrincipal setControladorSencha: controladorSencha];
-    [_pantallaPrincipal setControladorSencha2: controladorSencha2];
+    [_pantallaPrincipal setControladorGraficaPie:controladorGraficaSenchaPie];
+    [_pantallaPrincipal setControladorGraficaArea:controladorGraficaSenchaArea];
+    
     _controlMaestro = [ControlMaestro new];
     
     id gestorInteres = controladorRepresentacionGlobo;

@@ -101,19 +101,27 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
 
 -(void)cmdGeoReferenciaSeleccionada:(NSNotification *)notificacion
 {
-    
-    TapMessage *msg = notificacion.object;
+    TapMessage * msg = notificacion.object;
     
 
-    if(RotateToCountry)
-    {
+    //if(RotateToCountry)
+    //{
        // [[self globeView] cancelAnimation];
         //Eigen::Quaternionf newRotQuat = [[self globeView] makeRotationToGeoCoord:msg.whereGeo keepNorthUp:YES];
         //self.globeView.delegate= [[[AnimateViewRotation alloc] initWithView:[self globeView] rot:newRotQuat howLong:0.6] autorelease ];
-    }
-    
+    //}
     [self performSelector:@selector(cmdAccionSobreAreaGeografica:) onThread:[self layerThread] withObject:msg waitUntilDone:NO];
-    
+}
+
+
+-(void)rotarElMapaSegunCoordenadas:(TapMessage *) _msg
+{
+     if(RotateToCountry)
+     {
+     [[self globeView] cancelAnimation];
+     Eigen::Quaternionf newRotQuat = [[self globeView] makeRotationToGeoCoord:_msg.whereGeo keepNorthUp:YES];
+     self.globeView.delegate= [[[AnimateViewRotation alloc] initWithView:[self globeView] rot:newRotQuat howLong:1.0] autorelease ];
+     }
 }
 
 - (void)cmdAccionSobreAreaGeografica:(TapMessage *)msg
@@ -167,7 +175,6 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
                     [[self controlMaestro] estableceVariable:@"Entidad federativa" valor: nombreRegion];
                     [[self controlMaestro] actualizaSecciones];
                 }
-                NSLog(@"Pais");
                 break;
             case PoligonoOceano:
                 NSLog(@"Oceano");
@@ -204,6 +211,9 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
             }
         }
     }
+    
+   // [ self performSelector:@selector(rotarElMapaSegunCoordenadas) withObject:msg afterDelay: 0.3 ];
+    
     while(_poligonosDibujados.size() > MaxRepresentacionesPoligono )
         [self eliminarRepresentacionPoligono:*(_poligonosDibujados.begin())];
 }

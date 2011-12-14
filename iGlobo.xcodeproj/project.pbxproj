@@ -992,6 +992,7 @@
 				D71E44A014855F3500A9E422 /* utilidades */,
 				D71E449C14855CD300A9E422 /* componentes */,
 				D7AFB7DB147432DC00D66A37 /* ControladorRepresentacionGlobo.xib */,
+				D72FCDF614991AC1001040B1 /* ControladorGraficaSencha.xib */,
 				D79E269C147EAAE400985242 /* PantallaPrincipal.xib */,
 				D71E44981485467400A9E422 /* ControladorListaBarras.xib */,
 				D79E269A147EAAE400985242 /* PantallaPrincipal.h */,
@@ -1014,7 +1015,6 @@
 				D71E44971485467400A9E422 /* ControladorListaBarras.m */,
 				D72FCDF414991AC1001040B1 /* ControladorGraficaSencha.h */,
 				D72FCDF514991AC1001040B1 /* ControladorGraficaSencha.m */,
-				D72FCDF614991AC1001040B1 /* ControladorGraficaSencha.xib */,
 			);
 			name = Controlador;
 			sourceTree = "<group>";

@@ -14,10 +14,14 @@
 @synthesize representacionGraficaBarrasIzquierdo = _representacionGraficaBarrasIzquierdo;
 @synthesize representacionGraficaBarrasDerecha = _representacionGraficaBarrasDerecha;
 @synthesize controladorVista = _controladorRepresentacionGlobo;
-@synthesize controladorSencha;
-@synthesize controladorSencha2;
-@synthesize webView;
-@synthesize webView2;
+
+@synthesize representacionGraficaPie;
+@synthesize representacionGraficaArea;
+
+@synthesize controladorGraficaArea;
+@synthesize controladorGraficaPie;
+
+
 
 @synthesize controladorPiramidePoblacional = _controladorPiramidePoblacional;
 
@@ -34,8 +38,8 @@
     [_controladorRepresentacionGlobo release];
     [_controladorPiramidePoblacional release];
 
-    [self setControladorSencha: nil];
-    [self setControladorSencha2: nil];
+    [self setControladorGraficaArea: nil];
+    [self setControladorGraficaPie: nil];
     
     [super dealloc];
 }
@@ -80,21 +84,15 @@
     [[self representacionGraficaBarrasDerecha] addSubview: _controladorRepresentacionListaGraficaBarrasDerecha.obtenerRepresentacion];
     
     
+    [[self representacionGraficaArea] addSubview: [[self controladorGraficaArea] obtenerRepresentacion]];
+
+    [[self representacionGraficaPie] addSubview: [[self controladorGraficaPie] obtenerRepresentacion]];
+    
     [_controladorRepresentacionListaGraficaBarrasDerecha establcerGenero:@"Hombres"];
     [_controladorRepresentacionListaGraficaBarrasIzquierda establcerGenero:@"Mujeres"];
     
     
-    [[self webView] setOpaque:NO];
-    [[self webView] setBackgroundColor:[UIColor clearColor]];
     
-    [[self webView2] setOpaque:NO];
-    [[self webView2] setBackgroundColor:[UIColor clearColor]];
-    
-    [[self controladorSencha] setWebView: [self webView]];
-    [[self controladorSencha] viewDidLoad];
-
-    [[self controladorSencha2] setWebView: [self webView2]];
-    [[self controladorSencha2] viewDidLoad];
     
     // Do any additional setup after loading the view from its nib.
 }

@@ -64,6 +64,8 @@ typedef std::list<RepresentacionPoligono*> RepresentacionesDePoligono;
 //Desacoplar a un servicio de Datos    
 }
 
+-(void)rotarElMapaSegunCoordenadas:(TapMessage *) _msg;
+
 -(SingleLabel*) createLabelInfunction:(WhirlyGlobe::ShapeSet) shapes withMinWidth:(float)minWidth andName:(NSString*)name minVis:(float)minVis maxVis:(float)maxVis withConfig:(NSMutableDictionary *) labelDescription;
 
 #pragma iControladorMapa
