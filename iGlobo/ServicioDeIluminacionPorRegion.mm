@@ -38,7 +38,7 @@
     
     LoftedPolyDesc *loftCountryDesc = [[[LoftedPolyDesc alloc] init] autorelease];
     
-    loftCountryDesc.color = [UIColor colorWithRed:0.4 green:0 blue:0.4 alpha:0.3];
+    loftCountryDesc.color = [UIColor colorWithRed:0.0/255.0 green:98.0/255.0 blue:97.0/255.0 alpha:0.3];
      loftCountryDesc.height = 0.002;
     
     regionIluminada = [_capaDeDibujado addLoftedPolys:shapeSet desc:loftCountryDesc];

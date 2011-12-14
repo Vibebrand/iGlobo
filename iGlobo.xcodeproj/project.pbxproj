@@ -47,9 +47,6 @@
 		D79325A61492AEAA00B79D40 /* RepresentableSencha.mm in Sources */ = {isa = PBXBuildFile; fileRef = D79325A51492AEAA00B79D40 /* RepresentableSencha.mm */; };
 		D7934C8614770750005B13C2 /* ControladorCapaDeInteraccion.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7934C8514770750005B13C2 /* ControladorCapaDeInteraccion.mm */; };
 		D7934C8A14770AA5005B13C2 /* ServicioBDGeograficas.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7934C8914770AA5005B13C2 /* ServicioBDGeograficas.mm */; };
-		D794F08F148686C3000855BB /* Hombres.png in Resources */ = {isa = PBXBuildFile; fileRef = D794F08D148686C3000855BB /* Hombres.png */; };
-		D794F090148686C3000855BB /* Mujeres.png in Resources */ = {isa = PBXBuildFile; fileRef = D794F08E148686C3000855BB /* Mujeres.png */; };
-		D794F09214868B2A000855BB /* hombre gde.png in Resources */ = {isa = PBXBuildFile; fileRef = D794F09114868B2A000855BB /* hombre gde.png */; };
 		D7961FCE14925B5000252EB9 /* NativeBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = D7961FCD14925B5000252EB9 /* NativeBridge.m */; };
 		D796200C14925F6900252EB9 /* ControladorSencha.mm in Sources */ = {isa = PBXBuildFile; fileRef = D796200B14925F6900252EB9 /* ControladorSencha.mm */; };
 		D796200E14926EDA00252EB9 /* www in Resources */ = {isa = PBXBuildFile; fileRef = D796200D14926EDA00252EB9 /* www */; };
@@ -167,6 +164,8 @@
 		F1AFA0C61492CFF800226371 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AFA0B81492CFF800226371 /* SBJsonTokeniser.m */; };
 		F1AFA0C71492CFF800226371 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AFA0BA1492CFF800226371 /* SBJsonUTF8Stream.m */; };
 		F1AFA0C81492CFF800226371 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AFA0BC1492CFF800226371 /* SBJsonWriter.m */; };
+		F1B8415F14983A70002D06D8 /* Mujeres.png in Resources */ = {isa = PBXBuildFile; fileRef = F1B8415D14983A70002D06D8 /* Mujeres.png */; };
+		F1B8416114983E4A002D06D8 /* Hombres.png in Resources */ = {isa = PBXBuildFile; fileRef = F1B8416014983E4A002D06D8 /* Hombres.png */; };
 		F1C8B239148EFECF00A85AB6 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C8B238148EFECF00A85AB6 /* libxml2.dylib */; };
 		F1C8B23B148EFED900A85AB6 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C8B23A148EFED900A85AB6 /* libiconv.dylib */; };
 		F1C8B23D148EFEDE00A85AB6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C8B23C148EFEDE00A85AB6 /* libz.dylib */; };
@@ -271,9 +270,6 @@
 		D7934C8514770750005B13C2 /* ControladorCapaDeInteraccion.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ControladorCapaDeInteraccion.mm; sourceTree = "<group>"; };
 		D7934C8814770AA5005B13C2 /* ServicioBDGeograficas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServicioBDGeograficas.h; sourceTree = "<group>"; };
 		D7934C8914770AA5005B13C2 /* ServicioBDGeograficas.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ServicioBDGeograficas.mm; sourceTree = "<group>"; };
-		D794F08D148686C3000855BB /* Hombres.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Hombres.png; path = resources/imagenes/Hombres.png; sourceTree = SOURCE_ROOT; };
-		D794F08E148686C3000855BB /* Mujeres.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Mujeres.png; path = resources/imagenes/Mujeres.png; sourceTree = SOURCE_ROOT; };
-		D794F09114868B2A000855BB /* hombre gde.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hombre gde.png"; path = "resources/imagenes/hombre gde.png"; sourceTree = SOURCE_ROOT; };
 		D7961FCC14925B5000252EB9 /* NativeBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeBridge.h; sourceTree = "<group>"; };
 		D7961FCD14925B5000252EB9 /* NativeBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeBridge.m; sourceTree = "<group>"; };
 		D7961FD214925BC200252EB9 /* INativeBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INativeBridge.h; sourceTree = "<group>"; };
@@ -431,6 +427,8 @@
 		F1AFA0BA1492CFF800226371 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonUTF8Stream.m; path = libs/SBJson/SBJsonUTF8Stream.m; sourceTree = "<group>"; };
 		F1AFA0BB1492CFF800226371 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonWriter.h; path = libs/SBJson/SBJsonWriter.h; sourceTree = "<group>"; };
 		F1AFA0BC1492CFF800226371 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonWriter.m; path = libs/SBJson/SBJsonWriter.m; sourceTree = "<group>"; };
+		F1B8415D14983A70002D06D8 /* Mujeres.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Mujeres.png; path = resources/imagenes/Mujeres.png; sourceTree = SOURCE_ROOT; };
+		F1B8416014983E4A002D06D8 /* Hombres.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Hombres.png; path = resources/imagenes/Hombres.png; sourceTree = SOURCE_ROOT; };
 		F1C8B22D148EFE4A00A85AB6 /* MotorIMapa */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MotorIMapa; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C8B238148EFECF00A85AB6 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = SDKs/MacOSX10.7.sdk/usr/lib/libxml2.dylib; sourceTree = DEVELOPER_DIR; };
 		F1C8B23A148EFED900A85AB6 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = SDKs/MacOSX10.7.sdk/usr/lib/libiconv.dylib; sourceTree = DEVELOPER_DIR; };
@@ -702,9 +700,8 @@
 		D794F08B14868679000855BB /* imagenes */ = {
 			isa = PBXGroup;
 			children = (
-				D794F09114868B2A000855BB /* hombre gde.png */,
-				D794F08D148686C3000855BB /* Hombres.png */,
-				D794F08E148686C3000855BB /* Mujeres.png */,
+				F1B8416014983E4A002D06D8 /* Hombres.png */,
+				F1B8415D14983A70002D06D8 /* Mujeres.png */,
 			);
 			name = imagenes;
 			sourceTree = "<group>";
@@ -1194,9 +1191,6 @@
 				D79E269E147EAAE400985242 /* PantallaPrincipal.xib in Resources */,
 				D71E449A1485467400A9E422 /* ControladorListaBarras.xib in Resources */,
 				D7A75B1614857EB500B4D5E5 /* CeldagraficaBarras.xib in Resources */,
-				D794F08F148686C3000855BB /* Hombres.png in Resources */,
-				D794F090148686C3000855BB /* Mujeres.png in Resources */,
-				D794F09214868B2A000855BB /* hombre gde.png in Resources */,
 				D7139A1B148D338900C0508A /* .gitignore in Resources */,
 				D7139A1C148D338900C0508A /* iconv.dll in Resources */,
 				D7139A1D148D338900C0508A /* iconv.exe in Resources */,
@@ -1211,6 +1205,8 @@
 				D7139A34148D338900C0508A /* MotorIMapa.layout in Resources */,
 				F11D3A82148DA04C00C8D088 /* Nayarit_2010.xml in Resources */,
 				D796200E14926EDA00252EB9 /* www in Resources */,
+				F1B8415F14983A70002D06D8 /* Mujeres.png in Resources */,
+				F1B8416114983E4A002D06D8 /* Hombres.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
