@@ -7,6 +7,7 @@
 //
 
 #import "ControladorGraficaSencha.h"
+#import "NativeBridge.h"
 
 @implementation ControladorGraficaSencha
 
@@ -19,6 +20,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         [self setControladorSencha:[[ControladorSencha new] autorelease]];
+        [controladorSencha setNativeBridge:[[NativeBridge new] autorelease]];
+        [[self controladorSencha] setNativeBridgeDelegate:self];
     }
     return self;
 }
@@ -73,4 +76,12 @@
 {
     return [self view];
 }
+
+- (void)handleCall:(NSString*)functionName callbackId:(int)callbackId args:(NSArray*)args webView: (UIWebView *)webView andNativeBridge: (id<INativeBridge>) nativeBridge
+{
+    if([functionName isEqualToString: @"graficaActiva"])
+        [[self etiquetaNombregrafica] setText:[args objectAtIndex:0]];
+        
+}
+
 @end

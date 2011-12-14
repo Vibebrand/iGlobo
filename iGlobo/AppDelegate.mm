@@ -15,6 +15,7 @@
 #import "ControladorPiramidePoblacional.h"
 #import "ControladorGraficaSencha.h"
 
+
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -41,13 +42,16 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     self.window.backgroundColor = [UIColor whiteColor];
-    
-    
+        
     ControladorGraficaSencha* controladorGraficaSenchaPie = [[[ControladorGraficaSencha alloc] initWithNibName:@"ControladorGraficaSencha" bundle:[NSBundle mainBundle]] autorelease];  
     
+    
+
      ControladorGraficaSencha* controladorGraficaSenchaArea = [[[ControladorGraficaSencha alloc] initWithNibName:@"ControladorGraficaSencha" bundle:[NSBundle mainBundle]] autorelease] ; 
     
+    
     MotorGraficasSencha::IRepresentableSencha * representable = new RepresentableSencha([controladorGraficaSenchaPie controladorSencha]);
+    
     
     MotorGraficasSencha::IRepresentableSencha * representable2 = new RepresentableSencha([controladorGraficaSenchaArea controladorSencha]);
     

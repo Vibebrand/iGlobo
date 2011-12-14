@@ -850,9 +850,9 @@
 			children = (
 				D794F08B14868679000855BB /* imagenes */,
 				D7AFB7241474136200D66A37 /* iGlobo-Info.plist */,
+				D7AFB72A1474136200D66A37 /* iGlobo-Prefix.pch */,
 				D7AFB7251474136200D66A37 /* InfoPlist.strings */,
 				D7AFB7281474136200D66A37 /* main.m */,
-				D7AFB72A1474136200D66A37 /* iGlobo-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

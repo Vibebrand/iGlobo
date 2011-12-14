@@ -27,7 +27,8 @@
 - (void) estableceVistaRequerida: (bool) requerida;
 - (void) ejecutaInstruccion: (NSString *) instruccion;
 
-@property(nonatomic, assign) NativeBridge * nativeBridge;
+@property(nonatomic, assign) id<NativeBridgeDelegate> nativeBridgeDelegate;
+@property(nonatomic, retain) NativeBridge * nativeBridge;
 @property(nonatomic, assign) UIWebView * webView;
 
 @end
