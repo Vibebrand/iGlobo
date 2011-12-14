@@ -56,6 +56,8 @@
 		D797521E147FEF5F003F331A /* PanelRedondo.mm in Sources */ = {isa = PBXBuildFile; fileRef = D797521D147FEF5F003F331A /* PanelRedondo.mm */; };
 		D797526214804147003F331A /* ServicioDeIluminacionPorRegion.mm in Sources */ = {isa = PBXBuildFile; fileRef = D797526114804147003F331A /* ServicioDeIluminacionPorRegion.mm */; };
 		D798595E1475B0C600F98991 /* ControladorMapa.mm in Sources */ = {isa = PBXBuildFile; fileRef = D798595D1475B0C600F98991 /* ControladorMapa.mm */; };
+		D79937E71497FCFF00BB069E /* GraficaArea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D79937E51497FCFF00BB069E /* GraficaArea.cpp */; };
+		D79937E81497FCFF00BB069E /* GraficaArea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D79937E51497FCFF00BB069E /* GraficaArea.cpp */; };
 		D79E269D147EAAE400985242 /* PantallaPrincipal.mm in Sources */ = {isa = PBXBuildFile; fileRef = D79E269B147EAAE400985242 /* PantallaPrincipal.mm */; };
 		D79E269E147EAAE400985242 /* PantallaPrincipal.xib in Resources */ = {isa = PBXBuildFile; fileRef = D79E269C147EAAE400985242 /* PantallaPrincipal.xib */; };
 		D7A3418114911ADC00B0FCD3 /* indicadorGraficaBarra.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A3418014911ADC00B0FCD3 /* indicadorGraficaBarra.m */; };
@@ -288,6 +290,8 @@
 		D79859361475ABE800F98991 /* iControladorMapa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iControladorMapa.h; sourceTree = "<group>"; };
 		D798595C1475B0C600F98991 /* ControladorMapa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControladorMapa.h; sourceTree = "<group>"; };
 		D798595D1475B0C600F98991 /* ControladorMapa.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ControladorMapa.mm; sourceTree = "<group>"; };
+		D79937E51497FCFF00BB069E /* GraficaArea.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GraficaArea.cpp; sourceTree = "<group>"; };
+		D79937E61497FCFF00BB069E /* GraficaArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraficaArea.h; sourceTree = "<group>"; };
 		D79E269A147EAAE400985242 /* PantallaPrincipal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PantallaPrincipal.h; sourceTree = "<group>"; };
 		D79E269B147EAAE400985242 /* PantallaPrincipal.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PantallaPrincipal.mm; sourceTree = "<group>"; };
 		D79E269C147EAAE400985242 /* PantallaPrincipal.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PantallaPrincipal.xib; sourceTree = "<group>"; };
@@ -615,6 +619,8 @@
 		D71399FA148D338900C0508A /* vista */ = {
 			isa = PBXGroup;
 			children = (
+				D79937E51497FCFF00BB069E /* GraficaArea.cpp */,
+				D79937E61497FCFF00BB069E /* GraficaArea.h */,
 				D71399FB148D338900C0508A /* Grafica.cpp */,
 				D71399FC148D338900C0508A /* Grafica.h */,
 				D71399FD148D338900C0508A /* GraficaPie.cpp */,
@@ -1267,6 +1273,7 @@
 				F1AFA0C61492CFF800226371 /* SBJsonTokeniser.m in Sources */,
 				F1AFA0C71492CFF800226371 /* SBJsonUTF8Stream.m in Sources */,
 				F1AFA0C81492CFF800226371 /* SBJsonWriter.m in Sources */,
+				D79937E71497FCFF00BB069E /* GraficaArea.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1288,6 +1295,7 @@
 				F1C8B25B148EFF1E00A85AB6 /* Grafica.cpp in Sources */,
 				F1C8B25D148EFF1E00A85AB6 /* GraficaPie.cpp in Sources */,
 				F1C8B25F148EFF1E00A85AB6 /* MotorIMapa.cpp in Sources */,
+				D79937E81497FCFF00BB069E /* GraficaArea.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

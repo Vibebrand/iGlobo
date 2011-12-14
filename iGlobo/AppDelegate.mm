@@ -44,9 +44,13 @@
     ControladorSencha * controladorSencha = [[ControladorSencha new] autorelease];
     MotorGraficasSencha::IRepresentableSencha * representable = new RepresentableSencha(controladorSencha);
     
-    MotorGraficasSencha::MotorGraficasSencha * motorGraficasSencha = new MotorGraficasSencha::MotorGraficasSencha;
-    motorGraficasSencha->registraRepresentable(representable, "Distribucion de la poblacion de 12 agnos y mas no economicamente activa segun tipo de actividad", MotorGraficasSencha::MotorGraficasSencha::Pie);
+    ControladorSencha * controladorSencha2 = [[ControladorSencha new] autorelease];
+    MotorGraficasSencha::IRepresentableSencha * representable2 = new RepresentableSencha(controladorSencha2);
     
+    MotorGraficasSencha::MotorGraficasSencha * motorGraficasSencha = new MotorGraficasSencha::MotorGraficasSencha;
+    
+    motorGraficasSencha->registraRepresentable(representable, "Distribucion de la poblacion de 12 agnos y mas no economicamente activa segun tipo de actividad", MotorGraficasSencha::MotorGraficasSencha::Pie);
+    motorGraficasSencha->registraRepresentable(representable2, "Poblacion de 12 agnos y mas", MotorGraficasSencha::MotorGraficasSencha::Area);
     
     ControladorRepresentacionGlobo * controladorRepresentacionGlobo = [[ControladorRepresentacionGlobo alloc]  initWithNibName:@"ControladorRepresentacionGlobo" bundle:nil ];
     
@@ -56,6 +60,7 @@
     [_pantallaPrincipal setControladorVista: controladorRepresentacionGlobo];
     [_pantallaPrincipal setControladorPiramidePoblacional:controladorPiramidePoblacional];
     [_pantallaPrincipal setControladorSencha: controladorSencha];
+    [_pantallaPrincipal setControladorSencha2: controladorSencha2];
     _controlMaestro = [ControlMaestro new];
     
     id gestorInteres = controladorRepresentacionGlobo;
