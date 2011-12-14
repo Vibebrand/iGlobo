@@ -107,9 +107,9 @@ RepresentacionPoligono::~RepresentacionPoligono(){}
 
     if(RotateToCountry)
     {
-        [[self globeView] cancelAnimation];
-        Eigen::Quaternionf newRotQuat = [[self globeView] makeRotationToGeoCoord:msg.whereGeo keepNorthUp:YES];
-        self.globeView.delegate= [[[AnimateViewRotation alloc] initWithView:[self globeView] rot:newRotQuat howLong:0.7] autorelease ];
+       // [[self globeView] cancelAnimation];
+        //Eigen::Quaternionf newRotQuat = [[self globeView] makeRotationToGeoCoord:msg.whereGeo keepNorthUp:YES];
+        //self.globeView.delegate= [[[AnimateViewRotation alloc] initWithView:[self globeView] rot:newRotQuat howLong:0.6] autorelease ];
     }
     
     [self performSelector:@selector(cmdAccionSobreAreaGeografica:) onThread:[self layerThread] withObject:msg waitUntilDone:NO];

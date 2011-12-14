@@ -56,7 +56,7 @@
 -(void)establecerNombreCelda:(NSString*)nombre conValor:(float) valor
 {
     [[self rangoEdad] setText:nombre];
-    [_representacionGraficaBarra setProgress:valor animated:TRUE];
+    [_representacionGraficaBarra setProgress:valor animated:YES];
 }
 
 @end

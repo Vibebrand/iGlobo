@@ -17,7 +17,7 @@
     
     NSMutableArray* hombres;
     NSMutableArray* mujeres;
-    
+    bool banderaValida;
 }
 
 -(void)procesarYActualizarGrafica;

@@ -18,50 +18,6 @@
 		</seccion>
 	</conjunto>
 	
-	<conjunto nombre="Distribucion territorial">
-		<variables>
-			<concepto nombre="Entidad federativa">Jalisco</concepto>
-		</variables>
-		<seccion nombre="tabla">
-			<concepto nombre="Superficie (km2)" nota="Representa el 1.4% del territorio nacional"> 78 588</concepto>
-			<concepto nombre="Densidad de poblacion (hab./km2)"> 93.5 </concepto>
-			<concepto nombre="Total de municipios"> 125
-				<concepto nombre="Guadalajara">1 495 159</concepto>
-				<concepto nombre="Zapopan">1 243 756</concepto>
-				<concepto nombre="Tlaquepaque">608 114</concepto>
-			</concepto>
-		</seccion>
-		<seccion nombre="Distribucion de la poblacion de 12 agnos y mas no economicamente activa segun tipo de actividad" tipo-valor="%">
-			<concepto nombre="Estudiantes">40</concepto>
-			<concepto nombre="Personas dedicadas a los quehaceres del hogar">30</concepto>
-			<concepto nombre="Jubilados y pensionados">10</concepto>
-			<concepto nombre="Personas con alguna limitacion fisica o mental permanente que les impida trabajar">20</concepto>
-			<concepto nombre="Personas en otras actividades no economicas">10</concepto>
-		</seccion>
-	</conjunto>
-
-	<conjunto nombre="Distribucion territorial">
-		<variables>
-			<concepto nombre="Entidad federativa">Aguascalientes</concepto>
-		</variables>
-		<seccion nombre="tabla">
-			<concepto nombre="Superficie (km2)" nota="Representa el 1.4% del territorio nacional"> 5 616</concepto>
-			<concepto nombre="Densidad de poblacion (hab./km2)"> 211.0 </concepto>
-			<concepto nombre="Total de municipios"> 11
-				<concepto nombre="Aguascalientes">797 010</concepto>
-				<concepto nombre="Jesus Maria">99 590</concepto>
-				<concepto nombre="Calvillo">54 136</concepto>
-			</concepto>
-		</seccion>
-		<seccion nombre="Distribucion de la poblacion de 12 agnos y mas no economicamente activa segun tipo de actividad" tipo-valor="%">
-			<concepto nombre="Estudiantes">20</concepto>
-			<concepto nombre="Personas dedicadas a los quehaceres del hogar">10</concepto>
-			<concepto nombre="Jubilados y pensionados">30</concepto>
-			<concepto nombre="Personas con alguna limitacion fisica o mental permanente que les impida trabajar">40</concepto>
-			<concepto nombre="Personas en otras actividades no economicas">5</concepto>
-		</seccion>
-	</conjunto>
-	
 	<conjunto nombre="Caracteristicas economicas">
 		<seccion nombre="Poblacion de 12 agnos y mas" tipo-valor="%">
 			<concepto nombre="Economicamente activa" nota="De cada 100 personas de 12 agnos...">
@@ -111,16 +67,76 @@
         
 		<seccion nombre="Piramide poblacional" tipo-concepto="Agnos" tipo-valor="Miles">
 			<concepto nombre="0-4">
-				<valor nombre="Hombres">50</valor>
-				<valor nombre="Mujeres">51</valor>
+				<valor nombre="Hombres">63</valor>
+				<valor nombre="Mujeres">62</valor>
 			</concepto>
 			<concepto nombre="5-9">
-				<valor nombre="Hombres">48</valor>
-				<valor nombre="Mujeres">51</valor>
+				<valor nombre="Hombres">67</valor>
+				<valor nombre="Mujeres">65</valor>
 			</concepto>
 			<concepto nombre="10-14">
-				<valor nombre="Hombres">47</valor>
+				<valor nombre="Hombres">60</valor>
+				<valor nombre="Mujeres">65</valor>
+			</concepto>
+			<concepto nombre="15-19">
+				<valor nombre="Hombres">62</valor>
+				<valor nombre="Mujeres">64</valor>
+			</concepto>
+			<concepto nombre="20-24">
+				<valor nombre="Hombres">53</valor>
 				<valor nombre="Mujeres">50</valor>
+			</concepto>
+			<concepto nombre="25-29">
+				<valor nombre="Hombres">48</valor>
+				<valor nombre="Mujeres">45</valor>
+			</concepto>
+			<concepto nombre="30-34">
+				<valor nombre="Hombres">46</valor>
+				<valor nombre="Mujeres">42</valor>
+			</concepto>
+			<concepto nombre="35-39">
+				<valor nombre="Hombres">35</valor>
+				<valor nombre="Mujeres">42</valor>
+			</concepto>
+			<concepto nombre="40-44">
+				<valor nombre="Hombres">39</valor>
+				<valor nombre="Mujeres">41</valor>
+			</concepto>
+			<concepto nombre="45-49">
+				<valor nombre="Hombres">25</valor>
+				<valor nombre="Mujeres">32</valor>
+			</concepto>
+			<concepto nombre="50-54">
+				<valor nombre="Hombres">26</valor>
+				<valor nombre="Mujeres">28</valor>
+			</concepto>
+			<concepto nombre="55-59">
+				<valor nombre="Hombres">19</valor>
+				<valor nombre="Mujeres">21</valor>
+			</concepto>
+			<concepto nombre="60-64">
+				<valor nombre="Hombres">12</valor>
+				<valor nombre="Mujeres">15</valor>
+			</concepto>
+			<concepto nombre="65-69">
+				<valor nombre="Hombres">12</valor>
+				<valor nombre="Mujeres">16</valor>
+			</concepto>
+			<concepto nombre="70-74">
+				<valor nombre="Hombres">3</valor>
+				<valor nombre="Mujeres">6</valor>
+			</concepto>
+			<concepto nombre="75-79">
+				<valor nombre="Hombres">4</valor>
+				<valor nombre="Mujeres">4</valor>
+			</concepto>
+			<concepto nombre="80-84">
+				<valor nombre="Hombres">3</valor>
+				<valor nombre="Mujeres">3</valor>
+			</concepto>
+			<concepto nombre="85+">
+				<valor nombre="Hombres">3</valor>
+				<valor nombre="Mujeres">3</valor>
 			</concepto>
 		</seccion>
 	</conjunto>

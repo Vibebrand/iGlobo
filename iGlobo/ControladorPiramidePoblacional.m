@@ -26,6 +26,7 @@
 {
     hombres = [NSMutableArray new];
     mujeres = [NSMutableArray new];
+    banderaValida = NO;
     return self;
 }
 
@@ -98,21 +99,27 @@
         }
     }
     [self procesarYActualizarGrafica];
+    banderaValida = YES;
 }
 - (void) seccionInvalida: (NSDictionary *) seccion
 {
-    [mujeres removeAllObjects];
-    [hombres removeAllObjects];
-    
-    [_controladorBarrasHombres establecerPorcentajeDeLaPoblacion:@"0.0%" enBaseAlaSumatoriaTotal:@"0.0"];
-    
-    [_controladorBarrasMujeres establecerPorcentajeDeLaPoblacion:@"0.0%" enBaseAlaSumatoriaTotal:@"0.0"];
-    
-    [_controladorBarrasHombres actualizarGrafica:hombres];
-    [_controladorBarrasMujeres actualizarGrafica:mujeres];
-
 }
-- (void) finalizadaActualizacionSecciones{}
+- (void) finalizadaActualizacionSecciones
+{
+    if(!banderaValida)
+    {
+        [mujeres removeAllObjects];
+        [hombres removeAllObjects];
+        
+        [_controladorBarrasHombres establecerPorcentajeDeLaPoblacion:@"0.0%" enBaseAlaSumatoriaTotal:@"0.0"];
+        
+        [_controladorBarrasMujeres establecerPorcentajeDeLaPoblacion:@"0.0%" enBaseAlaSumatoriaTotal:@"0.0"];
+        
+        [_controladorBarrasHombres actualizarGrafica:hombres];
+        [_controladorBarrasMujeres actualizarGrafica:mujeres];
+    }
+    banderaValida = NO;
+}
 
 
 - (NSArray *) obtenNombreSeccionesGestionadas
