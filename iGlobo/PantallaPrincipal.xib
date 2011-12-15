@@ -39,8 +39,7 @@
 						<int key="NSvFlags">274</int>
 						<string key="NSFrame">{{11, 10}, {686, 516}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
+						<reference key="NSNextKeyView" ref="421287374"/>
 						<string key="NSReuseIdentifierKey">_NS:212</string>
 						<object class="NSColor" key="IBUIBackgroundColor" id="565249256">
 							<int key="NSColorSpace">3</int>
@@ -53,7 +52,6 @@
 						<int key="NSvFlags">274</int>
 						<string key="NSFrame">{{13, 536}, {458, 202}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="715008391"/>
 						<string key="NSReuseIdentifierKey">_NS:212</string>
 						<reference key="IBUIBackgroundColor" ref="565249256"/>
@@ -64,8 +62,7 @@
 						<int key="NSvFlags">274</int>
 						<string key="NSFrame">{{479, 536}, {458, 202}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="456766007"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:212</string>
 						<reference key="IBUIBackgroundColor" ref="565249256"/>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -73,10 +70,9 @@
 					<object class="IBUIView" id="456766007">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{722, 286}, {282, 234}}</string>
+						<string key="NSFrame">{{722, 265}, {282, 256}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
+						<reference key="NSNextKeyView" ref="183606644"/>
 						<string key="NSReuseIdentifierKey">_NS:212</string>
 						<reference key="IBUIBackgroundColor" ref="565249256"/>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -84,9 +80,9 @@
 					<object class="IBUIView" id="421287374">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{722, 29}, {282, 234}}</string>
+						<string key="NSFrame">{{722, 4}, {282, 256}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
-						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="456766007"/>
 						<string key="NSReuseIdentifierKey">_NS:212</string>
 						<reference key="IBUIBackgroundColor" ref="565249256"/>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -94,7 +90,6 @@
 				</array>
 				<string key="NSFrame">{{0, 20}, {1024, 748}}</string>
 				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="184588876"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">10</int>
@@ -4628,47 +4623,7 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 			<nil key="sourceID"/>
 			<int key="maxID">47</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes">
-			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
-				<object class="IBPartialClassDescription">
-					<string key="className">PantallaPrincipal</string>
-					<string key="superclassName">UIViewController</string>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="representacionGlobo">UIView</string>
-						<string key="representacionGraficaArea">UIView</string>
-						<string key="representacionGraficaBarrasDerecha">UIView</string>
-						<string key="representacionGraficaBarrasIzquierdo">UIView</string>
-						<string key="representacionGraficaPie">UIView</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="representacionGlobo">
-							<string key="name">representacionGlobo</string>
-							<string key="candidateClassName">UIView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="representacionGraficaArea">
-							<string key="name">representacionGraficaArea</string>
-							<string key="candidateClassName">UIView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="representacionGraficaBarrasDerecha">
-							<string key="name">representacionGraficaBarrasDerecha</string>
-							<string key="candidateClassName">UIView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="representacionGraficaBarrasIzquierdo">
-							<string key="name">representacionGraficaBarrasIzquierdo</string>
-							<string key="candidateClassName">UIView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="representacionGraficaPie">
-							<string key="name">representacionGraficaPie</string>
-							<string key="candidateClassName">UIView</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/PantallaPrincipal.h</string>
-					</object>
-				</object>
-			</array>
-		</object>
+		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBIPadFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
