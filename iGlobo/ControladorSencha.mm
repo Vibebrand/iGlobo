@@ -7,13 +7,14 @@
 //
 
 #import "ControladorSencha.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation ControladorSencha
 
 @synthesize webView;
 @synthesize nativeBridge;
 @synthesize nativeBridgeDelegate;
-
+@synthesize vistaPrincipal;
 - (id)init {
     self = [super init];
     if (self) {
@@ -75,6 +76,15 @@
 }
 
 - (void) estableceVistaRequerida: (bool) requerida {
+    
+    CATransition *transition = [CATransition animation];
+    transition.duration = 0.90;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionFade;
+    transition.delegate = self;
+    [self.vistaPrincipal.layer addAnimation:transition forKey:nil];
+    
+    [self.vistaPrincipal setHidden:!requerida];
     [[self webView] setHidden: !requerida];
 }
 

@@ -20,8 +20,9 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         [self setControladorSencha:[[ControladorSencha new] autorelease]];
-        [controladorSencha setNativeBridge:[[NativeBridge new] autorelease]];
+        [[self controladorSencha ] setNativeBridge:[[NativeBridge new] autorelease]];
         [[self controladorSencha] setNativeBridgeDelegate:self];
+        [[self controladorSencha] setVistaPrincipal:[self view]];
     }
     return self;
 }

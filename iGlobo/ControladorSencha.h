@@ -30,5 +30,6 @@
 @property(nonatomic, assign) id<NativeBridgeDelegate> nativeBridgeDelegate;
 @property(nonatomic, retain) NativeBridge * nativeBridge;
 @property(nonatomic, assign) UIWebView * webView;
+@property(nonatomic, assign) UIView * vistaPrincipal;
 
 @end

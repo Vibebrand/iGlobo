@@ -398,7 +398,7 @@
 -(void)establecerInvisibleVentanaDetalles:(BOOL)visible
 {
     CATransition *transition = [CATransition animation];
-    transition.duration = 0.60;
+    transition.duration = 0.90;
     transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     transition.type = kCATransitionFade;
     transition.delegate = self;
