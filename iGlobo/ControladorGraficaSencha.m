@@ -68,6 +68,11 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+-(IBAction) accionarLeyendas:(id)sender {
+    [[self navegadorWeb] performSelectorOnMainThread: @selector(stringByEvaluatingJavaScriptFromString:) 
+                                          withObject:@"Ext.dispatch({ controller: 'ControladorGrafica', action: 'mostrarFiltroGrafica'});" waitUntilDone:false];
+}
+
 -(UIView *) obtenerRepresentacionBajoMarco:(CGRect) tamanioVentana
 {
     return [self view];

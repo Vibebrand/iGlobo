@@ -3,7 +3,17 @@
 Ext.regController('ControladorGrafica', {
     mostrarFiltroGrafica: function(opciones){
 	var graficaActiva = this._graficaActiva;
-	graficaActiva.legend.show();
+	if(graficaActiva.leyendaActiva == undefined) {
+	    graficaActiva.leyendaActiva = false; 
+	}
+
+	if(graficaActiva.leyendaActiva) {
+	    graficaActiva.legend.hide();
+	} else {
+	    graficaActiva.legend.show();
+	}
+
+	graficaActiva.leyendaActiva = !graficaActiva.leyendaActiva;
     },
     cambioEnLeyenda: function(opciones){
 	console.log(opciones.json);
@@ -67,14 +77,16 @@ Ext.regController('ControladorGrafica', {
     },
     registraGrafica: function(opciones) {
 	var me = this;
+	var identificadorGrafica = opciones.identificadorGrafica;
 	var definicionGrafica = opciones.definicionGrafica;
 	if(definicionGrafica !== undefined) {
 	    var contenedorPrincipal = Ext.getCmp("contenedorPrincipal");
 	    contenedorPrincipal.add(definicionGrafica);
-                  contenedorPrincipal.doLayout();
-                  NativeBridge.call("graficaActiva", [definicionGrafica.titulo], function(info) {
-                                    
-                                    });
+            contenedorPrincipal.doLayout();
+	    if(identificadorGrafica !== undefined) {
+		this._graficaActiva = Ext.getCmp(identificadorGrafica);
+	    }
+            NativeBridge.call("graficaActiva", [definicionGrafica.titulo], function(info) {});
 	}
     },
     actualizaGrafica: function(opciones) {

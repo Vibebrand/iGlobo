@@ -17,6 +17,7 @@
 
 -(UIView *) obtenerRepresentacionBajoMarco:(CGRect) tamanioVentana;
 -(UIView *) obtenerRepresentacion;
+-(IBAction) accionarLeyendas:(id)sender;
 
 @property(nonatomic , assign)IBOutlet UILabel *etiquetaNombregrafica;
 @property(nonatomic , assign)IBOutlet UIWebView *navegadorWeb;
