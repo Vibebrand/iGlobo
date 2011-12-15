@@ -159,6 +159,7 @@
 		D7AFB7ED14743E9E00D66A37 /* GridClipper.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7AFB7E914743E9E00D66A37 /* GridClipper.mm */; };
 		D7AFB7EE14743E9E00D66A37 /* Tesselator.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7AFB7EB14743E9E00D66A37 /* Tesselator.mm */; };
 		D7AFB7F1147444A800D66A37 /* LoftLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7AFB7F0147444A800D66A37 /* LoftLayer.mm */; };
+		D7E1B1A4149A52370037A904 /* Distrito Federal.xml in Resources */ = {isa = PBXBuildFile; fileRef = D7E1B1A3149A52370037A904 /* Distrito Federal.xml */; };
 		D7F46FAB147D512600EBC270 /* ServicioMosaicoGeografico.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7F46FAA147D512600EBC270 /* ServicioMosaicoGeografico.mm */; };
 		F1AFA0BD1492CFF800226371 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AFA0A51492CFF800226371 /* NSObject+SBJson.m */; };
 		F1AFA0BE1492CFF800226371 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AFA0A81492CFF800226371 /* SBJsonParser.m */; };
@@ -412,6 +413,7 @@
 		D7AFB7EB14743E9E00D66A37 /* Tesselator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Tesselator.mm; sourceTree = "<group>"; };
 		D7AFB7EF147444A800D66A37 /* LoftLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoftLayer.h; sourceTree = "<group>"; };
 		D7AFB7F0147444A800D66A37 /* LoftLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LoftLayer.mm; sourceTree = "<group>"; };
+		D7E1B1A3149A52370037A904 /* Distrito Federal.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Distrito Federal.xml"; path = "iGlobo/Distrito Federal.xml"; sourceTree = "<group>"; };
 		D7F46FA8147D491A00EBC270 /* iServicioBDGeograficas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iServicioBDGeograficas.h; sourceTree = "<group>"; };
 		D7F46FA9147D512600EBC270 /* ServicioMosaicoGeografico.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServicioMosaicoGeografico.h; sourceTree = "<group>"; };
 		D7F46FAA147D512600EBC270 /* ServicioMosaicoGeografico.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ServicioMosaicoGeografico.mm; sourceTree = "<group>"; };
@@ -787,6 +789,7 @@
 		D7AFB70D1474136200D66A37 = {
 			isa = PBXGroup;
 			children = (
+				D7E1B1A3149A52370037A904 /* Distrito Federal.xml */,
 				D72FCE0114991D81001040B1 /* Aguascalientes_2010.xml */,
 				D72FCE0214991D81001040B1 /* Jalisco_2010.xml */,
 				D72FCE0314991D81001040B1 /* Nayarit_2010.xml */,
@@ -1232,6 +1235,7 @@
 				D72FCE0414991D81001040B1 /* Aguascalientes_2010.xml in Resources */,
 				D72FCE0514991D81001040B1 /* Jalisco_2010.xml in Resources */,
 				D72FCE0614991D81001040B1 /* Nayarit_2010.xml in Resources */,
+				D7E1B1A4149A52370037A904 /* Distrito Federal.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

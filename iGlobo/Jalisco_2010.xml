@@ -19,7 +19,7 @@
 	</conjunto>
 	
 	<conjunto nombre="Caracteristicas economicas">
-		<seccion nombre="Caracteristicas economicas de la poblacion" tipo-valor="%">
+		<seccion nombre="Porcentaje de la poblacion segun caracteristica economica" tipo-valor="%">
 			<concepto nombre="Activa" nota="De cada 100 personas de 12 agnos...">
 				<valor nombre="Hombres">74.9</valor>
 				<valor nombre="Mujeres">37.9</valor>
@@ -41,7 +41,7 @@
 				<valor nombre="Mujeres">0.4</valor>
 			</concepto>
 		</seccion>
-		<seccion nombre="Distribucion de la poblacion de 12 agnos y mas no economicamente activa segun tipo de actividad" tipo-valor="%">
+		<seccion nombre="Distribucion de la poblacion no economicamente activa segun tipo de actividad" tipo-valor="%">
 			<concepto nombre="Estudiantes">34.4</concepto>
 			<concepto nombre="Personas dedicadas a los quehaceres del hogar">52.0</concepto>
 			<concepto nombre="Jubilados y pensionados">6.0</concepto>

@@ -57,8 +57,8 @@
     
     MotorGraficasSencha::MotorGraficasSencha * motorGraficasSencha = new MotorGraficasSencha::MotorGraficasSencha;
     
-    motorGraficasSencha->registraRepresentable(representable, "Distribucion de la poblacion de 12 agnos y mas no economicamente activa segun tipo de actividad", MotorGraficasSencha::MotorGraficasSencha::Pie);
-    motorGraficasSencha->registraRepresentable(representable2, "Caracteristicas economicas de la poblacion", MotorGraficasSencha::MotorGraficasSencha::Area);
+    motorGraficasSencha->registraRepresentable(representable, "Distribucion de la poblacion no economicamente activa segun tipo de actividad", MotorGraficasSencha::MotorGraficasSencha::Pie);
+    motorGraficasSencha->registraRepresentable(representable2, "Porcentaje de la poblacion segun caracteristica economica", MotorGraficasSencha::MotorGraficasSencha::Area);
     
     ControladorRepresentacionGlobo * controladorRepresentacionGlobo = [[ControladorRepresentacionGlobo alloc]  initWithNibName:@"ControladorRepresentacionGlobo" bundle:nil ];
     
