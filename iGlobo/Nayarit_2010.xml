@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <conjunto nombre="Definicion Mosaicos"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.inegi.org.mx/imapa/info" xsi:schemaLocation="http://www.inegi.org.mx/imapa/info info-imapa.xsd ">
 	<variables>
@@ -19,29 +19,24 @@
 	</conjunto>
 	
 	<conjunto nombre="Caracteristicas economicas">
-		<seccion nombre="Poblacion de 12 agnos y mas" tipo-valor="%">
-			<concepto nombre="Economicamente activa" nota="De cada 100 personas de 12 agnos...">
-				<valor nombre="Total">52.9</valor>
+		<seccion nombre="Caracteristicas economicas de la poblacion" tipo-valor="%">
+			<concepto nombre="Activa" nota="De cada 100 personas de 12 agnos...">
 				<valor nombre="Hombres">72.8</valor>
 				<valor nombre="Mujeres">33.4</valor>
 				<concepto nombre="Ocupada">
-					<valor nombre="Total">96.4</valor>
 					<valor nombre="Hombres">95.6</valor>
 					<valor nombre="Mujeres">98.1</valor>
 				</concepto>
 				<concepto nombre="No ocupada">
-					<valor nombre="Total">3.6</valor>
 					<valor nombre="Hombres">4.4</valor>
 					<valor nombre="Mujeres">1.9</valor>
 				</concepto>
 			</concepto>
-			<concepto nombre="No economicamente activa" nota="De cada 100 personas de 12 agnos...">
-				<valor nombre="Total">46.5</valor>
+			<concepto nombre="No Activa" nota="De cada 100 personas de 12 agnos...">
 				<valor nombre="Hombres">26.3</valor>
 				<valor nombre="Mujeres">66.3</valor>
 			</concepto>
-			<concepto nombre="Condicion de actividad no especificada">
-				<valor nombre="Total">0.6</valor>
+			<concepto nombre="No especificada">
 				<valor nombre="Hombres">0.9</valor>
 				<valor nombre="Mujeres">0.3</valor>
 			</concepto>

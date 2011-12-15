@@ -19,29 +19,24 @@
 	</conjunto>
 	
 	<conjunto nombre="Caracteristicas economicas">
-		<seccion nombre="Poblacion de 12 agnos y mas" tipo-valor="%">
-			<concepto nombre="Economicamente activa" nota="De cada 100 personas de 12 agnos...">
-				<valor nombre="Total">54.0</valor>
+		<seccion nombre="Caracteristicas economicas de la poblacion" tipo-valor="%">
+			<concepto nombre="Activa" nota="De cada 100 personas de 12 agnos...">
 				<valor nombre="Hombres">73.0</valor>
 				<valor nombre="Mujeres">36.6</valor>
 				<concepto nombre="Ocupada">
-					<valor nombre="Total">93.4</valor>
 					<valor nombre="Hombres">91.9</valor>
 					<valor nombre="Mujeres">96.1</valor>
 				</concepto>
 				<concepto nombre="No ocupada">
-					<valor nombre="Total">6.6</valor>
 					<valor nombre="Hombres">8.1</valor>
 					<valor nombre="Mujeres">3.9</valor>
 				</concepto>
 			</concepto>
-			<concepto nombre="No economicamente activa" nota="De cada 100 personas de 12 agnos...">
-				<valor nombre="Total">45.6</valor>
+			<concepto nombre="No Activa" nota="De cada 100 personas de 12 agnos...">
 				<valor nombre="Hombres">26.6</valor>
 				<valor nombre="Mujeres">63.1</valor>
 			</concepto>
-			<concepto nombre="Condicion de actividad no especificada">
-				<valor nombre="Total">0.4</valor>
+			<concepto nombre="No especificada">
 				<valor nombre="Hombres">0.4</valor>
 				<valor nombre="Mujeres">0.3</valor>
 			</concepto>
@@ -58,11 +53,11 @@
 	<conjunto nombre="Composicion por edad y sexo">
         
         <seccion nombre="Poblacion Total"> 
-            <concepto nombre="Poblacion Total">1 184 996</concepto>
-            <concepto nombre="Porcentaje de poblacion nacional">1.1</concepto>
-            <concepto nombre="Relacion hombres-mujeres">94.8</concepto>
-            <concepto nombre="Edad mediana">24</concepto>
-            <concepto nombre="Razon de dependencia por edad">58.2</concepto>
+            <concepto nombre="Poblacion Total">1 084 979</concepto>
+            <concepto nombre="Porcentaje de poblacion nacional">1</concepto>
+            <concepto nombre="Relacion hombres-mujeres">99.5</concepto>
+            <concepto nombre="Edad mediana">26</concepto>
+            <concepto nombre="Razon de dependencia por edad">57.3</concepto>
         </seccion>
         
 		<seccion nombre="Piramide poblacional" tipo-concepto="Agnos" tipo-valor="Miles">
