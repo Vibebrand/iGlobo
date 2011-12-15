@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<conjunto nombre="Definicion Mosaicos"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.inegi.org.mx/imapa/info" xsi:schemaLocation="http://www.inegi.org.mx/imapa/info info-imapa.xsd ">
+	<variables>
+		<concepto nombre="Fecha">2010</concepto>
+		<concepto nombre="Entidad federativa">Aguascalientes</concepto>
+	</variables>
+	
+	<conjunto nombre="Distribucion territorial">
+		<seccion nombre="tabla">
+			<concepto nombre="Superficie (km2)" nota="Representa el 1.4% del territorio nacional"> 5 616</concepto>
+			<concepto nombre="Densidad de poblacion (hab./km2)"> 211.0 </concepto>
+			<concepto nombre="Total de municipios"> 11
+				<concepto nombre="Aguascalientes">797 010</concepto>
+				<concepto nombre="Jesus Maria">99 590</concepto>
+				<concepto nombre="Calvillo">54 136</concepto>
+			</concepto>
+		</seccion>
+	</conjunto>
+	
+	<conjunto nombre="Caracteristicas economicas">
+		<seccion nombre="Poblacion de 12 agnos y mas" tipo-valor="%">
+			<concepto nombre="Economicamente activa" nota="De cada 100 personas de 12 agnos...">
+				<valor nombre="Total">54.0</valor>
+				<valor nombre="Hombres">73.0</valor>
+				<valor nombre="Mujeres">36.6</valor>
+				<concepto nombre="Ocupada">
+					<valor nombre="Total">93.4</valor>
+					<valor nombre="Hombres">91.9</valor>
+					<valor nombre="Mujeres">96.1</valor>
+				</concepto>
+				<concepto nombre="No ocupada">
+					<valor nombre="Total">6.6</valor>
+					<valor nombre="Hombres">8.1</valor>
+					<valor nombre="Mujeres">3.9</valor>
+				</concepto>
+			</concepto>
+			<concepto nombre="No economicamente activa" nota="De cada 100 personas de 12 agnos...">
+				<valor nombre="Total">45.6</valor>
+				<valor nombre="Hombres">26.6</valor>
+				<valor nombre="Mujeres">63.1</valor>
+			</concepto>
+			<concepto nombre="Condicion de actividad no especificada">
+				<valor nombre="Total">0.4</valor>
+				<valor nombre="Hombres">0.4</valor>
+				<valor nombre="Mujeres">0.3</valor>
+			</concepto>
+		</seccion>
+		<seccion nombre="Distribucion de la poblacion de 12 agnos y mas no economicamente activa segun tipo de actividad" tipo-valor="%">
+			<concepto nombre="Estudiantes">37.1</concepto>
+			<concepto nombre="Personas dedicadas a los quehaceres del hogar">50.0</concepto>
+			<concepto nombre="Jubilados y pensionados">6.6</concepto>
+			<concepto nombre="Personas con alguna limitacion fisica o mental permanente que les impida trabajar">1.9</concepto>
+			<concepto nombre="Personas en otras actividades no economicas">4.4</concepto>
+		</seccion>
+	</conjunto>
+	
+	<conjunto nombre="Composicion por edad y sexo">
+        
+        <seccion nombre="Poblacion Total"> 
+            <concepto nombre="Poblacion Total">1 084 979</concepto>
+            <concepto nombre="Porcentaje de poblacion nacional">1</concepto>
+            <concepto nombre="Relacion hombres-mujeres">99.5</concepto>
+            <concepto nombre="Edad mediana">26</concepto>
+            <concepto nombre="Razon de dependencia por edad">57.3</concepto>
+        </seccion>
+        
+		<seccion nombre="Piramide poblacional" tipo-concepto="Agnos" tipo-valor="Miles">
+			<concepto nombre="0-4">
+				<valor nombre="Hombres">61</valor>
+				<valor nombre="Mujeres">59</valor>
+			</concepto>
+			<concepto nombre="5-9">
+				<valor nombre="Hombres">64</valor>
+				<valor nombre="Mujeres">62</valor>
+			</concepto>
+			<concepto nombre="10-14">
+				<valor nombre="Hombres">61</valor>
+				<valor nombre="Mujeres">60</valor>
+			</concepto>
+			<concepto nombre="15-19">
+				<valor nombre="Hombres">59</valor>
+				<valor nombre="Mujeres">60</valor>
+			</concepto>
+			<concepto nombre="20-24">
+				<valor nombre="Hombres">50</valor>
+				<valor nombre="Mujeres">54</valor>
+			</concepto>
+			<concepto nombre="25-29">
+				<valor nombre="Hombres">45</valor>
+				<valor nombre="Mujeres">46</valor>
+			</concepto>
+			<concepto nombre="30-34">
+				<valor nombre="Hombres">40</valor>
+				<valor nombre="Mujeres">43</valor>
+			</concepto>
+			<concepto nombre="35-39">
+				<valor nombre="Hombres">38</valor>
+				<valor nombre="Mujeres">40</valor>
+			</concepto>
+			<concepto nombre="40-44">
+				<valor nombre="Hombres">35</valor>
+				<valor nombre="Mujeres">38</valor>
+			</concepto>
+			<concepto nombre="45-49">
+				<valor nombre="Hombres">28</valor>
+				<valor nombre="Mujeres">30</valor>
+			</concepto>
+			<concepto nombre="50-54">
+				<valor nombre="Hombres">25</valor>
+				<valor nombre="Mujeres">25</valor>
+			</concepto>
+			<concepto nombre="55-59">
+				<valor nombre="Hombres">18</valor>
+				<valor nombre="Mujeres">20</valor>
+			</concepto>
+			<concepto nombre="60-64">
+				<valor nombre="Hombres">12</valor>
+				<valor nombre="Mujeres">18</valor>
+			</concepto>
+			<concepto nombre="65-69">
+				<valor nombre="Hombres">10</valor>
+				<valor nombre="Mujeres">15</valor>
+			</concepto>
+			<concepto nombre="70-74">
+				<valor nombre="Hombres">5</valor>
+				<valor nombre="Mujeres">8</valor>
+			</concepto>
+			<concepto nombre="75-79">
+				<valor nombre="Hombres">4</valor>
+				<valor nombre="Mujeres">4</valor>
+			</concepto>
+			<concepto nombre="80-84">
+				<valor nombre="Hombres">3</valor>
+				<valor nombre="Mujeres">3</valor>
+			</concepto>
+			<concepto nombre="85+">
+				<valor nombre="Hombres">3</valor>
+				<valor nombre="Mujeres">3</valor>
+			</concepto>
+		</seccion>
+	</conjunto>
+</conjunto>
