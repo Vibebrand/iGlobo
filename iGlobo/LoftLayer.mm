@@ -251,7 +251,6 @@ public:
     void addLoftTriangle(Point2f verts[3])
     {
         setupDrawable(3);
-        NSLog(@"empieza a dibujar los triangulos");
         int startVert = drawable->getNumPoints();
         for (unsigned int ii=0;ii<3;ii++)
         {
@@ -455,7 +454,7 @@ protected:
 - (void)addGeometryToBuilder:(LoftedPolySceneRep *)sceneRep polyInfo:(LoftedPolyInfo *)polyInfo drawMbr:(GeoMbr &)drawMbr
 {
     int numShapes = 0;
-    NSLog(@"lo agrega addGeometry");
+    
     // Used to toss out drawables as we go
     // Its destructor will flush out the last drawable
     DrawableBuilder2 drawBuild(scene,sceneRep,polyInfo,drawMbr);
@@ -474,7 +473,7 @@ protected:
             }
         }
     }
-    NSLog(@"termina de recorrer los pligonos  y los agrega a SkirtPoints");
+ 
     
     // Tweak the mesh polygons and toss 'em in
     drawBuild.addPolyGroup(sceneRep->triMesh);
@@ -485,7 +484,7 @@ protected:
 // Generate drawables for a lofted poly
 - (void)runAddPoly:(LoftedPolyInfo *)polyInfo
 {
-    NSLog(@"empieza a correr runAddPoly");
+   
     LoftedPolySceneRep *sceneRep = new LoftedPolySceneRep();
     sceneRep->setId(polyInfo->sceneRepId);
     polyReps[sceneRep->getId()] = sceneRep;
@@ -495,7 +494,7 @@ protected:
     // Try reading from the cache
     if (!useCache || !polyInfo.key || !sceneRep->readFromCache(polyInfo.key))
     {
-        NSLog(@"tarta de leer chache");
+   
         // If that fails, we'll regenerate everything
         for (ShapeSet::iterator it = polyInfo->shapes.begin();
              it != polyInfo->shapes.end(); ++it)
@@ -520,7 +519,7 @@ protected:
                         // Tesselate the ring, even if it's concave (it's concave a lot)
                         TesselateRing(ring,sceneRep->triMesh);
                     }
-                    NSLog(@"termina de trabajar sobre los ciclos de analisis de VectorArea");
+                    
                 }
             }
         }
@@ -574,7 +573,7 @@ protected:
 // Add a lofted poly
 - (SimpleIdentity)addLoftedPolys:(ShapeSet *)shapes desc:(LoftedPolyDesc *)desc
 {
-    NSLog(@"entra en loftLayer");
+    
     LoftedPolyInfo *polyInfo = [[[LoftedPolyInfo alloc] initWithShapes:shapes desc:desc] autorelease];
     polyInfo->sceneRepId = Identifiable::genId();
     if (!layerThread || ([NSThread currentThread] == layerThread))

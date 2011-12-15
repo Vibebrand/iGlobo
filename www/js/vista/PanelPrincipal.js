@@ -1,5 +1,6 @@
 Grafo.PanelPrincipal = Ext.extend(Ext.Panel,{
     layout : 'fit',
+    cls : "panel-principal",
     id: 'contenedorPrincipal',
     initComponent : function() {
 	var me = this;
@@ -13,7 +14,15 @@ Grafo.PanelPrincipal = Ext.extend(Ext.Panel,{
 	var funcionShowAllPie = Ext.chart.series.Pie.prototype.showAll;
 	var funcionHideAllPie = Ext.chart.series.Pie.prototype.hideAll;
         var funcionShowAllArea = Ext.chart.series.Area.prototype.showAll;
-        var funcionHideAllArea = Ext.chart.series.Area.prototype.hideAll;                         
+        var funcionHideAllArea = Ext.chart.series.Area.prototype.hideAll;     
+                                  window.colores = ['#c2dde3', '#8BBFC4', '#1D9BA3', '#148181', '#306E63', '#315D57', '#2A4542'];
+                                  Ext.chart.theme.iGlobe = [{
+                                                            selector: 'chart',
+                                                            specificity: 5,
+                                                            style: {
+                                                            colors: window.colores
+                                                            }
+                                                            }];
         
 	Ext.chart.series.Series.prototype.showAll = function() { funcionShowAll.apply(this); me.codeInjected('nivel', this.yField, this.seriesIsHidden); }
 	Ext.chart.series.Series.prototype.hideAll = function() { funcionHideAll.apply(this); me.codeInjected('nivel', this.yField, this.seriesIsHidden); }
@@ -47,6 +56,7 @@ Grafo.PanelPrincipal = Ext.extend(Ext.Panel,{
 		me.codeInjected('nombre', itemInteres.get(this.label.field), this.isExcluded(this._index) );
 	    } 
 	}
+                                
         
     },
     codeInjected:function(_nombre, _valor, _oculto){

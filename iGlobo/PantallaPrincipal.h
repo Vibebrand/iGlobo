@@ -35,12 +35,14 @@
 @property(nonatomic, retain) IBOutlet UIView* representacionGlobo;
 @property(nonatomic, retain) IBOutlet UIView* representacionGraficaBarrasIzquierdo;
 @property(nonatomic, retain) IBOutlet UIView* representacionGraficaBarrasDerecha;
-@property(nonatomic, assign) IBOutlet UIWebView * webView;
-@property(nonatomic, assign) IBOutlet UIWebView * webView2;
+
+@property(nonatomic, assign) IBOutlet UIView * representacionGraficaPie;
+@property(nonatomic, assign) IBOutlet UIView * representacionGraficaArea;
 
 @property(nonatomic, retain) id<iControladorVista> controladorVista;
 @property(nonatomic, retain) ControladorPiramidePoblacional *controladorPiramidePoblacional;
-@property(nonatomic, retain) ControladorSencha * controladorSencha;
-@property(nonatomic, retain) ControladorSencha * controladorSencha2;
+
+@property(nonatomic, retain) id<iControladorVista> controladorGraficaPie;
+@property(nonatomic, retain) id<iControladorVista> controladorGraficaArea;
 
 @end

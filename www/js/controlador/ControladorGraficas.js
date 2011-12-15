@@ -71,7 +71,10 @@ Ext.regController('ControladorGrafica', {
 	if(definicionGrafica !== undefined) {
 	    var contenedorPrincipal = Ext.getCmp("contenedorPrincipal");
 	    contenedorPrincipal.add(definicionGrafica);
-	    contenedorPrincipal.doLayout()
+                  contenedorPrincipal.doLayout();
+                  NativeBridge.call("graficaActiva", [definicionGrafica.titulo], function(info) {
+                                    
+                                    });
 	}
     },
     actualizaGrafica: function(opciones) {

@@ -35,7 +35,7 @@
        
         [[self contenedorGraficaBarra] insertSubview:_representacionGraficaBarra atIndex:0];
         
-        [_representacionGraficaBarra setTintColor:[UIColor purpleColor]];
+        [_representacionGraficaBarra setTintColor:[UIColor colorWithRed:0.0/255.0 green:98.0/255.0 blue:97.0/255.0 alpha:1.0]];
     }
 }
 
@@ -56,7 +56,7 @@
 -(void)establecerNombreCelda:(NSString*)nombre conValor:(float) valor
 {
     [[self rangoEdad] setText:nombre];
-    [_representacionGraficaBarra setProgress:valor animated:TRUE];
+    [_representacionGraficaBarra setProgress:valor animated:YES];
 }
 
 @end

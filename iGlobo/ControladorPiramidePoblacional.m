@@ -26,6 +26,7 @@
 {
     hombres = [NSMutableArray new];
     mujeres = [NSMutableArray new];
+    banderaValida = NO;
     return self;
 }
 
@@ -48,17 +49,20 @@
 -(float)sumatoriaArreglo:(NSArray*) arreglo
 {
     float sumatoria=0.0f;
+    float numeroMayor=0.0f;
     NSEnumerator *registro = [arreglo objectEnumerator];
     indicadorGraficaBarra *indicador;
     while(indicador =  [registro nextObject] )
     {
         sumatoria += [indicador valor];
+        if(numeroMayor <  [indicador valor])
+            numeroMayor = [indicador valor];
     }
     NSInteger numeroElementos = [arreglo count];
     for(int i=0; i< numeroElementos; i++)
     {
         indicador = [arreglo objectAtIndex:i];
-        [indicador setPorcentajeARepresentar: ([indicador valor] /sumatoria) ];        
+        [indicador setPorcentajeARepresentar: ([indicador valor] /numeroMayor) ];        
     }
     return sumatoria;
 }
@@ -73,7 +77,6 @@
     NSArray *datosPoblacionales =  [seccion objectForKey:@"conceptos"];
     NSEnumerator *dato = [datosPoblacionales objectEnumerator];
     id datoDiccionario;
-    NSLog(@"%@", seccion);
     while(datoDiccionario = [dato nextObject] )
     {
         NSString * nombre = [datoDiccionario objectForKey:@"nombre"];
@@ -85,7 +88,6 @@
             indicadorGraficaBarra *indicador = [indicadorGraficaBarra new];
             NSString * valor = [diccionarioValores objectForKey:@"valor"];
            
-            NSLog(@"%@",nombre);
             [indicador setNombreEtiqueta: nombre];
             NSString * nombreSeccion = [diccionarioValores objectForKey:@"nombre"];
             [indicador setValor: [valor floatValue]];
@@ -98,21 +100,27 @@
         }
     }
     [self procesarYActualizarGrafica];
+    banderaValida = YES;
 }
 - (void) seccionInvalida: (NSDictionary *) seccion
 {
-    [mujeres removeAllObjects];
-    [hombres removeAllObjects];
-    
-    [_controladorBarrasHombres establecerPorcentajeDeLaPoblacion:@"0.0%" enBaseAlaSumatoriaTotal:@"0.0"];
-    
-    [_controladorBarrasMujeres establecerPorcentajeDeLaPoblacion:@"0.0%" enBaseAlaSumatoriaTotal:@"0.0"];
-    
-    [_controladorBarrasHombres actualizarGrafica:hombres];
-    [_controladorBarrasMujeres actualizarGrafica:mujeres];
-
 }
-- (void) finalizadaActualizacionSecciones{}
+- (void) finalizadaActualizacionSecciones
+{
+    if(!banderaValida)
+    {
+        [mujeres removeAllObjects];
+        [hombres removeAllObjects];
+        
+        [_controladorBarrasHombres establecerPorcentajeDeLaPoblacion:@"0.0%" enBaseAlaSumatoriaTotal:@"0.0"];
+        
+        [_controladorBarrasMujeres establecerPorcentajeDeLaPoblacion:@"0.0%" enBaseAlaSumatoriaTotal:@"0.0"];
+        
+        [_controladorBarrasHombres actualizarGrafica:hombres];
+        [_controladorBarrasMujeres actualizarGrafica:mujeres];
+    }
+    banderaValida = NO;
+}
 
 
 - (NSArray *) obtenNombreSeccionesGestionadas

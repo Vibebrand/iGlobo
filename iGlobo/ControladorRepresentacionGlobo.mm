@@ -410,7 +410,6 @@
 
 - (void) seccionInvalida: (NSDictionary *) seccion
 {
-    NSLog(@"seccionInvalida: %@", seccion);
 }
 
 - (void) finalizadaActualizacionSecciones
