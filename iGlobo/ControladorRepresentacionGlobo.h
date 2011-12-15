@@ -84,6 +84,8 @@
 
 -(void)agregarPanelesCarrusel;
 
+-(void)establecerInvisibleVentanaDetalles:(BOOL)visible;
+
 -(IBAction)changePage:(id)sender;
 
 -(void) procesaSeccionTabla:(NSDictionary *) seccion;

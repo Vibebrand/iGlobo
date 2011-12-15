@@ -10,6 +10,7 @@
 #import "ServicioBDGeograficas.h"
 #import "ServicioMosaicoGeografico.h"
 #import "ServicioDeIluminacionPorRegion.h"
+#import <QuartzCore/QuartzCore.h>
 
 #define CENTER_COORD1 512.0
 #define CENTER_COORD2 384.0
@@ -389,10 +390,23 @@
     
     [[self etiquetaDescripcionPoligono] setText: valorEtiqueta];
     [valorEtiqueta release];
-    [[self etiquetaDescripcionPoligono]setHidden:NO];
-    [[self botonOcultarMensajes] setHidden:NO];
+    
+    [self establecerInvisibleVentanaDetalles:NO];
 }
 
+
+-(void)establecerInvisibleVentanaDetalles:(BOOL)visible
+{
+    CATransition *transition = [CATransition animation];
+    transition.duration = 0.60;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionFade;
+    transition.delegate = self;
+    [self.view.layer addAnimation:transition forKey:nil];
+    
+    [[self etiquetaDescripcionPoligono]setHidden:visible];
+    [[self botonOcultarMensajes] setHidden:visible];
+}
 
 #pragma iGestorObjectiveC
 
@@ -415,9 +429,7 @@
 - (void) finalizadaActualizacionSecciones
 {
     if(flagBotonOcultarMensajes) {
-        [[self botonOcultarMensajes] setHidden:YES];
-        [[self etiquetaDescripcionPoligono] setHidden:YES];
-        
+        [self establecerInvisibleVentanaDetalles:YES];
         [[self etiquetaTotalPoblacion] setText:@""];
         [[self etiquetaPorcentajePoblacion] setText:@""];
         [[self etiquetaRelacionHombresMujeres] setText:@""];
@@ -449,8 +461,7 @@
 
 -(IBAction)cmdOcultarEtiqueta:(id)sender
 {
-    [[self etiquetaDescripcionPoligono] setHidden:YES];
-    [[self botonOcultarMensajes] setHidden:YES];
+    [self establecerInvisibleVentanaDetalles:YES];
 }
 
 #pragma UIScrollView
