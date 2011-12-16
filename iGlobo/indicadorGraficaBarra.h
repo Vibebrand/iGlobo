@@ -14,6 +14,7 @@
     float _valor;
     float _tipoValor;
     float _porcentajeARepresentar;
+    float _porcentajeSegunValor;
 }
 
 -(NSString*)description;
@@ -22,6 +23,6 @@
 @property(nonatomic, assign) float porcentajeARepresentar;
 @property(nonatomic, assign) float valor;
 @property(nonatomic, assign) float tipoValor;
-
+@property(nonatomic, assign) float porcentajeSegunValor;
 
 @end

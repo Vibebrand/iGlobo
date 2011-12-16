@@ -14,7 +14,7 @@
 @synthesize porcentajeARepresentar = _porcentajeARepresentar;
 @synthesize valor = _valor;
 @synthesize tipoValor = _tipoValor;
-
+@synthesize porcentajeSegunValor = _porcentajeSegunValor;
 -(void) dealloc
 {
     [_nombreEtiqueta release];

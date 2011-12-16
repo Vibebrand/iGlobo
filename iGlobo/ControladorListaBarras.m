@@ -105,7 +105,7 @@
     static NSString * identificador = @"RangosDeEdad";
     CeldaGraficaDeBarras *celda;
     
-    [self popTipViewWasDismissedByUser:self.currentPopTipViewTarget];
+    
     
     celda = (CeldaGraficaDeBarras *)[tableView dequeueReusableCellWithIdentifier:identificador];
             
@@ -120,6 +120,9 @@
     {
         indicadorGraficaBarra *indicador = [_rangosDeEdad objectAtIndex: [indexPath row]  ];
         [celda establecerNombreCelda: [indicador nombreEtiqueta] conValor: [indicador porcentajeARepresentar]];
+        
+        [[self currentPopTipViewTarget] dismissAnimated:YES];
+        self.currentPopTipViewTarget = nil;
     }
    
     return celda;
@@ -143,7 +146,11 @@
 	[[self currentPopTipViewTarget] dismissAnimated:YES];
     self.currentPopTipViewTarget = nil;
     
-     CMPopTipView * _popTipView = [[[CMPopTipView alloc] initWithMessage:[NSString stringWithFormat:@" hola soy el mensaje %d", indexPath.row]] autorelease];
+    indicadorGraficaBarra *indicador = [_rangosDeEdad objectAtIndex: [indexPath row] ];
+    NSString * mensaje = [NSString stringWithFormat:@" %.0f Mil personas que representa %.1f%% de la población de %@ ", indicador.valor, indicador.valor, self.genero];
+    
+    
+     CMPopTipView * _popTipView = [[[CMPopTipView alloc] initWithMessage:mensaje ]autorelease];
     _popTipView.delegate = self;
     _popTipView.backgroundColor = [UIColor blackColor];
     _popTipView.textColor = [UIColor whiteColor];

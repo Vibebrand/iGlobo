@@ -62,7 +62,8 @@
     for(int i=0; i< numeroElementos; i++)
     {
         indicador = [arreglo objectAtIndex:i];
-        [indicador setPorcentajeARepresentar: ([indicador valor] /numeroMayor) ];        
+        [indicador setPorcentajeARepresentar: ([indicador valor] /numeroMayor) ];   
+        [indicador setPorcentajeSegunValor:([indicador valor]*100/sumatoria)];
     }
     return sumatoria;
 }
