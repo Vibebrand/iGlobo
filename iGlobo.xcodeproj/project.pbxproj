@@ -59,6 +59,7 @@
 		D7961FCE14925B5000252EB9 /* NativeBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = D7961FCD14925B5000252EB9 /* NativeBridge.m */; };
 		D796200C14925F6900252EB9 /* ControladorSencha.mm in Sources */ = {isa = PBXBuildFile; fileRef = D796200B14925F6900252EB9 /* ControladorSencha.mm */; };
 		D796200E14926EDA00252EB9 /* www in Resources */ = {isa = PBXBuildFile; fileRef = D796200D14926EDA00252EB9 /* www */; };
+		D7969E3A149B9EC20066D760 /* CMPopTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7969E39149B9EC20066D760 /* CMPopTipView.m */; };
 		D797521E147FEF5F003F331A /* PanelRedondo.mm in Sources */ = {isa = PBXBuildFile; fileRef = D797521D147FEF5F003F331A /* PanelRedondo.mm */; };
 		D797526214804147003F331A /* ServicioDeIluminacionPorRegion.mm in Sources */ = {isa = PBXBuildFile; fileRef = D797526114804147003F331A /* ServicioDeIluminacionPorRegion.mm */; };
 		D798595E1475B0C600F98991 /* ControladorMapa.mm in Sources */ = {isa = PBXBuildFile; fileRef = D798595D1475B0C600F98991 /* ControladorMapa.mm */; };
@@ -294,6 +295,8 @@
 		D796200A14925F6900252EB9 /* ControladorSencha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControladorSencha.h; sourceTree = "<group>"; };
 		D796200B14925F6900252EB9 /* ControladorSencha.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ControladorSencha.mm; sourceTree = "<group>"; };
 		D796200D14926EDA00252EB9 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
+		D7969E38149B9EC20066D760 /* CMPopTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMPopTipView.h; sourceTree = "<group>"; };
+		D7969E39149B9EC20066D760 /* CMPopTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMPopTipView.m; sourceTree = "<group>"; };
 		D797521C147FEF5F003F331A /* PanelRedondo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelRedondo.h; sourceTree = "<group>"; };
 		D797521D147FEF5F003F331A /* PanelRedondo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PanelRedondo.mm; sourceTree = "<group>"; };
 		D7975220147FF030003F331A /* iDelegadoPanelRepresentacionGlobo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iDelegadoPanelRepresentacionGlobo.h; sourceTree = "<group>"; };
@@ -681,6 +684,8 @@
 		D71E44A014855F3500A9E422 /* utilidades */ = {
 			isa = PBXGroup;
 			children = (
+				D7969E38149B9EC20066D760 /* CMPopTipView.h */,
+				D7969E39149B9EC20066D760 /* CMPopTipView.m */,
 				D71E44A114855F9000A9E422 /* drawing.m */,
 				D71E44A214855F9000A9E422 /* PDColoredProgressView.h */,
 				D71E44A314855F9000A9E422 /* PDColoredProgressView.m */,
@@ -1300,6 +1305,7 @@
 				F1AFA0C81492CFF800226371 /* SBJsonWriter.m in Sources */,
 				D79937E71497FCFF00BB069E /* GraficaArea.cpp in Sources */,
 				D72FCDF714991AC1001040B1 /* ControladorGraficaSencha.m in Sources */,
+				D7969E3A149B9EC20066D760 /* CMPopTipView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

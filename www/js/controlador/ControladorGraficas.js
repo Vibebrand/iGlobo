@@ -2,6 +2,12 @@
 
 Ext.regController('ControladorGrafica', {
     mostrarFiltroGrafica: function(opciones){
+    
+    if(window.panelDeDetalle!== undefined){
+        window.panelDeDetalle.hide();
+        window.panelDeDetalle = undefined;
+    }
+                  
 	var graficaActiva = this._graficaActiva;
 	if(graficaActiva.leyendaActiva == undefined) {
 	    graficaActiva.leyendaActiva = false; 
@@ -90,6 +96,11 @@ Ext.regController('ControladorGrafica', {
 	}
     },
     actualizaGrafica: function(opciones) {
+                  
+    if(window.panelDeDetalle!== undefined){
+        window.panelDeDetalle.hide();
+        window.panelDeDetalle = undefined;
+    }
 	var me = this;
 	var identificadorGrafica = opciones.identificadorGrafica;
 	var definicionGrafica = opciones.definicionGrafica;

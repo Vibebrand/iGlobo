@@ -18,6 +18,9 @@
 @synthesize genero = _genero;
 @synthesize imagen = _imagen;
 @synthesize rangosDeEdad = _rangosDeEdad;
+@synthesize currentPopTipViewTarget;
+
+@synthesize etiquetaReferenciaPopOver;
 
 -(void)dealloc
 {
@@ -31,6 +34,8 @@
     [_etiquetaNumeroTotalPorGenero release];
     [_imagen release];
     
+    self.currentPopTipViewTarget = nil;
+    self.etiquetaReferenciaPopOver=nil;
     
     [super dealloc];
 }
@@ -40,7 +45,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.currentPopTipViewTarget = nil;
     }
     return self;
 }
@@ -99,6 +104,9 @@
 {
     static NSString * identificador = @"RangosDeEdad";
     CeldaGraficaDeBarras *celda;
+    
+    [self popTipViewWasDismissedByUser:self.currentPopTipViewTarget];
+    
     celda = (CeldaGraficaDeBarras *)[tableView dequeueReusableCellWithIdentifier:identificador];
             
     if (celda == nil) {
@@ -131,7 +139,19 @@
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+	[[self currentPopTipViewTarget] dismissAnimated:YES];
+    self.currentPopTipViewTarget = nil;
+    
+     CMPopTipView * _popTipView = [[[CMPopTipView alloc] initWithMessage:[NSString stringWithFormat:@" hola soy el mensaje %d", indexPath.row]] autorelease];
+    _popTipView.delegate = self;
+    _popTipView.backgroundColor = [UIColor blackColor];
+    _popTipView.textColor = [UIColor whiteColor];
+    _popTipView.animation = arc4random() % 2;
+    self.currentPopTipViewTarget = _popTipView;
+   
+    [_popTipView presentPointingAtView:self.etiquetaReferenciaPopOver inView:self.view animated:YES];
+    //[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark -
@@ -160,5 +180,12 @@
 {
     [[self porcentajeResultante] setText:porcentajePoblacion];
     [[self etiquetaNumeroTotalPorGenero] setText: [NSString stringWithFormat:@"%@ %@", sumatorialTotal, [self genero]]];
+}
+
+#pragma CMPopTipView
+
+- (void)popTipViewWasDismissedByUser:(CMPopTipView *)popTipView
+{
+    self.currentPopTipViewTarget = nil;
 }
 @end

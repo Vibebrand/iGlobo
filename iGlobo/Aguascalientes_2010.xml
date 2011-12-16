@@ -53,11 +53,11 @@
 	<conjunto nombre="Composicion por edad y sexo">
         
         <seccion nombre="Poblacion Total"> 
-            <concepto nombre="Poblacion Total">1 084 979</concepto>
-            <concepto nombre="Porcentaje de poblacion nacional">1</concepto>
-            <concepto nombre="Relacion hombres-mujeres">99.5</concepto>
-            <concepto nombre="Edad mediana">26</concepto>
-            <concepto nombre="Razon de dependencia por edad">57.3</concepto>
+            <concepto nombre="Poblacion Total">1 184 996</concepto>
+            <concepto nombre="Porcentaje de poblacion nacional">1.1</concepto>
+            <concepto nombre="Relacion hombres-mujeres">94.8</concepto>
+            <concepto nombre="Edad mediana">24</concepto>
+            <concepto nombre="Razon de dependencia por edad">58.2</concepto>
         </seccion>
         
 		<seccion nombre="Piramide poblacional" tipo-concepto="Agnos" tipo-valor="Miles">
