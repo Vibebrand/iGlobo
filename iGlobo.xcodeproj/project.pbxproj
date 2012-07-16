@@ -167,6 +167,7 @@
 		D7AFB7F1147444A800D66A37 /* LoftLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7AFB7F0147444A800D66A37 /* LoftLayer.mm */; };
 		D7E1B1A4149A52370037A904 /* Distrito Federal.xml in Resources */ = {isa = PBXBuildFile; fileRef = D7E1B1A3149A52370037A904 /* Distrito Federal.xml */; };
 		D7F46FAB147D512600EBC270 /* ServicioMosaicoGeografico.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7F46FAA147D512600EBC270 /* ServicioMosaicoGeografico.mm */; };
+		F125C74815B4635F0013BC03 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F125C74715B4635F0013BC03 /* libTestFlight.a */; };
 		F1AFA0BD1492CFF800226371 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AFA0A51492CFF800226371 /* NSObject+SBJson.m */; };
 		F1AFA0BE1492CFF800226371 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AFA0A81492CFF800226371 /* SBJsonParser.m */; };
 		F1AFA0BF1492CFF800226371 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AFA0AA1492CFF800226371 /* SBJsonStreamParser.m */; };
@@ -429,6 +430,8 @@
 		D7F46FAA147D512600EBC270 /* ServicioMosaicoGeografico.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ServicioMosaicoGeografico.mm; sourceTree = "<group>"; };
 		D7F46FAC147D56D100EBC270 /* iServicioMosaicoGeografico.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iServicioMosaicoGeografico.h; sourceTree = "<group>"; };
 		F11D3A84148DA3EF00C8D088 /* MotorSenchaAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotorSenchaAPI.h; sourceTree = "<group>"; };
+		F125C74715B4635F0013BC03 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = libs/TestFlight/libTestFlight.a; sourceTree = "<group>"; };
+		F125C74915B4637E0013BC03 /* TestFlight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TestFlight.h; path = libs/TestFlight/TestFlight.h; sourceTree = "<group>"; };
 		F1AFA0A41492CFF800226371 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+SBJson.h"; path = "libs/SBJson/NSObject+SBJson.h"; sourceTree = "<group>"; };
 		F1AFA0A51492CFF800226371 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+SBJson.m"; path = "libs/SBJson/NSObject+SBJson.m"; sourceTree = "<group>"; };
 		F1AFA0A61492CFF800226371 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJson.h; path = libs/SBJson/SBJson.h; sourceTree = "<group>"; };
@@ -472,6 +475,7 @@
 				D7AFB71D1474136200D66A37 /* UIKit.framework in Frameworks */,
 				D7AFB71F1474136200D66A37 /* Foundation.framework in Frameworks */,
 				D7AFB7211474136200D66A37 /* CoreGraphics.framework in Frameworks */,
+				F125C74815B4635F0013BC03 /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -827,6 +831,7 @@
 				D7139A45148D33BB00C0508A /* libz.dylib */,
 				D7139A43148D33B400C0508A /* libxml2.dylib */,
 				D7AFB73B1474167000D66A37 /* libsqlite3.dylib */,
+				F125C74615B4633D0013BC03 /* TestFlight */,
 				D7AFB7391474165500D66A37 /* WhirlyGlobe.framework */,
 				D7AFB7371474164700D66A37 /* QuartzCore.framework */,
 				D7AFB7351474163C00D66A37 /* OpenGLES.framework */,
@@ -1073,6 +1078,15 @@
 				D797525F1480400E003F331A /* iServicioDeIluminacionPorRegion.h */,
 			);
 			name = protocolo;
+			sourceTree = "<group>";
+		};
+		F125C74615B4633D0013BC03 /* TestFlight */ = {
+			isa = PBXGroup;
+			children = (
+				F125C74915B4637E0013BC03 /* TestFlight.h */,
+				F125C74715B4635F0013BC03 /* libTestFlight.a */,
+			);
+			name = TestFlight;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1423,6 +1437,10 @@
 					"libs/eigen-eigen-3.0.1/",
 				);
 				INFOPLIST_FILE = "iGlobo/iGlobo-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/libs/TestFlight\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1445,6 +1463,10 @@
 					"libs/eigen-eigen-3.0.1/",
 				);
 				INFOPLIST_FILE = "iGlobo/iGlobo-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/libs/TestFlight\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
