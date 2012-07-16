@@ -14,6 +14,7 @@
 #import "RepresentableSencha.h"
 #import "ControladorPiramidePoblacional.h"
 #import "ControladorGraficaSencha.h"
+#import "../libs/TestFlight/TestFlight.h"
 
 
 @implementation AppDelegate
@@ -40,6 +41,13 @@
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+#define TESTING 1
+#ifdef TESTING
+    [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
+#endif
+    
+    [TestFlight takeOff:@"fc94afbf9058e48097c399875eb34c13_MTA5NjA4MjAxMi0wNy0xMiAxNDozNDowOC40ODc0MjA"];
+    
     sleep(2);
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     self.window.backgroundColor = [UIColor whiteColor];
