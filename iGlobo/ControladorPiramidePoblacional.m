@@ -50,6 +50,7 @@
 {
     float sumatoria=0.0f;
     float numeroMayor=0.0f;
+    float porcentaje=0.0f;
     NSEnumerator *registro = [arreglo objectEnumerator];
     indicadorGraficaBarra *indicador;
     while(indicador =  [registro nextObject] )
@@ -63,7 +64,9 @@
     {
         indicador = [arreglo objectAtIndex:i];
         [indicador setPorcentajeARepresentar: ([indicador valor] /numeroMayor) ];   
-        [indicador setPorcentajeSegunValor:([indicador valor]*100/sumatoria)];
+    
+        porcentaje = ([indicador valor]*100.0f)/sumatoria;
+        [indicador setPorcentajeSegunValor:porcentaje];
     }
     return sumatoria;
 }

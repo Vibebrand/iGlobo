@@ -52,6 +52,11 @@
 		D72FCE0414991D81001040B1 /* Aguascalientes_2010.xml in Resources */ = {isa = PBXBuildFile; fileRef = D72FCE0114991D81001040B1 /* Aguascalientes_2010.xml */; };
 		D72FCE0514991D81001040B1 /* Jalisco_2010.xml in Resources */ = {isa = PBXBuildFile; fileRef = D72FCE0214991D81001040B1 /* Jalisco_2010.xml */; };
 		D72FCE0614991D81001040B1 /* Nayarit_2010.xml in Resources */ = {isa = PBXBuildFile; fileRef = D72FCE0314991D81001040B1 /* Nayarit_2010.xml */; };
+		D73054FC15AF1CF000AF96EC /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D73054FB15AF1CF000AF96EC /* Default-Landscape~ipad.png */; };
+		D73054FE15AF1CF900AF96EC /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D73054FD15AF1CF900AF96EC /* Default-Landscape@2x~ipad.png */; };
+		D730550015AF1D2100AF96EC /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = D73054FF15AF1D2100AF96EC /* Icon-72.png */; };
+		D730550215AF1D3100AF96EC /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D730550115AF1D3100AF96EC /* Icon-72@2x.png */; };
+		D730550415AF1F7A00AF96EC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D730550315AF1F7A00AF96EC /* Default.png */; };
 		D761C994148FB7A200E81541 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D71399DA148D338900C0508A /* main.cpp */; };
 		D79325A61492AEAA00B79D40 /* RepresentableSencha.mm in Sources */ = {isa = PBXBuildFile; fileRef = D79325A51492AEAA00B79D40 /* RepresentableSencha.mm */; };
 		D7934C8614770750005B13C2 /* ControladorCapaDeInteraccion.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7934C8514770750005B13C2 /* ControladorCapaDeInteraccion.mm */; };
@@ -279,6 +284,11 @@
 		D72FCE0114991D81001040B1 /* Aguascalientes_2010.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Aguascalientes_2010.xml; path = iGlobo/Aguascalientes_2010.xml; sourceTree = "<group>"; };
 		D72FCE0214991D81001040B1 /* Jalisco_2010.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Jalisco_2010.xml; path = iGlobo/Jalisco_2010.xml; sourceTree = "<group>"; };
 		D72FCE0314991D81001040B1 /* Nayarit_2010.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Nayarit_2010.xml; path = iGlobo/Nayarit_2010.xml; sourceTree = "<group>"; };
+		D73054FB15AF1CF000AF96EC /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		D73054FD15AF1CF900AF96EC /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		D73054FF15AF1D2100AF96EC /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		D730550115AF1D3100AF96EC /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		D730550315AF1F7A00AF96EC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		D73EAE0714840020006DE184 /* iControladorVista.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iControladorVista.h; sourceTree = "<group>"; };
 		D79325A41492AE5C00B79D40 /* RepresentableSencha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepresentableSencha.h; sourceTree = "<group>"; };
 		D79325A51492AEAA00B79D40 /* RepresentableSencha.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RepresentableSencha.mm; sourceTree = "<group>"; };
@@ -794,6 +804,10 @@
 		D7AFB70D1474136200D66A37 = {
 			isa = PBXGroup;
 			children = (
+				D730550115AF1D3100AF96EC /* Icon-72@2x.png */,
+				D73054FF15AF1D2100AF96EC /* Icon-72.png */,
+				D73054FD15AF1CF900AF96EC /* Default-Landscape@2x~ipad.png */,
+				D73054FB15AF1CF000AF96EC /* Default-Landscape~ipad.png */,
 				D7E1B1A3149A52370037A904 /* Distrito Federal.xml */,
 				D72FCE0114991D81001040B1 /* Aguascalientes_2010.xml */,
 				D72FCE0214991D81001040B1 /* Jalisco_2010.xml */,
@@ -868,6 +882,7 @@
 		D7AFB73E1474324800D66A37 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				D730550315AF1F7A00AF96EC /* Default.png */,
 				D7AFB73F1474324800D66A37 /* big_wtb */,
 				D7AFB7691474324800D66A37 /* Icon-72.png */,
 				D7AFB76A1474324800D66A37 /* Icon-Small-50.png */,
@@ -1241,6 +1256,11 @@
 				D72FCE0514991D81001040B1 /* Jalisco_2010.xml in Resources */,
 				D72FCE0614991D81001040B1 /* Nayarit_2010.xml in Resources */,
 				D7E1B1A4149A52370037A904 /* Distrito Federal.xml in Resources */,
+				D73054FC15AF1CF000AF96EC /* Default-Landscape~ipad.png in Resources */,
+				D73054FE15AF1CF900AF96EC /* Default-Landscape@2x~ipad.png in Resources */,
+				D730550015AF1D2100AF96EC /* Icon-72.png in Resources */,
+				D730550215AF1D3100AF96EC /* Icon-72@2x.png in Resources */,
+				D730550415AF1F7A00AF96EC /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

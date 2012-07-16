@@ -147,7 +147,7 @@
     self.currentPopTipViewTarget = nil;
     
     indicadorGraficaBarra *indicador = [_rangosDeEdad objectAtIndex: [indexPath row] ];
-    NSString * mensaje = [NSString stringWithFormat:@" %.0f Mil personas que representa %.1f%% de la población de %@ ", indicador.valor, indicador.valor, self.genero];
+    NSString * mensaje = [NSString stringWithFormat:@" %.0f Mil personas que representa %.1f%% de la población de %@ ", indicador.valor, indicador.porcentajeSegunValor, self.genero];
     
     
      CMPopTipView * _popTipView = [[[CMPopTipView alloc] initWithMessage:mensaje ]autorelease];
