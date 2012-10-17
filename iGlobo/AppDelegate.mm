@@ -35,7 +35,7 @@
 {
     // Add the view controller's view to the window and display.
     //[[_pantallaPrincipal representacionGlobo] addSubview:_controladorRepresentacionGlobo.view];
-    [self.window addSubview:_pantallaPrincipal.view];
+    [self.window setRootViewController: _pantallaPrincipal];
     [self.window makeKeyAndVisible];
     [_controlMaestro actualizaSecciones];
 }
